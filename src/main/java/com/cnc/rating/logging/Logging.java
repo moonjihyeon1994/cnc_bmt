@@ -16,6 +16,7 @@ public class Logging implements WebServerFactoryCustomizer {
         accessLogValve.setDirectory(".");
         accessLogValve.setSuffix(".log");
         accessLogValve.setCondition("ignoreLogging");
+        // 하나의 시간체크, 샤드넘버, 서비스관리번호,
         containerFactory.addContextValves(accessLogValve);
     }
 }

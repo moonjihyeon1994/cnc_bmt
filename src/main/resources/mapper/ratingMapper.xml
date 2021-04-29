@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cnc.rating.mybatis.RatingMapper">
+<!--    <select id="selectAll" resultType="post">-->
+<!--        SELECT DECODE(usg_type, 550, '서킷데이터', '데이터통화') cdr_kind,-->
+<!--               33 cdr_kind_order,-->
+<!--               DATE_FORMAT(usg_start_date, '%y/%m/%d') usg_start_date,-->
+<!--               usg_start_time usg_start_time,-->
+<!--               total_duration total_duration,-->
+<!--               '' rat_term_phon_num,-->
+<!--               '' rat_term_phon_num_xxx,-->
+<!--               total_usg_nou,-->
+<!--               total_used_charge,-->
+<!--               total_rated_charge,-->
+<!--               (total_used_charge - total_rated_charge) deduct_discount_charge,-->
+<!--               deduct_code1, deduct_code2, deduct_code3, deduct_code4, deduct_code5, disc_code1, disc_code2, disc_code3,-->
+<!--               msc_switch_id switch_id,-->
+<!--               cell_id-->
+<!--               || ocall_toll_id AS cell_id,-->
+<!--               '' tzone,-->
+<!--               usg_type,-->
+<!--               CASE-->
+<!--                WHEN opmd_flag = '7' THEN '스마트와치(AW) 데이터공유'-->
+<!--                WHEN LENGTH(CH_SVC_ICCID) = 14 THEN substr(sh_svc_iccid, 0 ,4) || '-' || THEN substr(sh_svc_iccid, 5 ,4) || '-' || THEN substr(sh_svc_iccid, 9 ,4) || '-' || THEN substr(sh_svc_iccid, 13)-->
+<!--                ELSE IFNULL(CH_SVC_ICCID, '')-->
+<!--               END bigo_name,-->
+<!--               ag_service_type_name cont_product_name,-->
+<!--               network_type,-->
+<!--               processed_date,-->
+<!--               processed_time,-->
+<!--               '' service_term_date,-->
+<!--               '' service_term_time,-->
+<!--               usg_seq-->
+<!--        FROM (SELECT usg_start_date,-->
+<!--                     usg_start_time,-->
+<!--                     total_duration,-->
+<!--                     DECODE(usg_type, 620, DECODE(a.prod_id, 'NA00002738', ag_used_nou * 1024, 'NA00002739', ag_used_nou * 1024, ag_used_nou * 5), ROUND(ag_used_nou/2,2 )) total_usg_nou,-->
+<!--                     total_used_charge,-->
+<!--                     total_rated_charge,-->
+<!--                     deduct_code1,-->
+<!--                     deduct_code2,-->
+<!--                     deduct_code3,-->
+<!--                     deduct_code4,-->
+<!--                     deduct_code5,-->
+<!--                     disc_code1,-->
+<!--                     disc_code2,-->
+<!--                     disc_code3,-->
+<!--                     NVL(msc_switch_id, switch_id) msc_switch_id,-->
+<!--                     cell_id,-->
+<!--                     '' sect_cd,-->
+<!--                     usg_type,-->
+<!--                     b.code_name ag_service_type_name,-->
+<!--                     To_number(usg_seq) usg_seq,-->
+<!--                     CH_SVC_ICCID,-->
+<!--                     ocall_toll_id,-->
+<!--                     processed_date,-->
+<!--                     processed_time,-->
+<!--                     org_net_info,-->
+<!--                     DECODE(org_net_info, '4', 'LTE', '5', 'LTE(3G망)', 'D', '3G(LTE망)', 'I', '5G', 'H', '5G(LTE망)', '') network_type,-->
+<!--                     opmd_flag,-->
+<!--                     dialed_no,-->
+<!--                     called_no-->
+<!--            FROM online_evdo_rated_cdr_0421 a,-->
+<!--                    ui_minor_code b-->
+<!--            WHERE service_mgmt_no = '9999999999'-->
+<!--                AND usg_start_date >= '20200401'-->
+<!--                AND usg_start_date <= '20200501'-->
+<!--                AND usg_start_date || usg_start_time >= '202004010000000'-->
+<!--                AND usg_start_date || usg_start_time <= '202005012359599'-->
+<!--                AND b.major_id(+) = 'EVDO_AG_SERVICE_TYPE'-->
+<!--                AND a.ag_service_type = b.code_id(+)-->
+<!--                AND NVL(a.ag_service_type, ' ') <> 'MVP');-->
+<!--    </select>-->
+<!--    <delete id="deleteEVDO" parameterType="int">-->
+<!--        DELETE FROM EVDO_RATED_CDR_202104 A-->
+<!--            WHERE (A.SERVICE_MGMT_NO, A.USG_START_DATE,-->
+<!--                   A.USG_START_TIME, A.USG_TYPE,-->
+<!--                   A.USG_SEQ, A.TIME_FALG, A.AG_SERVICE_TYPE, A.TOTAL_VOLUME, A.LOS_SEQ_NO)-->
+<!--            IN (SELECT B.SERVICE_MGMT_NO, B.USG_START_DATE,-->
+<!--                       B.USG_START_TIME, B.USG_TYPE,-->
+<!--                       B.USG_SEQ, B.TIME_FALG, B.AG_SERVICE_TYPE, B.TOTAL_VOLUME, B.LOS_SEQ_NO-->
+<!--                FROM ON_BJ_EVDO_RATED_CDR_RB B-->
+<!--                WHERE B.SERVICE_MGMT_NO = '9999999999'-->
+<!--                AND B.TRANS_COUNT = 0);-->
+<!--    </delete>-->
+<!--    <update id="updateDVDO" parameterType="int">-->
+<!--        UPDATE EVDO_RATED_CDR_202104 A-->
+<!--        SET total_used_charge = 0, total_rated_charge=0-->
+<!--        WHERE (A.SERVICE_MGMT_NO, A.USG_START_DATE, A.USG_START_TIME, A.USG_TYPE,-->
+<!--              A.USG_SEQ, A.TIME_FLAG, A.AG_SERVICE_TYPE, A.TOTAL_VOLUME, A.LOS_SEQ_NO)-->
+<!--            IN-->
+<!--            (SELECT B.SERVICE_MGMT_NO, B.USG_START_DATE,-->
+<!--                    B.USG_START_TIME, B.USG_TYPE,-->
+<!--                    B.USG_SEQ, B.TIME_FLAG, B.AG_SERVICE_TYPE, B.TOTAL_VOLUME, B.LOS_SEQ_NO-->
+<!--                    FROM ON_BJ_EVDO_RATED_CDR_RB B-->
+<!--                    WHERE B.SERVICE_MGMT_NO = '9999999999'-->
+<!--                        AND B.TRANS_COUNT =0);-->
+<!--    </update>-->
+<!--    <insert id="insertEVDObefore" parameterType="int">-->
+<!--        INSERT INTO evdo_rated_cdr_yyyymm BUC-->
+<!--        SELECT FROM online_evdo_rated_cdr_mmdd WT-->
+<!--        WHERE SUBSTR(USG_START_DATE, 1, 6) <= 'yymm -1'-->
+<!--    </insert>-->
+<!--    <insert id="insertEVDOafter" parameterType="int">-->
+<!--        INSERT INTO evdo_rated_cdr_yyyymm BUC-->
+<!--        SELECT FROM online_evdo_rated_cdr_mmdd WT-->
+<!--        WHERE SUBSTR(USG_START_DATE, 1, 6) <= 'yymm'-->
+<!--    </insert>-->
+</mapper>
