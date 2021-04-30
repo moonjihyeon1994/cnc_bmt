@@ -1,10 +1,10 @@
 package com.cnc.rating.repository;
 
-import com.cnc.rating.mybatis.Post;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
 
 @Repository
@@ -33,7 +33,7 @@ public class PostRepo {
 //            @Qualifier("client8SqlSessionTemplate") SqlSessionTemplate client8SqlSessionTemplate,
 //            @Qualifier("client9SqlSessionTemplate") SqlSessionTemplate client9SqlSessionTemplate,
 //            @Qualifier("client10SqlSessionTemplate") SqlSessionTemplate client10SqlSessionTemplate
-            ) {
+    ) {
         this.client1SqlSessionTemplate = client1SqlSessionTemplate;
         this.client2SqlSessionTemplate = client2SqlSessionTemplate;
 //        this.client3SqlSessionTemplate = client3SqlSessionTemplate;
@@ -48,16 +48,12 @@ public class PostRepo {
 
     private final String namespace = "com.cnc.rating.mybatis.PostMapper.";
 
-    public List<Post> getAllPost_Client1() {
+    public List<HashMap<String, Object>> getAllPost_Client1() {
         return client1SqlSessionTemplate.selectList(namespace + "selectAll");
     }
 
-    public List<Post> getAllPost_Client2() {
+    public List<HashMap<String, Object>> getAllPost_Client2() {
         return client2SqlSessionTemplate.selectList(namespace + "selectAll");
-    }
-
-    public List<Post> addPost_Client1(Post post) {
-        return client1SqlSessionTemplate.selectList(namespace + "selectAll", post);
     }
 
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cnc.rating.mybatis.RatingMapper">
-<!--    <select id="selectAll" resultType="post">-->
+<!--    <select id="selectCDR" resultType="post">-->
 <!--        SELECT DECODE(usg_type, 550, '서킷데이터', '데이터통화') cdr_kind,-->
 <!--               33 cdr_kind_order,-->
 <!--               DATE_FORMAT(usg_start_date, '%y/%m/%d') usg_start_date,-->
@@ -96,7 +96,7 @@
 <!--                    WHERE B.SERVICE_MGMT_NO = '9999999999'-->
 <!--                        AND B.TRANS_COUNT =0);-->
 <!--    </update>-->
-<!--    <insert id="insertEVDObefore" parameterType="int">-->
+<!--    <insert id="insertEVDO" parameterType="int">-->
 <!--        INSERT INTO evdo_rated_cdr_yyyymm BUC-->
 <!--        SELECT FROM online_evdo_rated_cdr_mmdd WT-->
 <!--        WHERE SUBSTR(USG_START_DATE, 1, 6) <= 'yymm -1'-->

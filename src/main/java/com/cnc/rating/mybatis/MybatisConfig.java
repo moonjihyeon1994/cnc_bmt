@@ -14,43 +14,51 @@ import javax.sql.DataSource;
 @Configuration
 public class MybatisConfig {
 
+    private final DataSource client0DataSource;
     private final DataSource client1DataSource;
     private final DataSource client2DataSource;
-//    private final DataSource client3DataSource;
-//    private final DataSource client4DataSource;
-//    private final DataSource client5DataSource;
-//    private final DataSource client6DataSource;
-//    private final DataSource client7DataSource;
-//    private final DataSource client8DataSource;
-//    private final DataSource client9DataSource;
-//    private final DataSource client10DataSource;
-
+    private final DataSource client3DataSource;
+    private final DataSource client4DataSource;
+    private final DataSource client5DataSource;
+    private final DataSource client6DataSource;
+    private final DataSource client7DataSource;
+    private final DataSource client8DataSource;
+    private final DataSource client9DataSource;
 
     public MybatisConfig(
+            @Qualifier("client0DataSource") DataSource client0DataSource,
             @Qualifier("client1DataSource") DataSource client1DataSource,
-            @Qualifier("client2DataSource") DataSource client2DataSource
-//            @Qualifier("client3DataSource") DataSource client3DataSource,
-//            @Qualifier("client4DataSource") DataSource client4DataSource,
-//            @Qualifier("client5DataSource") DataSource client5DataSource,
-//            @Qualifier("client6DataSource") DataSource client6DataSource,
-//            @Qualifier("client7DataSource") DataSource client7DataSource,
-//            @Qualifier("client8DataSource") DataSource client8DataSource,
-//            @Qualifier("client9DataSource") DataSource client9DataSource,
-//            @Qualifier("client10DataSource") DataSource client10DataSource
+            @Qualifier("client2DataSource") DataSource client2DataSource,
+            @Qualifier("client3DataSource") DataSource client3DataSource,
+            @Qualifier("client4DataSource") DataSource client4DataSource,
+            @Qualifier("client5DataSource") DataSource client5DataSource,
+            @Qualifier("client6DataSource") DataSource client6DataSource,
+            @Qualifier("client7DataSource") DataSource client7DataSource,
+            @Qualifier("client8DataSource") DataSource client8DataSource,
+            @Qualifier("client9DataSource") DataSource client9DataSource
     ) {
+        this.client0DataSource = client0DataSource;
         this.client1DataSource = client1DataSource;
         this.client2DataSource = client2DataSource;
-//        this.client3DataSource = client3DataSource;
-//        this.client4DataSource = client4DataSource;
-//        this.client5DataSource = client5DataSource;
-//        this.client6DataSource = client6DataSource;
-//        this.client7DataSource = client7DataSource;
-//        this.client8DataSource = client8DataSource;
-//        this.client9DataSource = client9DataSource;
-//        this.client10DataSource = client10DataSource;
+        this.client3DataSource = client3DataSource;
+        this.client4DataSource = client4DataSource;
+        this.client5DataSource = client5DataSource;
+        this.client6DataSource = client6DataSource;
+        this.client7DataSource = client7DataSource;
+        this.client8DataSource = client8DataSource;
+        this.client9DataSource = client9DataSource;
     }
 
     @Primary
+    @Bean
+    public SqlSessionFactory client0SqlSessionFactory(ApplicationContext applicationContext) throws Exception {
+        SqlSessionFactoryBean sqlSession = new SqlSessionFactoryBean();
+        sqlSession.setDataSource(client0DataSource);
+        sqlSession.setConfigLocation(applicationContext.getResource("classpath:/mapper/mybatis-config.xml"));
+        sqlSession.setMapperLocations(applicationContext.getResources("classpath:/mapper/*Mapper.xml"));
+        return sqlSession.getObject();
+    }
+
     @Bean
     public SqlSessionFactory client1SqlSessionFactory(ApplicationContext applicationContext) throws Exception {
         SqlSessionFactoryBean sqlSession = new SqlSessionFactoryBean();
@@ -69,7 +77,6 @@ public class MybatisConfig {
         return sqlSession.getObject();
     }
 
-    /*
     @Bean
     public SqlSessionFactory client3SqlSessionFactory(ApplicationContext applicationContext) throws Exception {
         SqlSessionFactoryBean sqlSession = new SqlSessionFactoryBean();
@@ -133,18 +140,13 @@ public class MybatisConfig {
         return sqlSession.getObject();
     }
 
+    @Primary
     @Bean
-    public SqlSessionFactory client10SqlSessionFactory(ApplicationContext applicationContext) throws Exception {
-        SqlSessionFactoryBean sqlSession = new SqlSessionFactoryBean();
-        sqlSession.setDataSource(client10DataSource);
-        sqlSession.setConfigLocation(applicationContext.getResource("classpath:/mapper/mybatis-config.xml"));
-        sqlSession.setMapperLocations(applicationContext.getResources("classpath:/mapper/*Mapper.xml"));
-        return sqlSession.getObject();
+    public SqlSessionTemplate client0SqlSessionTemplate(@Qualifier("client0SqlSessionFactory") SqlSessionFactory client0SqlSessionFactory) {
+        return new SqlSessionTemplate(client0SqlSessionFactory);
     }
-    */
 
     @Bean
-    @Primary
     public SqlSessionTemplate client1SqlSessionTemplate(@Qualifier("client1SqlSessionFactory") SqlSessionFactory client1SqlSessionFactory) {
         return new SqlSessionTemplate(client1SqlSessionFactory);
     }
@@ -153,45 +155,39 @@ public class MybatisConfig {
     public SqlSessionTemplate client2SqlSessionTemplate(@Qualifier("client2SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
         return new SqlSessionTemplate(client2SqlSessionFactory);
     }
-    /*
+
     @Bean
-    public SqlSessionTemplate client3SqlSessionTemplate(@Qualifier("client3SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
-        return new SqlSessionTemplate(client2SqlSessionFactory);
+    public SqlSessionTemplate client3SqlSessionTemplate(@Qualifier("client3SqlSessionFactory") SqlSessionFactory client3SqlSessionFactory) {
+        return new SqlSessionTemplate(client3SqlSessionFactory);
     }
 
     @Bean
-    public SqlSessionTemplate client4SqlSessionTemplate(@Qualifier("client4SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
-        return new SqlSessionTemplate(client2SqlSessionFactory);
+    public SqlSessionTemplate client4SqlSessionTemplate(@Qualifier("client4SqlSessionFactory") SqlSessionFactory client4SqlSessionFactory) {
+        return new SqlSessionTemplate(client4SqlSessionFactory);
     }
 
     @Bean
-    public SqlSessionTemplate client5SqlSessionTemplate(@Qualifier("client5SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
-        return new SqlSessionTemplate(client2SqlSessionFactory);
+    public SqlSessionTemplate client5SqlSessionTemplate(@Qualifier("client5SqlSessionFactory") SqlSessionFactory client5SqlSessionFactory) {
+        return new SqlSessionTemplate(client5SqlSessionFactory);
     }
 
     @Bean
-    public SqlSessionTemplate client6SqlSessionTemplate(@Qualifier("client6SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
-        return new SqlSessionTemplate(client2SqlSessionFactory);
+    public SqlSessionTemplate client6SqlSessionTemplate(@Qualifier("client6SqlSessionFactory") SqlSessionFactory client6SqlSessionFactory) {
+        return new SqlSessionTemplate(client6SqlSessionFactory);
     }
 
     @Bean
-    public SqlSessionTemplate client7SqlSessionTemplate(@Qualifier("client7SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
-        return new SqlSessionTemplate(client2SqlSessionFactory);
+    public SqlSessionTemplate client7SqlSessionTemplate(@Qualifier("client7SqlSessionFactory") SqlSessionFactory client7SqlSessionFactory) {
+        return new SqlSessionTemplate(client7SqlSessionFactory);
     }
 
     @Bean
-    public SqlSessionTemplate client8SqlSessionTemplate(@Qualifier("client8SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
-        return new SqlSessionTemplate(client2SqlSessionFactory);
+    public SqlSessionTemplate client8SqlSessionTemplate(@Qualifier("client8SqlSessionFactory") SqlSessionFactory client8SqlSessionFactory) {
+        return new SqlSessionTemplate(client8SqlSessionFactory);
     }
 
     @Bean
-    public SqlSessionTemplate client9SqlSessionTemplate(@Qualifier("client9SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
-        return new SqlSessionTemplate(client2SqlSessionFactory);
+    public SqlSessionTemplate client9SqlSessionTemplate(@Qualifier("client9SqlSessionFactory") SqlSessionFactory client9SqlSessionFactory) {
+        return new SqlSessionTemplate(client9SqlSessionFactory);
     }
-
-    @Bean
-    public SqlSessionTemplate client10SqlSessionTemplate(@Qualifier("client10SqlSessionFactory") SqlSessionFactory client2SqlSessionFactory) {
-        return new SqlSessionTemplate(client2SqlSessionFactory);
-    }
-    */
 }

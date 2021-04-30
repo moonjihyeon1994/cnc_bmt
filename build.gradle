@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.3.10.RELEASE'
+    id 'org.springframework.boot' version '2.4.5'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
     id 'java'
 }
@@ -18,9 +18,10 @@ repositories {
     mavenCentral()
 }
 
-//ext {
-//    set('springCloudVersion', "Hoxton.SR10")
-//}
+
+ext {
+    set('springCloudVersion', "2020.0.2")
+}
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
@@ -30,6 +31,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 //    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
 //    implementation 'org.springframework.cloud:spring-cloud-starter-aws-jdbc'
+    implementation group: 'io.micrometer', name: 'micrometer-registry-prometheus', version: '1.6.6'
+    implementation 'org.springframework.cloud:spring-cloud-starter-sleuth'
+
     compileOnly 'org.projectlombok:lombok'
     runtimeOnly 'com.h2database:h2'
     runtimeOnly 'mysql:mysql-connector-java'
@@ -41,11 +45,11 @@ dependencies {
     }
 }
 
-//dependencyManagement {
-//    imports {
-//        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-//    }
-//}
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
 
 test {
     useJUnitPlatform()

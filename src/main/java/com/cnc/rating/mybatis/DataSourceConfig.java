@@ -16,6 +16,12 @@ public class DataSourceConfig {
 
     @Primary
     @Bean
+    @ConfigurationProperties("app.datasource.client0")
+    public DataSource client0DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
     @ConfigurationProperties("app.datasource.client1")
     public DataSource client1DataSource() {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
@@ -27,10 +33,6 @@ public class DataSourceConfig {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
 
-    /**
-     * 3개 이상시 부터 추가
-     */
-    /*
     @Bean
     @ConfigurationProperties("app.datasource.client3")
     public DataSource client3DataSource() {
@@ -72,11 +74,4 @@ public class DataSourceConfig {
     public DataSource client9DataSource() {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
-
-    @Bean
-    @ConfigurationProperties("app.datasource.client10")
-    public DataSource client10DataSource() {
-        return DataSourceBuilder.create().type(HikariDataSource.class).build();
-    }
-    */
 }
