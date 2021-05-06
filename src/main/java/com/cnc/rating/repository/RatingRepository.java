@@ -1,5 +1,6 @@
 package com.cnc.rating.repository;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.HashMap;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class RatingRepository {
 
@@ -68,6 +70,7 @@ public class RatingRepository {
     }
 
     private SqlSessionTemplate getSqlSessionTemplateByShardNumber(int shardNumber) {
+        log.info("sharNumber :{}", shardNumber);
         switch (shardNumber) {
             case 0:
                 return client0SqlSessionTemplate;
