@@ -80,6 +80,10 @@ public class QueryService {
         return result;
     }
 
+    public List<HashMap<String, Object>> selectTest(String service_mgmt_no) {
+        return ratingRepository.selectTest(this.getShardNumber(service_mgmt_no));
+    }
+
     private int getShardNumber(String key) {
         return key.charAt(key.length() - 1) - '0';
     }

@@ -63,6 +63,10 @@ public class RatingRepository {
         return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "insertEVDO");
     }
 
+    public List<HashMap<String, Object>> selectTest(int shardNumber) {
+        return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "selectTest");
+    }
+
     private SqlSessionTemplate getSqlSessionTemplateByShardNumber(int shardNumber) {
         switch (shardNumber) {
             case 0:

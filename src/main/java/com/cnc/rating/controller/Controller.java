@@ -37,4 +37,10 @@ public class Controller {
     public List<HashMap<String, Object>> insertEVDO() {
         return queryService.insertEVDO("123124124");
     }
+
+    @GetMapping("/test/{service_mgmt_no}")
+    List<HashMap<String, Object>> selectTest(@PathVariable String service_mgmt_no) {
+        log.info("service_mgmt_no = " + service_mgmt_no);
+        return queryService.selectTest(service_mgmt_no);
+    }
 }
