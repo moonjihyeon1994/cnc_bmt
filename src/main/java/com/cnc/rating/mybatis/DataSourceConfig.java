@@ -18,14 +18,12 @@ public class DataSourceConfig {
     @Bean
     @ConfigurationProperties("app.datasource.client0")
     public DataSource client0DataSource() {
-        System.out.println("data0insert");
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
 
     @Bean
     @ConfigurationProperties("app.datasource.client1")
     public DataSource client1DataSource() {
-        System.out.println("data1insert");
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
 

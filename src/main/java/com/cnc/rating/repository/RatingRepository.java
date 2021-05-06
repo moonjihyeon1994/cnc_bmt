@@ -70,7 +70,6 @@ public class RatingRepository {
     }
 
     private SqlSessionTemplate getSqlSessionTemplateByShardNumber(int shardNumber) {
-        log.info("sharNumber :{}", shardNumber);
         switch (shardNumber) {
             case 0:
                 return client0SqlSessionTemplate;
