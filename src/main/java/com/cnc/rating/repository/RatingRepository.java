@@ -47,8 +47,8 @@ public class RatingRepository {
 
     private final String namespace = "com.cnc.rating.mybatis.RatingMapper.";
 
-    public List<HashMap<String, Object>> selectCDR(int shardNumber) {
-        return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "selectCDR");
+    public List<HashMap<String, Object>> selectCDR(String service_mgmt_no, int shardNumber) {
+        return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "selectCDR", service_mgmt_no);
     }
 
     public List<HashMap<String, Object>> deleteEVDO(int shardNumber) {

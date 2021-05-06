@@ -14,7 +14,6 @@ import java.util.List;
 public class QueryService {
 
     private final RatingRepository ratingRepository;
-    // 하나의 시간체크, 샤드넘버, 서비스관리번호
 
     /**
      * SQL 1번
@@ -26,9 +25,10 @@ public class QueryService {
     public List<HashMap<String, Object>> selectCDR(String service_mgmt_no) {
         int shardNumber = getShardNumber(service_mgmt_no);
         long startTime = System.currentTimeMillis();
-        List<HashMap<String, Object>> result = ratingRepository.selectCDR(shardNumber);
+//        log.info("shard number : {}", service_mgmt_no);
+        List<HashMap<String, Object>> result = ratingRepository.selectCDR(service_mgmt_no, shardNumber);
         long endTime = System.currentTimeMillis();
-        log.info("serviceNumber : {}, shardNumber : {}, duration : {}", service_mgmt_no, shardNumber, endTime - startTime);
+//        log.info("serviceNumber : {}, shardNumber : {}, duration : {}", service_mgmt_no, shardNumber, endTime - startTime);
         return result;
     }
 

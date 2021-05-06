@@ -18,6 +18,7 @@ public class DataSourceConfig {
     @Bean
     @ConfigurationProperties("app.datasource.client0")
     public DataSource client0DataSource() {
+        System.out.println("data0insert");
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
 

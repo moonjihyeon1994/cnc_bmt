@@ -1,23 +1,14 @@
-server:
-  port: 8081
-
-#spring:
-#  application:
-#    name: rating
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/test?useSSL=false
-#    username: root
-#    password: password
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    properties:
-#      hibernate:
-#        format_sql: true
-#    generate-ddl: true
-#    show-sql: true
-#    open-in-view: false
+spring:
+  application:
+    name: rating
+  config:
+    activate:
+      on-profile: test
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: root
+    password: 1234
 
 # logging 설정
 #logging:
@@ -50,18 +41,18 @@ management:
       enabled: true
 
 # multi datasource 설정
-#app:
-#  datasource:
-#    client0:
-#      jdbc-url: jdbc:mysql://localhost:3306/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#    client1:
-#      jdbc-url: jdbc:mysql://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: com.mysql.cj.jdbc.Driver
+app:
+  datasource:
+    client0:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:testdb
+      username: root
+      password: 1234
+    client1:
+      driver-class-name: org.h2.Driver
+      jdbc-url: jdbc:h2:mem:testdb
+      username: root
+      password: 1234
 #    client2:
 #      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
 #      username: root
