@@ -1,5 +1,6 @@
 package com.cnc.rating.mybatis;
 
+import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -11,6 +12,7 @@ import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
 
+@Slf4j
 @Configuration
 public class MybatisConfig {
 
@@ -143,11 +145,13 @@ public class MybatisConfig {
     @Primary
     @Bean
     public SqlSessionTemplate client0SqlSessionTemplate(@Qualifier("client0SqlSessionFactory") SqlSessionFactory client0SqlSessionFactory) {
+        log.info("create client0 template");
         return new SqlSessionTemplate(client0SqlSessionFactory);
     }
 
     @Bean
     public SqlSessionTemplate client1SqlSessionTemplate(@Qualifier("client1SqlSessionFactory") SqlSessionFactory client1SqlSessionFactory) {
+        log.info("create client0 template");
         return new SqlSessionTemplate(client1SqlSessionFactory);
     }
 
