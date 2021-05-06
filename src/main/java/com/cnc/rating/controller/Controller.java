@@ -36,7 +36,8 @@ public class Controller {
     @GetMapping("/selectCDR")
     public List<HashMap<String, Object>> selectCDRFromJson() throws IOException {
         ClassPathResource resource = new ClassPathResource("service-mgmt-no.json");
-        HashMap<String, Object> object = (new ObjectMapper()).readValue(new ClassPathResource("service-mgmt-no.json").getFile(), HashMap.class);
+        System.out.println(resource.getPath());
+        HashMap<String, Object> object = (new ObjectMapper()).readValue(resource.getInputStream(), HashMap.class);
         System.out.println(object);
         return null;
     }
