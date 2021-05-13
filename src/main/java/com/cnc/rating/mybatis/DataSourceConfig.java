@@ -20,12 +20,6 @@ public class DataSourceConfig {
 
     @Primary
     @Bean
-    @ConfigurationProperties("app.datasource.client0")
-    public DataSource client0DataSource() {
-        return DataSourceBuilder.create().type(HikariDataSource.class).build();
-    }
-
-    @Bean
     @ConfigurationProperties("app.datasource.client1")
     public DataSource client1DataSource() {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
@@ -78,4 +72,71 @@ public class DataSourceConfig {
     public DataSource client9DataSource() {
         return DataSourceBuilder.create().type(HikariDataSource.class).build();
     }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client10")
+    public DataSource client10DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client11")
+    public DataSource client11DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client12")
+    public DataSource client12DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client13")
+    public DataSource client13DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client14")
+    public DataSource client14DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client15")
+    public DataSource client15DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client16")
+    public DataSource client16DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client17")
+    public DataSource client17DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client18")
+    public DataSource client18DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client19")
+    public DataSource client19DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
+    @Bean
+    @ConfigurationProperties("app.datasource.client20")
+    public DataSource client20DataSource() {
+        return DataSourceBuilder.create().type(HikariDataSource.class).build();
+    }
+
 }
