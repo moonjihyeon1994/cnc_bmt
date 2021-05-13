@@ -68,25 +68,25 @@ public class RatingRepository {
     private SqlSessionTemplate getSqlSessionTemplateByShardNumber(int shardNumber) {
         switch (shardNumber) {
             case 0:
-                return client0SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             case 1:
                 return client1SqlSessionTemplate;
             case 2:
-                return client2SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             case 3:
-                return client3SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             case 4:
-                return client4SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             case 5:
-                return client5SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             case 6:
-                return client6SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             case 7:
-                return client7SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             case 8:
-                return client8SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             case 9:
-                return client9SqlSessionTemplate;
+                return client1SqlSessionTemplate;
             default:
                 throw new RuntimeException();
         }
