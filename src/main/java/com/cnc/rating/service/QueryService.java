@@ -41,15 +41,15 @@ public class QueryService {
         return result;
     }
 
-    public List<HashMap<String, Object>> selectSub(String service_mgmt_no, String startDate, String endDate) {
+    public List<HashMap<String, Object>> selectSub(String service_mgmt_no, String startDateTime, String endDateTime) {
         int shardNumber = getShardNumber(service_mgmt_no);
-        String startTime = startDate.substring(0,8);
-        String endTime = endDate.substring(0,8);
-        int startMonth = Integer.parseInt(startDate.substring(0,6));
-        int endMonth = Integer.parseInt(endDate.substring(0,6));
+        String startDate = startDateTime.substring(0,8);
+        String endDate = endDateTime.substring(0,8);
+        int startMonth = Integer.parseInt(startDateTime.substring(0,6));
+        int endMonth = Integer.parseInt(endDateTime.substring(0,6));
         int idx = 0;
 
-        System.out.println("startTime = " + startTime + "endTime = " + endTime +
+        System.out.println("startDate = " + startDate + "endDate = " + endDate +
                 "startMonth = " + startMonth + "endMonth = " + endMonth);
 
         String[] tableList = new String[endMonth - startMonth + 1];
@@ -64,10 +64,9 @@ public class QueryService {
         params.put("tables", tableList);
         params.put("startDate", startDate);
         params.put("endDate", endDate);
-        params.put("startTime", startTime);
-        params.put("endTime", endTime);
-        List<HashMap<String, Object>> result = ratingRepository.selectSub(shardNumber, params);
-        return result;
+        params.put("startDateTime", startDateTime);
+        params.put("endDateTime", endDateTime);
+        return ratingRepository.selectSub(shardNumber, params);
     }
 
     public List<HashMap<String, Object>> selectTest(String service_mgmt_no) {

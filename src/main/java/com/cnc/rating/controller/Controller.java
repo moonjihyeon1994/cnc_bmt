@@ -49,13 +49,13 @@ public class Controller {
     @GetMapping("/test/{service_mgmt_no}")
     public List<HashMap<String, Object>> test(
             @PathVariable String service_mgmt_no,
-            @RequestParam(value = "startDate") String startDate,
-            @RequestParam(value = "endDate") String endDate
+            @RequestParam(value = "startDateTime") String startDateTime,
+            @RequestParam(value = "endDateTime") String endDateTime
     ) {
-        if(startDate.length() != 14 || endDate.length() != 14) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        if(startDateTime.length() != 14 || endDateTime.length() != 14) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
 
-        System.out.println("service_mgmt_no = " + service_mgmt_no + ", startDate = " + startDate + ", endDate = " + endDate);
-        return queryService.selectSub(service_mgmt_no, startDate, endDate);
+        System.out.println("service_mgmt_no = " + service_mgmt_no + ", startDateTime = " + startDateTime + ", endDateTime = " + endDateTime);
+        return queryService.selectSub(service_mgmt_no, startDateTime, endDateTime);
     }
 
     @GetMapping("/selectCDR")

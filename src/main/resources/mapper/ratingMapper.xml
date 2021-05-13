@@ -198,8 +198,8 @@
                  WHERE service_mgmt_no = #{service_mgmt_no}
                  AND usg_start_date >= #{startDate}
                  AND usg_start_date &lt;= #{endDate}
-                 AND concat(usg_start_date, usg_start_time) >= #{startTime}
-                 AND concat(usg_start_date, usg_start_time) &lt;= #{endTime}
+                 AND concat(usg_start_date, usg_start_time) >= #{startDateTime}
+                 AND concat(usg_start_date, usg_start_time) &lt;= #{endDateTime}
                  AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
                  AND IFNULL(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP') as a
              </foreach>
