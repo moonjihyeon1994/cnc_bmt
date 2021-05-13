@@ -6,7 +6,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import javax.xml.crypto.Data;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -24,7 +23,6 @@ public class QueryService {
 
     /**
      * CDR 조회
-     *
      * @param service_mgmt_no 서비스 관리 번호
      * @param startDateTime   시작
      * @param endDateTime     끝
@@ -59,9 +57,17 @@ public class QueryService {
         return ratingRepository.selectSub(shardNumber, params);
     }
 
+    /**
+     *
+     * @param service_mgmt_no 서비스 관리번호
+     * @param currentDate     대상날짜
+     * @param rangeMonth      범위
+     * @return
+     * @throws ParseException
+     */
     public List<HashMap<String, Object>> selectCDRByMonth(long service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
         int shardNumber = getShardNumber(service_mgmt_no);
-        System.out.println("service_mgmt_no = " + service_mgmt_no + ", shardNumber = " + shardNumber);
+//        System.out.println("service_mgmt_no = " + service_mgmt_no + ", shardNumber = " + shardNumber);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
         Calendar calendar = Calendar.getInstance();
@@ -86,8 +92,13 @@ public class QueryService {
         return ratingRepository.selectSub(shardNumber, params);
     }
 
+    /**
+     * 서비스 관리번호 -> 샤드 번호
+     * @param key 서비스 관리번호
+     * @return
+     */
     private int getShardNumber(long key) {
-        return (int) ((key % 20) +1);
+        return (int) ((key % 20) + 1);
     }
 
 }

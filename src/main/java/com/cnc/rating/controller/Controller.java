@@ -33,6 +33,8 @@ public class Controller {
 
     private final QueryService queryService;
 
+    public static long shardNum = 0;
+
     /**
      * 서비스 관리번호가 파라미터로 들어올 때
      * @param service_mgmt_no 서비스 관리번호
@@ -61,7 +63,8 @@ public class Controller {
             @RequestParam(value = "currentDate") String currentDate,
             @RequestParam(value = "rangeMonth") int rangeMonth
     ) throws ParseException {
-        long service_mgmt_no = (long) ((Math.random() * 9000000000L) + 1000000000L);
+        long service_mgmt_no = shardNum++;
+        log.info("service_mgmt_no : {} ", service_mgmt_no);
         return queryService.selectCDRByMonth(service_mgmt_no, currentDate, rangeMonth);
     }
 
