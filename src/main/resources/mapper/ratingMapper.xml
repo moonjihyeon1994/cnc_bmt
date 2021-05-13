@@ -142,7 +142,7 @@
                                                                   substr(ch_svc_iccid, 9, 4), '-', substr(ch_svc_iccid, 13))
                        ELSE IFNULL(CH_SVC_ICCID, '')
                        END                                  bigo_name,
-                   ag_service_type_name                     cont_product_name,
+#                    ag_service_type_name                     cont_product_name,
                    network_type,
                    processed_date,
                    processed_time,
