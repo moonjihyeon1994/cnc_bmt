@@ -57,6 +57,8 @@ public class QueryService {
             tableList[idx++] = "evdo_rated_cdr_" + month;
         }
 
+        System.out.println("tableList = " + Arrays.toString(tableList));
+
         HashMap<String, Object> params = new HashMap<>();
         params.put("service_mgmt_no", service_mgmt_no);
         params.put("tables", tableList);
