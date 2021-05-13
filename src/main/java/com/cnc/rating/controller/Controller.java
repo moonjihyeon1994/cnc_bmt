@@ -40,7 +40,7 @@ public class Controller {
             @RequestParam(value = "startDate") String startDate,
             @RequestParam(value = "endDate") String endDate
     ) {
-        if(startDate.length() != 15 || endDate.length() != 15) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        if(startDate.length() != 14 || endDate.length() != 14) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
 
         System.out.println("service_mgmt_no = " + service_mgmt_no + ", startDate = " + startDate + ", endDate = " + endDate);
         return queryService.selectCDR(service_mgmt_no, startDate, endDate);
@@ -52,7 +52,7 @@ public class Controller {
             @RequestParam(value = "startDate") String startDate,
             @RequestParam(value = "endDate") String endDate
     ) {
-        if(startDate.length() != 15 || endDate.length() != 15) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        if(startDate.length() != 14 || endDate.length() != 14) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
 
         System.out.println("service_mgmt_no = " + service_mgmt_no + ", startDate = " + startDate + ", endDate = " + endDate);
         return queryService.selectSub(service_mgmt_no, startDate, endDate);
