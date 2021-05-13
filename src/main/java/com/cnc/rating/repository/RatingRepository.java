@@ -83,12 +83,8 @@ public class RatingRepository {
 
     private final String namespace = "com.cnc.rating.mybatis.RatingMapper.";
 
-    public List<HashMap<String, Object>> selectCDR(int shardNumber, HashMap<String, Object> params) {
+    public List<HashMap<String, Object>> selectSub(int shardNumber, HashMap<String, Object> params) {
         return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "selectSub", params);
-    }
-
-    public List<HashMap<String, Object>> selectTest(int shardNumber) {
-        return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "selectTest");
     }
 
     private SqlSessionTemplate getSqlSessionTemplateByShardNumber(int shardNumber) {

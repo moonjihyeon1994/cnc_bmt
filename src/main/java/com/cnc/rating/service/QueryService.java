@@ -30,7 +30,7 @@ public class QueryService {
      * @param endDateTime     끝
      * @return
      */
-    public List<HashMap<String, Object>> selectCDR(String service_mgmt_no, String startDateTime, String endDateTime) throws ParseException {
+    public List<HashMap<String, Object>> selectCDR(long service_mgmt_no, String startDateTime, String endDateTime) throws ParseException {
         int shardNumber = getShardNumber(service_mgmt_no);
         String startDate = startDateTime.substring(0, 8);
         String endDate = endDateTime.substring(0, 8);
@@ -56,19 +56,12 @@ public class QueryService {
         params.put("endDate", endDate);
         params.put("startDateTime", startDateTime);
         params.put("endDateTime", endDateTime);
-        return ratingRepository.selectCDR(shardNumber, params);
+        return ratingRepository.selectSub(shardNumber, params);
     }
 
-    public List<HashMap<String, Object>> selectTest(String service_mgmt_no) {
-        return ratingRepository.selectTest(this.getShardNumber(service_mgmt_no));
-    }
-
-    private int getShardNumber(String key) {
-        return key.charAt(key.length() - 1) - '0';
-    }
-
-    public List<HashMap<String, Object>> selectCDRByMonth(String service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
+    public List<HashMap<String, Object>> selectCDRByMonth(long service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
         int shardNumber = getShardNumber(service_mgmt_no);
+        System.out.println(shardNumber);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
         Calendar calendar = Calendar.getInstance();
@@ -90,6 +83,11 @@ public class QueryService {
         params.put("endDate", dateFormat.format(calendar.getTime()));
         params.put("startDateTime", "202005" + currentDate + "000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "99999999");
-        return ratingRepository.selectCDR(shardNumber, params);
+        return ratingRepository.selectSub(shardNumber, params);
     }
+
+    private int getShardNumber(long key) {
+        return (int) ((key % 20) +1);
+    }
+
 }

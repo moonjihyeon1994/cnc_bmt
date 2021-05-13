@@ -40,7 +40,7 @@ public class Controller {
      */
     @GetMapping("/selectCDR/{service_mgmt_no}")
     public List<HashMap<String, Object>> selectCDR(
-            @PathVariable String service_mgmt_no,
+            @PathVariable long service_mgmt_no,
             @RequestParam(value = "startDateTime") String startDateTime,
             @RequestParam(value = "endDateTime") String endDateTime
     ) throws ParseException {
@@ -61,9 +61,7 @@ public class Controller {
             @RequestParam(value = "currentDate") String currentDate,
             @RequestParam(value = "rangeMonth") int rangeMonth
     ) throws ParseException {
-        long random_number_10_digit = (long) ((Math.random() * 9000000000L) + 1000000000L);
-        String service_mgmt_no = String.valueOf(random_number_10_digit);
-
+        long service_mgmt_no = (long) ((Math.random() * 9000000000L) + 1000000000L);
         return queryService.selectCDRByMonth(service_mgmt_no, currentDate, rangeMonth);
     }
 
