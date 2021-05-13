@@ -49,6 +49,9 @@ public class QueryService {
         int endMonth = Integer.parseInt(endDate.substring(0,6));
         int idx = 0;
 
+        System.out.println("startTime = " + startTime + "endTime = " + endTime +
+                "startMonth = " + startMonth + "endMonth = " + endMonth);
+
         String[] tableList = new String[endMonth - startMonth + 1];
         for (int month = startMonth; month <= endMonth; month++) {
             tableList[idx++] = "evdo_rated_cdr_" + month;
