@@ -51,7 +51,7 @@ public class QueryService {
 
         String[] tableList = new String[endMonth - startMonth + 1];
         for (int month = startMonth; month <= endMonth; month++) {
-            tableList[idx++] = "ONLINE_EVDO_RATED_CDR_TEMP_" + month;
+            tableList[idx++] = "evdo_rated_cdr_" + month;
         }
 
         HashMap<String, Object> params = new HashMap<>();
