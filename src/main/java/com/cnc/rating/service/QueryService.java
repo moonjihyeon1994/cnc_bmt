@@ -49,11 +49,15 @@ public class QueryService {
         int endMonth = Integer.parseInt(endDateTime.substring(0,6));
         int idx = 0;
 
-        System.out.println("startDate = " + startDate + "endDate = " + endDate +
-                "startMonth = " + startMonth + "endMonth = " + endMonth);
+        System.out.println("startDate = " + startDate + ", endDate = " + endDate +
+                ", startMonth = " + startMonth + ", endMonth = " + endMonth);
 
         String[] tableList = new String[endMonth - startMonth + 1];
         for (int month = startMonth; month <= endMonth; month++) {
+            if(month == 202013) {
+                month = 202101;
+                continue;
+            }
             tableList[idx++] = "evdo_rated_cdr_" + month;
         }
 
