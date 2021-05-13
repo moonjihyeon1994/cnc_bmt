@@ -76,7 +76,7 @@ public class QueryService {
         calendar.setTime(date);
 
         List<String> list = new ArrayList<>();
-        list.add("online_evdo_rated_cdr_" + currentDate);
+        list.add("online_evdo_rated_cdr_" + "05" + currentDate);
         for (int i = 0; i < rangeMonth; i++) {
             list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
             calendar.add(Calendar.MONTH, 1);
