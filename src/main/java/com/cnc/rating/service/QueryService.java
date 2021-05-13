@@ -6,9 +6,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import javax.xml.crypto.Data;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 import static com.cnc.rating.config.SpringProfile.*;
 
@@ -21,56 +23,40 @@ public class QueryService {
     private final RatingRepository ratingRepository;
 
     /**
-     * SQL 1번
      * CDR 조회
      *
-     *
      * @param service_mgmt_no 서비스 관리 번호
-     * @param startDate 시작
-     * @param endDate 끝
+     * @param startDateTime   시작
+     * @param endDateTime     끝
      * @return
      */
-    public List<HashMap<String, Object>> selectCDR(String service_mgmt_no, String startDate, String endDate) {
+    public List<HashMap<String, Object>> selectCDR(String service_mgmt_no, String startDateTime, String endDateTime) throws ParseException {
         int shardNumber = getShardNumber(service_mgmt_no);
-        long startTime = System.currentTimeMillis();
+        String startDate = startDateTime.substring(0, 8);
+        String endDate = endDateTime.substring(0, 8);
+        String startMonth = startDateTime.substring(0, 6);
+        String endMonth = endDateTime.substring(0, 6);
 
-//        log.info("shard number : {}", service_mgmt_no);
-        List<HashMap<String, Object>> result = ratingRepository.selectCDR(service_mgmt_no, shardNumber, startDate, endDate);
-        long endTime = System.currentTimeMillis();
-//        log.info("serviceNumber : {}, shardNumber : {}, duration : {}", service_mgmt_no, shardNumber, endTime - startTime);
-        return result;
-    }
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
+        Calendar calendar = Calendar.getInstance();
+        Date date = dateFormat.parse(startMonth);
+        calendar.setTime(date);
 
-    public List<HashMap<String, Object>> selectSub(String service_mgmt_no, String startDateTime, String endDateTime) {
-        int shardNumber = getShardNumber(service_mgmt_no);
-        String startDate = startDateTime.substring(0,8);
-        String endDate = endDateTime.substring(0,8);
-        int startMonth = Integer.parseInt(startDateTime.substring(0,6));
-        int endMonth = Integer.parseInt(endDateTime.substring(0,6));
-        int idx = 0;
-
-        System.out.println("startDate = " + startDate + ", endDate = " + endDate +
-                ", startMonth = " + startMonth + ", endMonth = " + endMonth);
-
-        String[] tableList = new String[endMonth - startMonth + 1];
-        for (int month = startMonth; month <= endMonth; month++) {
-            if(month == 202013) {
-                month = 202101;
-                continue;
-            }
-            tableList[idx++] = "evdo_rated_cdr_" + month;
+        List<String> list = new ArrayList<>();
+        while (!endMonth.equals(dateFormat.format(calendar.getTime()))) {
+            list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
+            calendar.add(Calendar.MONTH, 1);
         }
-
-        System.out.println("tableList = " + Arrays.toString(tableList));
+        list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
 
         HashMap<String, Object> params = new HashMap<>();
         params.put("service_mgmt_no", service_mgmt_no);
-        params.put("tables", tableList);
+        params.put("tables", list.toArray(String[]::new));
         params.put("startDate", startDate);
         params.put("endDate", endDate);
         params.put("startDateTime", startDateTime);
         params.put("endDateTime", endDateTime);
-        return ratingRepository.selectSub(shardNumber, params);
+        return ratingRepository.selectCDR(shardNumber, params);
     }
 
     public List<HashMap<String, Object>> selectTest(String service_mgmt_no) {
@@ -79,5 +65,31 @@ public class QueryService {
 
     private int getShardNumber(String key) {
         return key.charAt(key.length() - 1) - '0';
+    }
+
+    public List<HashMap<String, Object>> selectCDRByMonth(String service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
+        int shardNumber = getShardNumber(service_mgmt_no);
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
+        Calendar calendar = Calendar.getInstance();
+        Date date = dateFormat.parse("202005");
+        calendar.setTime(date);
+
+        List<String> list = new ArrayList<>();
+        list.add("online_evdo_rated_cdr_" + currentDate);
+        for (int i = 0; i < rangeMonth; i++) {
+            list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
+            calendar.add(Calendar.MONTH, 1);
+        }
+        list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
+
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("service_mgmt_no", service_mgmt_no);
+        params.put("tables", list.toArray(String[]::new));
+        params.put("startDate", "202005");
+        params.put("endDate", dateFormat.format(calendar.getTime()));
+        params.put("startDateTime", "202005" + currentDate + "000000");
+        params.put("endDateTime", dateFormat.format(calendar.getTime()) + "99999999");
+        return ratingRepository.selectCDR(shardNumber, params);
     }
 }
