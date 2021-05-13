@@ -142,7 +142,7 @@
                                                                   substr(ch_svc_iccid, 9, 4), '-', substr(ch_svc_iccid, 13))
                        ELSE IFNULL(CH_SVC_ICCID, '')
                        END                                  bigo_name,
-#                    ag_service_type_name                     cont_product_name,
+                   ag_service_type_name                     cont_product_name,
                    network_type,
                    processed_date,
                    processed_time,
@@ -174,7 +174,7 @@
                  cell_id,
                  ''                               sect_cd,
                  usg_type,
-#                  b.code_name                      ag_service_type_name,
+                 b.code_name                      ag_service_type_name,
                  CAST(usg_seq AS UNSIGNED)        usg_seq,
                  CH_SVC_ICCID,
                  ocall_toll_id,
@@ -193,14 +193,14 @@
                  dialed_no,
                  called_no
                  from ${table} a
-#                  RIGHT OUTER JOIN ui_minor_code b
-#                  on a.ag_service_type = b.code_id
+                 RIGHT OUTER JOIN ui_minor_code b
+                 on a.ag_service_type = b.code_id
                  WHERE service_mgmt_no = #{service_mgmt_no}
                  AND usg_start_date >= #{startDate}
                  AND usg_start_date &lt;= #{endDate}
                  AND concat(usg_start_date, usg_start_time) >= #{startTime}
                  AND concat(usg_start_date, usg_start_time) &lt;= #{endTime}
-#                  AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
+                 AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
                  AND IFNULL(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP') as a
              </foreach>
     </select>
