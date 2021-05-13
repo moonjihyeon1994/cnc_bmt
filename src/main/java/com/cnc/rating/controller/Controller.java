@@ -53,10 +53,12 @@ public class Controller {
             @RequestParam(value = "endDateTime") String endDateTime
     ) {
         if(startDateTime.length() != 14 || endDateTime.length() != 14) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-
+        long start = System.currentTimeMillis();
         System.out.println("service_mgmt_no = " + service_mgmt_no + ", startDateTime = " + startDateTime + ", endDateTime = " + endDateTime);
         List<HashMap<String, Object>> result = queryService.selectSub(service_mgmt_no, startDateTime, endDateTime);
         System.out.println(result.size());
+        long end = System.currentTimeMillis();
+        System.out.println("time : "+ (end - start));
         return result;
     }
 
