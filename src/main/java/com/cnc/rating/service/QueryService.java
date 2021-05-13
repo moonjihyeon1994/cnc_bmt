@@ -61,7 +61,7 @@ public class QueryService {
 
     public List<HashMap<String, Object>> selectCDRByMonth(long service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
         int shardNumber = getShardNumber(service_mgmt_no);
-        System.out.println(shardNumber);
+        System.out.println("service_mgmt_no = " + service_mgmt_no + ", shardNumber = " + shardNumber);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
         Calendar calendar = Calendar.getInstance();
