@@ -22,24 +22,6 @@ spring:
 #  file:
 #    name: logs/dev_profile_app.log
 
-# spring actuator 설정
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, prometheus, loggers
-  metrics:
-    tags:
-      application: ${spring.application.name}
-    export:
-      prometheus:
-        enabled: true
-  endpoint:
-    prometheus:
-      enabled: true
-    loggers:
-      enabled: true
-
 # multi datasource 설정
 app:
   datasource:

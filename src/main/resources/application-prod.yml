@@ -17,34 +17,16 @@ spring:
 #  file:
 #    name: logs/dev_profile_app.log
 
-# spring actuator 설정
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health, info, prometheus, loggers
-  metrics:
-    tags:
-      application: ${spring.application.name}
-    export:
-      prometheus:
-        enabled: true
-  endpoint:
-    prometheus:
-      enabled: true
-    loggers:
-      enabled: true
-
 # multi datasource 설정
 app:
   datasource:
     client0:
-      jdbc-url: jdbc:mysql://urt-bmt-db-imsi-ap1.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds19.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client1:
-      jdbc-url: jdbc:mysql://urt-bmt-db-imsi-ap2.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds20.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver

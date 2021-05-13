@@ -1,36 +1,6 @@
 server:
   port: 8081
 
-#spring:
-#  application:
-#    name: rating
-#  datasource:
-#    url: jdbc:mysql://localhost:3306/test?useSSL=false
-#    username: root
-#    password: password
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#  jpa:
-#    hibernate:
-#      ddl-auto: update
-#    properties:
-#      hibernate:
-#        format_sql: true
-#    generate-ddl: true
-#    show-sql: true
-#    open-in-view: false
-
-# logging 설정
-#logging:
-#  pattern:
-#    console: "%d %-5level %logger : %msg%n"
-#    file: "%d %-5level [%thread] %logger : %msg%n"
-##  level:
-##    org.springframework.web: DEBUG
-##    guru.springframework.controllers: DEBUG
-##    org.hibernate: DEBUG
-#  file:
-#    name: logs/dev_profile_app.log
-
 # spring actuator 설정
 management:
   endpoints:
@@ -48,57 +18,3 @@ management:
       enabled: true
     loggers:
       enabled: true
-
-# multi datasource 설정
-#app:
-#  datasource:
-#    client0:
-#      jdbc-url: jdbc:mysql://localhost:3306/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#    client1:
-#      jdbc-url: jdbc:mysql://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: com.mysql.cj.jdbc.Driver
-#    client2:
-#      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: org.mariadb.jdbc.Driver
-#    client3:
-#      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: org.mariadb.jdbc.Driver
-#    client4:
-#      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: org.mariadb.jdbc.Driver
-#    client5:
-#      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: org.mariadb.jdbc.Driver
-#    client6:
-#      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: org.mariadb.jdbc.Driver
-#    client7:
-#      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: org.mariadb.jdbc.Driver
-#    client8:
-#      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: org.mariadb.jdbc.Driver
-#    client9:
-#      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
-#      username: root
-#      password: password
-#      driver-class-name: org.mariadb.jdbc.Driver

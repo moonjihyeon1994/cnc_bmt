@@ -7,10 +7,14 @@ import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 
 import javax.sql.DataSource;
 
+import static com.cnc.rating.config.SpringProfile.*;
+
 @Slf4j
+@Profile({DEV, TEST, PROD})
 @Configuration
 public class DataSourceConfig {
 

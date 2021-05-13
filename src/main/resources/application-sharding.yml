@@ -1,0 +1,56 @@
+spring:
+  application:
+    name: rating
+  config:
+    activate:
+      on-profile: sharding
+
+  # sharding sphere
+  shardingsphere:
+    datasource:
+      names: client0, client1
+
+      client0:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/test?useSSL=false
+        username: root
+        password: password
+      client1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3308/test?useSSL=false
+        username: root
+        password: password
+
+#    sharding:
+#      default-database-strategy:
+#        standard:
+#          precise-algorithm-class-name: com.cnc.rating.mybatis.AuroraPreciseAlgorithm
+#          sharding-column: service_mgmt_no
+#      default-data-source-name: client0
+    props:
+      sql:
+        show: true
+    masterslave:
+      load-balance-algorithm-type: round_robin
+      name: test
+      master-data-source-name: client0
+      slave-data-source-names: client1
+#    sharding:
+#      master-slave-rules:
+#        client1:
+#          master-data-source-name: client0
+
+
+
+
+
+#    masterslave:
+#      name: ms
+#      master-data-source-name: client0
+#      slave-data-source-names: client0, client1
+#      load-balance-algorithm-type:
+mybatis:
+  config-location: classpath:/mapper/mybatis-config.xml
+  mapper-locations: classpath:/mapper/*Mapper.xml

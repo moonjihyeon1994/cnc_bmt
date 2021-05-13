@@ -3,12 +3,16 @@ package com.cnc.rating.repository;
 import lombok.extern.slf4j.Slf4j;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashMap;
 import java.util.List;
 
+import static com.cnc.rating.config.SpringProfile.*;
+
 @Slf4j
+@Profile({DEV, TEST, PROD})
 @Repository
 public class RatingRepository {
 
@@ -49,20 +53,12 @@ public class RatingRepository {
 
     private final String namespace = "com.cnc.rating.mybatis.RatingMapper.";
 
-    public List<HashMap<String, Object>> selectCDR(String service_mgmt_no, int shardNumber) {
+    public List<HashMap<String, Object>> selectCDR(String service_mgmt_no, int shardNumber, String startDate, String endDate) {
         return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "selectCDR", service_mgmt_no);
     }
 
-    public List<HashMap<String, Object>> deleteEVDO(int shardNumber) {
-        return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "deleteEVDO");
-    }
-
-    public List<HashMap<String, Object>> updateDVDO(int shardNumber) {
-        return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "updateDVDO");
-    }
-
-    public List<HashMap<String, Object>> insertEVDO(int shardNumber) {
-        return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "insertEVDO");
+    public List<HashMap<String, Object>> selectSub(int shardNumber, HashMap<String, Object> params) {
+        return getSqlSessionTemplateByShardNumber(shardNumber).selectList(namespace + "selectSub", params);
     }
 
     public List<HashMap<String, Object>> selectTest(int shardNumber) {

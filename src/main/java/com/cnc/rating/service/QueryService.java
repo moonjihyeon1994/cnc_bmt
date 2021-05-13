@@ -3,12 +3,17 @@ package com.cnc.rating.service;
 import com.cnc.rating.repository.RatingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
+import static com.cnc.rating.config.SpringProfile.*;
+
 @Slf4j
+@Profile({DEV, TEST, PROD})
 @RequiredArgsConstructor
 @Service
 public class QueryService {
@@ -19,64 +24,44 @@ public class QueryService {
      * SQL 1번
      * CDR 조회
      *
-     * @param service_mgmt_no 서비스 관리번호
+     *
+     * @param service_mgmt_no 서비스 관리 번호
+     * @param startDate 시작
+     * @param endDate 끝
      * @return
      */
-    public List<HashMap<String, Object>> selectCDR(String service_mgmt_no) {
+    public List<HashMap<String, Object>> selectCDR(String service_mgmt_no, String startDate, String endDate) {
         int shardNumber = getShardNumber(service_mgmt_no);
         long startTime = System.currentTimeMillis();
+
 //        log.info("shard number : {}", service_mgmt_no);
-        List<HashMap<String, Object>> result = ratingRepository.selectCDR(service_mgmt_no, shardNumber);
+        List<HashMap<String, Object>> result = ratingRepository.selectCDR(service_mgmt_no, shardNumber, startDate, endDate);
         long endTime = System.currentTimeMillis();
 //        log.info("serviceNumber : {}, shardNumber : {}, duration : {}", service_mgmt_no, shardNumber, endTime - startTime);
         return result;
     }
 
-    /**
-     * SQL 2번
-     * delete DVDO
-     *
-     * @param service_mgmt_no 서비스 관리번호
-     * @return
-     */
-    public List<HashMap<String, Object>> deleteEVDO(String service_mgmt_no) {
+    public List<HashMap<String, Object>> selectSub(String service_mgmt_no, String startDate, String endDate) {
         int shardNumber = getShardNumber(service_mgmt_no);
-        long startTime = System.currentTimeMillis();
-        List<HashMap<String, Object>> result = ratingRepository.deleteEVDO(shardNumber);
-        long endTime = System.currentTimeMillis();
-        log.info("serviceNumber : {}, shardNumber : {}, duration : {}", service_mgmt_no, shardNumber, endTime - startTime);
-        return result;
-    }
+        String startTime = startDate.substring(0,8);
+        String endTime = endDate.substring(0,8);
+        int startMonth = Integer.parseInt(startDate.substring(0,6));
+        int endMonth = Integer.parseInt(endDate.substring(0,6));
+        int idx = 0;
 
-    /**
-     * SQL 3번
-     * update EVDO
-     *
-     * @param service_mgmt_no 서비스 관리번호
-     * @return
-     */
-    public List<HashMap<String, Object>> updateEVDO(String service_mgmt_no) {
-        int shardNumber = getShardNumber(service_mgmt_no);
-        long startTime = System.currentTimeMillis();
-        List<HashMap<String, Object>> result = ratingRepository.updateDVDO(shardNumber);
-        long endTime = System.currentTimeMillis();
-        log.info("serviceNumber : {}, shardNumber : {}, duration : {}", service_mgmt_no, shardNumber, endTime - startTime);
-        return result;
-    }
+        String[] tableList = new String[endMonth - startMonth + 1];
+        for (int month = startMonth; month <= endMonth; month++) {
+            tableList[idx++] = "ONLINE_EVDO_RATED_CDR_TEMP_" + month;
+        }
 
-    /**
-     * SQL 4번
-     * insert EVDO
-     *
-     * @param service_mgmt_no 서비스 관리번호
-     * @return
-     */
-    public List<HashMap<String, Object>> insertEVDO(String service_mgmt_no) {
-        int shardNumber = getShardNumber(service_mgmt_no);
-        long startTime = System.currentTimeMillis();
-        List<HashMap<String, Object>> result = ratingRepository.insertEVDO(shardNumber);
-        long endTime = System.currentTimeMillis();
-        log.info("serviceNumber : {}, shardNumber : {}, duration : {}", service_mgmt_no, shardNumber, endTime - startTime);
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("service_mgmt_no", service_mgmt_no);
+        params.put("tables", tableList);
+        params.put("startDate", startDate);
+        params.put("endDate", endDate);
+        params.put("startTime", startTime);
+        params.put("endTime", endTime);
+        List<HashMap<String, Object>> result = ratingRepository.selectSub(shardNumber, params);
         return result;
     }
 
