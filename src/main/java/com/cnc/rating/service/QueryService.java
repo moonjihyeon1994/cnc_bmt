@@ -23,6 +23,7 @@ public class QueryService {
 
     /**
      * CDR 조회
+     *
      * @param service_mgmt_no 서비스 관리 번호
      * @param startDateTime   시작
      * @param endDateTime     끝
@@ -58,7 +59,6 @@ public class QueryService {
     }
 
     /**
-     *
      * @param service_mgmt_no 서비스 관리번호
      * @param currentDate     대상날짜
      * @param rangeMonth      범위
@@ -72,8 +72,6 @@ public class QueryService {
         Calendar calendar = Calendar.getInstance();
         Date date = dateFormat.parse("202005");
         calendar.setTime(date);
-
-        log.info("shardNumber : {}", shardNumber);
 
         List<String> list = new ArrayList<>();
         list.add("online_evdo_rated_cdr_" + "05" + currentDate);
@@ -90,13 +88,12 @@ public class QueryService {
         params.put("endDate", dateFormat.format(calendar.getTime()));
         params.put("startDateTime", "202005" + currentDate + "0000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
-
-        System.out.println(params.toString());
         return ratingRepository.selectSub(shardNumber, params);
     }
 
     /**
      * 서비스 관리번호 -> 샤드 번호
+     *
      * @param key 서비스 관리번호
      * @return
      */

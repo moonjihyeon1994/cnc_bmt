@@ -24,7 +24,7 @@ import static com.cnc.rating.config.SpringProfile.*;
 public class Controller {
 
     private final QueryService queryService;
-    public static long shardNum = 19;
+    public static long shardNum = 0;
 
     /**
      * 서비스 관리번호가 파라미터로 들어올 때
@@ -59,10 +59,10 @@ public class Controller {
         if (rangeMonth > 12) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         long base_num = 7000000000L;
         long service_mgmt_no = base_num + shardNum++;
+        long currentTimeMillis = System.currentTimeMillis();
 
-        log.info("service_mgmt_no : {} ", service_mgmt_no);
         List<HashMap<String, Object>> result = queryService.selectCDRByMonth(service_mgmt_no, currentDate, rangeMonth);
-        log.info("result size : {} ", result.size());
+        log.info("duration : {}, result size : {} ", System.currentTimeMillis() - currentTimeMillis, result.size());
         return true;
     }
 
