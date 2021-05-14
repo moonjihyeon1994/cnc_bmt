@@ -88,7 +88,7 @@ public class RatingRepository {
     }
 
     private SqlSessionTemplate getSqlSessionTemplateByShardNumber(int shardNumber) {
-        return client4SqlSessionTemplate;
+        return client14SqlSessionTemplate;
         /*
         switch (shardNumber) {
             case 1:

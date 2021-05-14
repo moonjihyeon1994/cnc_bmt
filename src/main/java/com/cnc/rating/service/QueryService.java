@@ -73,6 +73,9 @@ public class QueryService {
         Date date = dateFormat.parse("202005");
         calendar.setTime(date);
 
+        System.out.println("shardNumber = " + shardNumber);
+        System.out.println("service_mgmt_no = " + service_mgmt_no);
+
         List<String> list = new ArrayList<>();
         list.add("online_evdo_rated_cdr_" + "05" + currentDate);
         for (int i = 0; i < rangeMonth; i++) {
@@ -84,8 +87,8 @@ public class QueryService {
         long currentTimeMillis = System.currentTimeMillis();
 
         HashMap<String, Object> params = new HashMap<>();
-        params.put("service_mgmt_no", service_mgmt_no);
-//        params.put("service_mgmt_no", "7000246698");
+//        params.put("service_mgmt_no", service_mgmt_no);
+        params.put("service_mgmt_no", "7000496013");
         params.put("tables", list.toArray(String[]::new));
         params.put("startDate", "202005");
         params.put("endDate", dateFormat.format(calendar.getTime()));
