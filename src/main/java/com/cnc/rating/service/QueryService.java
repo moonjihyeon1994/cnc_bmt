@@ -81,6 +81,8 @@ public class QueryService {
         }
         list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
 
+        long currentTimeMillis = System.currentTimeMillis();
+
         HashMap<String, Object> params = new HashMap<>();
         params.put("service_mgmt_no", service_mgmt_no);
         params.put("tables", list.toArray(String[]::new));
@@ -88,7 +90,10 @@ public class QueryService {
         params.put("endDate", dateFormat.format(calendar.getTime()));
         params.put("startDateTime", "202005" + currentDate + "0000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
-        return ratingRepository.selectSub(shardNumber, params);
+        List<HashMap<String, Object>> result = ratingRepository.selectSub(shardNumber, params);
+
+        log.info("service_mgmt_no : {}, shard_no : {}, duration : {}, size : {} ", service_mgmt_no, shardNumber, System.currentTimeMillis() - currentTimeMillis, result.size());
+        return result;
     }
 
     /**

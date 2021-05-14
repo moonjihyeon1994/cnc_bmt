@@ -59,10 +59,9 @@ public class Controller {
         if (rangeMonth > 12) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         long base_num = 7000000000L;
         long service_mgmt_no = base_num + shardNum++;
-        long currentTimeMillis = System.currentTimeMillis();
 
         List<HashMap<String, Object>> result = queryService.selectCDRByMonth(service_mgmt_no, currentDate, rangeMonth);
-        log.info("duration : {}, result size : {} ", System.currentTimeMillis() - currentTimeMillis, result.size());
+
         return true;
     }
 
