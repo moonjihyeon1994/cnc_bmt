@@ -127,8 +127,8 @@ public class RatingRepository {
                 return client18SqlSessionTemplate;
             case 19:
                 return client19SqlSessionTemplate;
-//            case 20:
-//                return client20SqlSessionTemplate;
+            case 20:
+                return client19SqlSessionTemplate;
             default:
                 throw new RuntimeException();
         }
