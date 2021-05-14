@@ -88,8 +88,10 @@ public class QueryService {
         params.put("tables", list.toArray(String[]::new));
         params.put("startDate", "202005");
         params.put("endDate", dateFormat.format(calendar.getTime()));
-        params.put("startDateTime", "202005" + currentDate + "000000");
-        params.put("endDateTime", dateFormat.format(calendar.getTime()) + "99999999");
+        params.put("startDateTime", "202005" + currentDate + "0000000");
+        params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
+
+        System.out.println(params.toString());
         return ratingRepository.selectSub(shardNumber, params);
     }
 
