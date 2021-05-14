@@ -21,102 +21,102 @@ spring:
 app:
   datasource:
     client1:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds01.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds01.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client2:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds02.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds02.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client3:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds03.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds03.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client4:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds04.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds04.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client5:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds05.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds05.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client6:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds06.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds06.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client7:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds07.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds07.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client8:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds08.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds08.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client9:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds09.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds09.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client10:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds10.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds10.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client11:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds11.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds11.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client12:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds12.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds12.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client13:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds13.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds13.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client14:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds14.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds14.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client15:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds15.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds15.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client16:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds16.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds16.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client17:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds17.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds17.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client18:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds18.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds18.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
     client19:
-      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds19.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds19.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
 #    client20:
-#      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds20.cluster-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+#      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds20.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
 #      username: bmtstat3
 #      password: djqjdlskf12!
 #      driver-class-name: com.mysql.cj.jdbc.Driver
