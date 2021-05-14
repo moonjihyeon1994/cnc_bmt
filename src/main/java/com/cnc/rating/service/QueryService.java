@@ -84,9 +84,8 @@ public class QueryService {
         long currentTimeMillis = System.currentTimeMillis();
 
         HashMap<String, Object> params = new HashMap<>();
-//        7000246698
-//        params.put("service_mgmt_no", service_mgmt_no);
-        params.put("service_mgmt_no", "7000246698");
+        params.put("service_mgmt_no", service_mgmt_no);
+//        params.put("service_mgmt_no", "7000246698");
         params.put("tables", list.toArray(String[]::new));
         params.put("startDate", "202005");
         params.put("endDate", dateFormat.format(calendar.getTime()));
