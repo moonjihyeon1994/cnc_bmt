@@ -24,7 +24,7 @@ import static com.cnc.rating.config.SpringProfile.*;
 public class Controller {
 
     private final QueryService queryService;
-    public static long shardNum = 100;
+    public static long shardNum = 13;
 
     /**
      * 서비스 관리번호가 파라미터로 들어올 때
