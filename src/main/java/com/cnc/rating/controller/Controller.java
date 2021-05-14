@@ -38,7 +38,7 @@ public class Controller {
             @RequestParam(value = "startDateTime") String startDateTime,
             @RequestParam(value = "endDateTime") String endDateTime
     ) throws ParseException {
-        if (startDateTime.length() != 14 || endDateTime.length() != 14)
+        if (startDateTime.length() != 15 || endDateTime.length() != 15)
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         return queryService.selectCDR(service_mgmt_no, startDateTime, endDateTime);
     }
