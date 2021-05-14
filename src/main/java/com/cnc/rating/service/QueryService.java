@@ -73,6 +73,8 @@ public class QueryService {
         Date date = dateFormat.parse("202005");
         calendar.setTime(date);
 
+        log.info("shardNumber : {}", shardNumber);
+
         List<String> list = new ArrayList<>();
         list.add("online_evdo_rated_cdr_" + "05" + currentDate);
         for (int i = 0; i < rangeMonth; i++) {
