@@ -64,24 +64,4 @@ public class Controller {
 
         return true;
     }
-
-//    @GetMapping("/selectCDR")
-//    public List<HashMap<String, Object>> selectCDRFromJson() throws IOException {
-//        ClassPathResource resource = new ClassPathResource("service-mgmt-no.json");
-//        HashMap<String, Object> object = (new ObjectMapper()).readValue(resource.getInputStream(), HashMap.class);
-//        return null;
-//    }
-    /**
-     * long random_number_10_digit = (long) ((Math.random() * 9000000000L) + 1000000000L);
-     *         long random_number_6_digit_1 = (long) ((Math.random() * 900000L) + 100000L);
-     *         long random_number_6_digit_2 = (long) ((Math.random() * 900000L) + 100000L);
-     * //        202005_000000<=   < 202106_000000
-     * //        System.out.println((long) (Math.random() * (end_date - start_date + 1)) + start_date);
-     *
-     *         int idx = ThreadLocalRandom.current().nextInt(0, targetMonth.length);
-     *         int next_idx = ThreadLocalRandom.current().nextInt(idx+1, targetMonth.length);
-     *         String service_mgmt_no = String.valueOf(random_number_10_digit);
-     *         String startDateTime = targetMonth[idx] + String.valueOf(random_number_6_digit_1);
-     *         String endDateTime = targetMonth[next_idx] + String.valueOf(random_number_6_digit_2);
-     */
 }

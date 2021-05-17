@@ -88,8 +88,6 @@ public class RatingRepository {
     }
 
     private SqlSessionTemplate getSqlSessionTemplateByShardNumber(int shardNumber) {
-//        return client14SqlSessionTemplate;
-//        /*
         switch (shardNumber) {
             case 1:
                 return client1SqlSessionTemplate;
@@ -130,10 +128,9 @@ public class RatingRepository {
             case 19:
                 return client19SqlSessionTemplate;
             case 20:
-                return client2SqlSessionTemplate;
+                return client20SqlSessionTemplate;
             default:
                 throw new RuntimeException();
         }
-//        */
     }
 }

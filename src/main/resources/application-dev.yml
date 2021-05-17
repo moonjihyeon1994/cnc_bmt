@@ -22,16 +22,18 @@ spring:
 # multi datasource 설정
 app:
   datasource:
-    client0:
+    client1:
       jdbc-url: jdbc:mysql://localhost:3306/test?useSSL=false
       username: root
       password: password
       driver-class-name: com.mysql.cj.jdbc.Driver
-    client1:
+      connection-test-query: SELECT 1
+    client2:
       jdbc-url: jdbc:mysql://localhost:3308/test?useSSL=false
       username: root
       password: password
       driver-class-name: com.mysql.cj.jdbc.Driver
+#      connection-test-query: SELECT 1
 #    client2:
 #      jdbc-url: jdbc:mariadb://localhost:3308/test?useSSL=false
 #      username: root

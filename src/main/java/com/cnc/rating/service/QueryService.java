@@ -23,7 +23,6 @@ public class QueryService {
 
     /**
      * CDR 조회
-     *
      * @param service_mgmt_no 서비스 관리 번호
      * @param startDateTime   시작
      * @param endDateTime     끝
@@ -92,7 +91,7 @@ public class QueryService {
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
         List<HashMap<String, Object>> result = ratingRepository.selectSub(shardNumber, params);
 
-        log.info("service_mgmt_no : {}, shard_no : {}, duration : {}, size : {} ", service_mgmt_no, shardNumber, System.currentTimeMillis() - currentTimeMillis, result.size());
+        log.info("service_mgmt_no : {}, shard_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, shardNumber, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
         return result;
     }
 
