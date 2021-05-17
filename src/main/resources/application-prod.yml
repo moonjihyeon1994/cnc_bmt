@@ -115,8 +115,8 @@ app:
       username: bmtstat3
       password: djqjdlskf12!
       driver-class-name: com.mysql.cj.jdbc.Driver
-#    client20:
-#      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds20.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
-#      username: bmtstat3
-#      password: djqjdlskf12!
-#      driver-class-name: com.mysql.cj.jdbc.Driver
+    client20:
+      jdbc-url: jdbc:mysql://bss-bmt-kc-urt-aurora-mysql-rds20.cluster-ro-c0dvxmmqgpip.ap-northeast-2.rds.amazonaws.com:3306/bmtdb
+      username: bmtstat3
+      password: djqjdlskf12!
+      driver-class-name: com.mysql.cj.jdbc.Driver
