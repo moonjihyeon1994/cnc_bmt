@@ -223,6 +223,6 @@
     </insert>
 
     <select id="selectTest" parameterType="map" resultType="map" >
-        select * from ONLINE_EVDO_RATED_CDR_TEMP where SERVICE_MGMT_NO = #{service_mgmt_no};
+        select * from evdo_rated_cdr_202005 where SERVICE_MGMT_NO = #{service_mgmt_no};
     </select>
 </mapper>

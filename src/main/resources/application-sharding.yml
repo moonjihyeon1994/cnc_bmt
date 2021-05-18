@@ -27,9 +27,10 @@ spring:
         inline:
           sharding-column: service_mgmt_no
           algorithm-expression: client$->{service_mgmt_no % 2}
-#      tables:
-#        evdo_rated_cdr_:
-#          actual-data-nodes: client$->{0..20}.evdo_rated_cdr_$->{202005..202105}
+      tables:
+        evdo_rated_cdr_:
+          actual-data-nodes: client$->{0..1}.evdo_rated_cdr_$->{202005..202105}
+
     props:
       sql:
         show: true
