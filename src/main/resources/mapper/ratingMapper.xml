@@ -189,4 +189,40 @@
                  AND IFNULL(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP') as a
              </foreach>
     </select>
+    <insert id="insertTest" parameterType="map">
+        insert into ONLINE_EVDO_RATED_CDR_TEMP (NODE_NO, SERVICE_MGMT_NO, USG_START_DATE, USG_START_TIME, USG_TYPE, USG_SEQ,
+                                                TIME_FLAG, EXTRNID, EXTRNID_TYPE, PROD_ID, CORRIDOR_ID, WIN_SVC, CHARGE_CODE,
+                                                SERVICE_FEATURE, FILENAME, FILEROW, CALLED_NO, DIALED_NO, DAY_TYPE_CD,
+                                                SERVICE_TERM_DATE, SERVICE_TERM_TIME, TOTAL_DURATION, TOTAL_VOLUME,
+                                                TOTAL_FREE_VOLUME, TOTAL_USG_NOU, TOTAL_FREE_USG_NOU, Q_CODE, QOS,
+                                                SERVICE_TYPE_CD, TRANS_COUNT, CHARGE_OR_NOT, PPS_CARD_TYPE, TOTAL_USED_CHARGE,
+                                                TOTAL_RATED_CHARGE, CARRIER, ORG_NET_INFO, NPA, MSC_SWITCH_ID, SWITCH_ID,
+                                                CELL_ID, CALL_STATUS, CP_CODE, ISP_CODE, IP_CODE, MSG_LENGTH, BILLCYCLE_ID,
+                                                EXTRA_RATING_FAC, DEDUCT_CODE1, DEDUCTED_CHARGE1, DEDUCT_BAL_BEFORE1,
+                                                DEDUCT_BAL_AFTER1, SUB_EVENT_CD1, DEDUCT_CODE2, DEDUCTED_CHARGE2,
+                                                DEDUCT_BAL_BEFORE2, DEDUCT_BAL_AFTER2, SUB_EVENT_CD2, DEDUCT_CODE3,
+                                                DEDUCTED_CHARGE3, DEDUCT_BAL_BEFORE3, DEDUCT_BAL_AFTER3, SUB_EVENT_CD3,
+                                                DEDUCT_CODE4, DEDUCTED_CHARGE4, DEDUCT_BAL_BEFORE4, DEDUCT_BAL_AFTER4,
+                                                SUB_EVENT_CD4, DEDUCT_CODE5, DEDUCTED_CHARGE5, DEDUCT_BAL_BEFORE5,
+                                                DEDUCT_BAL_AFTER5, SUB_EVENT_CD5, DISC_CODE1, DISC_CHARGE1, DISC_CODE2,
+                                                DISC_CHARGE2, DISC_CODE3, DISC_CHARGE3, LIMIT_CODE, LIMIT_APPLIED_CHARGE,
+                                                LIMIT_BAL_BEFORE, LIMIT_BAL_AFTER, LIMIT_APPLIED_TYPE, AG_SERVICE_TYPE,
+                                                AG_USED_NOU, AG_FREE_USED_NOU, AG_USED_CHARGE, AG_FREE_USED_CHARGE,
+                                                CDR_DURATION, CH_SERVICE_MGMT_NO, CH_SVC_ICCID, OPMD_FLAG, DBM_PROD_ID,
+                                                ZONE_CALL_INFO, OCALL_TOLL_ID, PROD_SEQ, PROCESSED_DATE, PROCESSED_TIME,
+                                                CHARGING_ID, PPE, SVC_QOS_UL, SVC_QOS_DL, LOS_SEQ_NO, SESSION_STATUS,
+                                                NTW_SLICE_ID, SVC_GRP)
+        values (2, #{service_mgmt_no}, 20210501, 001437, 650, 1, 1, 01040000018, 1, 'NA00001595', NULL, 85, 'LL013', 'LTE',
+                'ONLINE_EVDO_RATED_CDR_0501_2_0.txt', 10162, NULL, NULL, NULL, 20210501, 001437, 8466400, 557122914, 1414771015,
+                484649627, 5339494, NULL, NULL, 1, 0, 'B', 0, 721235.50, 20620408.22, NULL, 4, 11, 'STVk', 'bL4m', 'kyzM', 0, 280000, 0,
+                0, 499276497, 1, NULL, 'fiRrv', 3302535.89, 6799809.24, 15826434.79, NULL, NULL, NULL, NULL, NULL, NULL, NULL,
+                NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 14795615.14, NULL,
+                8343361.81, NULL, 19144712.29, NULL, NULL, 2094896.04, 19055180.64, NULL, 'ETC', 656927877, 3116322, 10775525.29,
+                13461230.51, 7939585, NULL, NULL, NULL, 'NA00001595', 0, 'IRS', 0, 20210501, 001437, NULL, NULL, NULL, NULL, 0,
+                NULL, NULL, NULL);
+    </insert>
+
+    <select id="selectTest" parameterType="map" resultType="map" >
+        select * from ONLINE_EVDO_RATED_CDR_TEMP where SERVICE_MGMT_NO = #{service_mgmt_no};
+    </select>
 </mapper>

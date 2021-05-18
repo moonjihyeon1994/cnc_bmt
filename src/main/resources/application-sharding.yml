@@ -9,7 +9,6 @@ spring:
   shardingsphere:
     datasource:
       names: client0, client1
-
       client0:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
@@ -23,20 +22,22 @@ spring:
         username: root
         password: password
 
-#    sharding:
-#      default-database-strategy:
-#        standard:
-#          precise-algorithm-class-name: com.cnc.rating.mybatis.AuroraPreciseAlgorithm
-#          sharding-column: service_mgmt_no
-#      default-data-source-name: client0
+    sharding:
+      default-database-strategy:
+        inline:
+          sharding-column: service_mgmt_no
+          algorithm-expression: client$->{service_mgmt_no % 2}
+#      tables:
+#        evdo_rated_cdr_:
+#          actual-data-nodes: client$->{0..20}.evdo_rated_cdr_$->{202005..202105}
     props:
       sql:
         show: true
-    masterslave:
-      load-balance-algorithm-type: round_robin
-      name: test
-      master-data-source-name: client0
-      slave-data-source-names: client1
+#    masterslave:
+##      load-balance-algorithm-type: ROUND_ROBIN
+#      name: test
+#      master-data-source-name: client0
+#      slave-data-source-names: client0, client1
 #    sharding:
 #      master-slave-rules:
 #        client1:
@@ -50,7 +51,7 @@ spring:
 #      name: ms
 #      master-data-source-name: client0
 #      slave-data-source-names: client0, client1
-#      load-balance-algorithm-type:
+##      load-balance-algorithm-type:
 mybatis:
   config-location: classpath:/mapper/mybatis-config.xml
   mapper-locations: classpath:/mapper/*Mapper.xml
