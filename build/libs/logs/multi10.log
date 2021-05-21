@@ -1,0 +1,608 @@
+2021:05:21 18:41:55.373 INFO  --- [main] com.cnc.rating.RatingApplication : Starting RatingApplication using Java 11.0.11 on ip-10-0-9-77.ap-northeast-2.compute.internal with PID 19410 (/home/P171580/cnc_bmt/build/libs/rating-0.0.1-SNAPSHOT.jar started by P171580 in /home/P171580/cnc_bmt/build/libs) 
+2021:05:21 18:41:55.382 INFO  --- [main] com.cnc.rating.RatingApplication : The following profiles are active: prod 
+2021:05:21 18:41:57.037 INFO  --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:05:21 18:41:57.060 INFO  --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces. 
+2021:05:21 18:41:57.188 WARN  --- [main] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[com.cnc.rating]' package. Please check your configuration. 
+2021:05:21 18:41:57.875 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8081 (http) 
+2021:05:21 18:41:57.890 INFO  --- [main] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8081"] 
+2021:05:21 18:41:57.891 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:05:21 18:41:57.891 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.45] 
+2021:05:21 18:41:57.970 INFO  --- [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:05:21 18:41:57.970 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2468 ms 
+2021:05:21 18:41:58.452 INFO  --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:05:21 18:41:58.891 INFO  --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:05:21 18:41:58.952 INFO  --- [main] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:05:21 18:41:59.031 INFO  --- [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.30.Final 
+2021:05:21 18:41:59.338 INFO  --- [main] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:05:21 18:41:59.508 INFO  --- [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.MySQL57Dialect 
+2021:05:21 18:42:00.297 INFO  --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021:05:21 18:42:00.305 INFO  --- [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021:05:21 18:42:01.309 WARN  --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021:05:21 18:42:01.436 INFO  --- [main] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2021:05:21 18:42:01.844 INFO  --- [main] o.s.b.a.e.web.EndpointLinksResolver : Exposing 4 endpoint(s) beneath base path '/actuator' 
+2021:05:21 18:42:01.889 INFO  --- [main] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8081"] 
+2021:05:21 18:42:01.909 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 8081 (http) with context path '' 
+2021:05:21 18:42:01.928 INFO  --- [main] com.cnc.rating.RatingApplication : Started RatingApplication in 7.685 seconds (JVM running for 8.359) 
+2021:05:21 18:43:09.850 INFO  --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021:05:21 18:43:09.851 INFO  --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2021:05:21 18:43:09.853 INFO  --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 2 ms 
+2021:05:21 18:43:12.920 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015000, shard_no : 1, range : 10, duration : 2936, size : 31762  
+2021:05:21 18:43:12.971 INFO  --- [http-nio-8081-exec-5] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Starting... 
+2021:05:21 18:43:12.971 INFO  --- [http-nio-8081-exec-9] com.zaxxer.hikari.HikariDataSource : HikariPool-3 - Starting... 
+2021:05:21 18:43:12.972 INFO  --- [http-nio-8081-exec-10] com.zaxxer.hikari.HikariDataSource : HikariPool-4 - Starting... 
+2021:05:21 18:43:12.981 INFO  --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource : HikariPool-5 - Starting... 
+2021:05:21 18:43:12.985 INFO  --- [http-nio-8081-exec-4] com.zaxxer.hikari.HikariDataSource : HikariPool-8 - Starting... 
+2021:05:21 18:43:12.982 INFO  --- [http-nio-8081-exec-7] com.zaxxer.hikari.HikariDataSource : HikariPool-6 - Starting... 
+2021:05:21 18:43:12.983 INFO  --- [http-nio-8081-exec-8] com.zaxxer.hikari.HikariDataSource : HikariPool-7 - Starting... 
+2021:05:21 18:43:12.991 INFO  --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource : HikariPool-9 - Starting... 
+2021:05:21 18:43:13.024 INFO  --- [http-nio-8081-exec-10] com.zaxxer.hikari.HikariDataSource : HikariPool-4 - Start completed. 
+2021:05:21 18:43:13.064 INFO  --- [http-nio-8081-exec-7] com.zaxxer.hikari.HikariDataSource : HikariPool-6 - Start completed. 
+2021:05:21 18:43:13.081 INFO  --- [http-nio-8081-exec-11] com.zaxxer.hikari.HikariDataSource : HikariPool-10 - Starting... 
+2021:05:21 18:43:13.092 INFO  --- [http-nio-8081-exec-4] com.zaxxer.hikari.HikariDataSource : HikariPool-8 - Start completed. 
+2021:05:21 18:43:13.096 INFO  --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource : HikariPool-9 - Start completed. 
+2021:05:21 18:43:13.107 INFO  --- [http-nio-8081-exec-9] com.zaxxer.hikari.HikariDataSource : HikariPool-3 - Start completed. 
+2021:05:21 18:43:13.125 INFO  --- [http-nio-8081-exec-5] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Start completed. 
+2021:05:21 18:43:13.140 INFO  --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource : HikariPool-5 - Start completed. 
+2021:05:21 18:43:13.148 INFO  --- [http-nio-8081-exec-8] com.zaxxer.hikari.HikariDataSource : HikariPool-7 - Start completed. 
+2021:05:21 18:43:13.237 INFO  --- [http-nio-8081-exec-11] com.zaxxer.hikari.HikariDataSource : HikariPool-10 - Start completed. 
+2021:05:21 18:43:19.823 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015006, shard_no : 7, range : 10, duration : 6854, size : 31562  
+2021:05:21 18:43:19.989 INFO  --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource : HikariPool-11 - Starting... 
+2021:05:21 18:43:20.159 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015004, shard_no : 5, range : 10, duration : 7195, size : 31308  
+2021:05:21 18:43:20.194 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015008, shard_no : 9, range : 10, duration : 7217, size : 31620  
+2021:05:21 18:43:20.205 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015002, shard_no : 3, range : 10, duration : 7246, size : 31646  
+2021:05:21 18:43:20.205 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015005, shard_no : 6, range : 10, duration : 7239, size : 31325  
+2021:05:21 18:43:20.210 INFO  --- [http-nio-8081-exec-1] com.zaxxer.hikari.HikariDataSource : HikariPool-11 - Start completed. 
+2021:05:21 18:43:20.283 INFO  --- [http-nio-8081-exec-9] com.zaxxer.hikari.HikariDataSource : HikariPool-12 - Starting... 
+2021:05:21 18:43:20.287 INFO  --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource : HikariPool-13 - Starting... 
+2021:05:21 18:43:20.297 INFO  --- [http-nio-8081-exec-4] com.zaxxer.hikari.HikariDataSource : HikariPool-14 - Starting... 
+2021:05:21 18:43:20.300 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015001, shard_no : 2, range : 10, duration : 7343, size : 32101  
+2021:05:21 18:43:20.320 INFO  --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource : HikariPool-16 - Starting... 
+2021:05:21 18:43:20.304 INFO  --- [http-nio-8081-exec-7] com.zaxxer.hikari.HikariDataSource : HikariPool-15 - Starting... 
+2021:05:21 18:43:20.310 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015009, shard_no : 10, range : 10, duration : 7245, size : 31603  
+2021:05:21 18:43:20.358 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015007, shard_no : 8, range : 10, duration : 7385, size : 31739  
+2021:05:21 18:43:20.432 INFO  --- [http-nio-8081-exec-5] com.zaxxer.hikari.HikariDataSource : HikariPool-17 - Starting... 
+2021:05:21 18:43:20.437 INFO  --- [http-nio-8081-exec-8] com.zaxxer.hikari.HikariDataSource : HikariPool-18 - Starting... 
+2021:05:21 18:43:20.441 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015003, shard_no : 4, range : 10, duration : 7480, size : 31759  
+2021:05:21 18:43:20.443 INFO  --- [http-nio-8081-exec-3] com.zaxxer.hikari.HikariDataSource : HikariPool-13 - Start completed. 
+2021:05:21 18:43:20.444 INFO  --- [http-nio-8081-exec-4] com.zaxxer.hikari.HikariDataSource : HikariPool-14 - Start completed. 
+2021:05:21 18:43:20.460 INFO  --- [http-nio-8081-exec-9] com.zaxxer.hikari.HikariDataSource : HikariPool-12 - Start completed. 
+2021:05:21 18:43:20.473 INFO  --- [http-nio-8081-exec-11] com.zaxxer.hikari.HikariDataSource : HikariPool-19 - Starting... 
+2021:05:21 18:43:20.480 INFO  --- [http-nio-8081-exec-2] com.zaxxer.hikari.HikariDataSource : HikariPool-16 - Start completed. 
+2021:05:21 18:43:20.494 INFO  --- [http-nio-8081-exec-5] com.zaxxer.hikari.HikariDataSource : HikariPool-17 - Start completed. 
+2021:05:21 18:43:20.511 INFO  --- [http-nio-8081-exec-7] com.zaxxer.hikari.HikariDataSource : HikariPool-15 - Start completed. 
+2021:05:21 18:43:20.526 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015003, shard_no : 4, range : 10, duration : 7565, size : 31759  
+2021:05:21 18:43:20.538 INFO  --- [http-nio-8081-exec-10] com.zaxxer.hikari.HikariDataSource : HikariPool-20 - Starting... 
+2021:05:21 18:43:20.545 INFO  --- [http-nio-8081-exec-11] com.zaxxer.hikari.HikariDataSource : HikariPool-19 - Start completed. 
+2021:05:21 18:43:20.552 INFO  --- [http-nio-8081-exec-8] com.zaxxer.hikari.HikariDataSource : HikariPool-18 - Start completed. 
+2021:05:21 18:43:20.591 INFO  --- [http-nio-8081-exec-10] com.zaxxer.hikari.HikariDataSource : HikariPool-20 - Start completed. 
+2021:05:21 18:43:25.459 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015010, shard_no : 11, range : 10, duration : 5473, size : 32029  
+2021:05:21 18:43:26.143 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015011, shard_no : 12, range : 10, duration : 5966, size : 31989  
+2021:05:21 18:43:26.385 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015012, shard_no : 13, range : 10, duration : 6105, size : 31429  
+2021:05:21 18:43:26.501 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015013, shard_no : 14, range : 10, duration : 6206, size : 31358  
+2021:05:21 18:43:26.554 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015014, shard_no : 15, range : 10, duration : 6256, size : 31488  
+2021:05:21 18:43:26.645 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015017, shard_no : 18, range : 10, duration : 6212, size : 31559  
+2021:05:21 18:43:26.817 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015016, shard_no : 17, range : 10, duration : 6443, size : 31736  
+2021:05:21 18:43:26.829 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015015, shard_no : 16, range : 10, duration : 6513, size : 31466  
+2021:05:21 18:43:26.853 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015018, shard_no : 19, range : 10, duration : 6404, size : 31578  
+2021:05:21 18:43:26.891 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015019, shard_no : 20, range : 10, duration : 6355, size : 31474  
+2021:05:21 18:43:30.239 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015020, shard_no : 1, range : 10, duration : 4630, size : 31847  
+2021:05:21 18:43:30.985 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015022, shard_no : 3, range : 10, duration : 4508, size : 31713  
+2021:05:21 18:43:31.593 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015021, shard_no : 2, range : 10, duration : 5433, size : 31450  
+2021:05:21 18:43:32.076 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015027, shard_no : 8, range : 10, duration : 5220, size : 31973  
+2021:05:21 18:43:32.297 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015028, shard_no : 9, range : 10, duration : 5426, size : 31651  
+2021:05:21 18:43:32.338 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015024, shard_no : 5, range : 10, duration : 5690, size : 31632  
+2021:05:21 18:43:32.450 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015029, shard_no : 10, range : 10, duration : 5546, size : 31773  
+2021:05:21 18:43:32.461 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015025, shard_no : 6, range : 10, duration : 5803, size : 31427  
+2021:05:21 18:43:32.576 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015023, shard_no : 4, range : 10, duration : 6062, size : 31872  
+2021:05:21 18:43:32.578 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015026, shard_no : 7, range : 10, duration : 5732, size : 31654  
+2021:05:21 18:43:33.437 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015030, shard_no : 11, range : 10, duration : 3103, size : 31561  
+2021:05:21 18:43:33.758 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015031, shard_no : 12, range : 10, duration : 2729, size : 31445  
+2021:05:21 18:43:34.771 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015032, shard_no : 13, range : 10, duration : 3157, size : 31617  
+2021:05:21 18:43:37.481 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015033, shard_no : 14, range : 10, duration : 5332, size : 31699  
+2021:05:21 18:43:39.118 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015037, shard_no : 18, range : 10, duration : 6629, size : 31641  
+2021:05:21 18:43:39.136 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015035, shard_no : 16, range : 10, duration : 6682, size : 31384  
+2021:05:21 18:43:39.266 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015034, shard_no : 15, range : 10, duration : 6952, size : 31341  
+2021:05:21 18:43:39.469 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015039, shard_no : 20, range : 10, duration : 6870, size : 31657  
+2021:05:21 18:43:39.512 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015038, shard_no : 19, range : 10, duration : 6917, size : 31872  
+2021:05:21 18:43:39.515 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015036, shard_no : 17, range : 10, duration : 7030, size : 31638  
+2021:05:21 18:43:39.893 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015040, shard_no : 1, range : 10, duration : 6423, size : 31907  
+2021:05:21 18:43:39.971 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015041, shard_no : 2, range : 10, duration : 6188, size : 31330  
+2021:05:21 18:43:40.192 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015042, shard_no : 3, range : 10, duration : 5388, size : 31500  
+2021:05:21 18:43:40.612 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015043, shard_no : 4, range : 10, duration : 3084, size : 31598  
+2021:05:21 18:43:43.924 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015046, shard_no : 7, range : 10, duration : 4619, size : 31549  
+2021:05:21 18:43:43.957 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015044, shard_no : 5, range : 10, duration : 4701, size : 31318  
+2021:05:21 18:43:44.702 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015047, shard_no : 8, range : 10, duration : 5227, size : 31557  
+2021:05:21 18:43:44.876 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015045, shard_no : 6, range : 10, duration : 5617, size : 31428  
+2021:05:21 18:43:45.094 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015049, shard_no : 10, range : 10, duration : 5536, size : 31689  
+2021:05:21 18:43:45.134 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015050, shard_no : 11, range : 10, duration : 5227, size : 31688  
+2021:05:21 18:43:45.151 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015048, shard_no : 9, range : 10, duration : 5612, size : 31565  
+2021:05:21 18:43:45.336 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015051, shard_no : 12, range : 10, duration : 5351, size : 31589  
+2021:05:21 18:43:45.621 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015053, shard_no : 14, range : 10, duration : 5002, size : 31618  
+2021:05:21 18:43:45.622 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015052, shard_no : 13, range : 10, duration : 5416, size : 31427  
+2021:05:21 18:43:48.372 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015055, shard_no : 16, range : 10, duration : 4379, size : 31524  
+2021:05:21 18:43:48.651 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015054, shard_no : 15, range : 10, duration : 4697, size : 31353  
+2021:05:21 18:43:50.445 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015056, shard_no : 17, range : 10, duration : 5708, size : 31708  
+2021:05:21 18:43:50.577 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015057, shard_no : 18, range : 10, duration : 5684, size : 31469  
+2021:05:21 18:43:50.874 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015059, shard_no : 20, range : 10, duration : 5720, size : 31651  
+2021:05:21 18:43:50.877 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015058, shard_no : 19, range : 10, duration : 5753, size : 31640  
+2021:05:21 18:43:50.891 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015060, shard_no : 1, range : 10, duration : 5618, size : 31468  
+2021:05:21 18:43:50.944 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015061, shard_no : 2, range : 10, duration : 5537, size : 31841  
+2021:05:21 18:43:51.792 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015062, shard_no : 3, range : 10, duration : 6165, size : 31830  
+2021:05:21 18:43:51.792 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015063, shard_no : 4, range : 10, duration : 6162, size : 31388  
+2021:05:21 18:43:52.291 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015064, shard_no : 5, range : 10, duration : 3866, size : 31682  
+2021:05:21 18:43:52.353 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015065, shard_no : 6, range : 10, duration : 3697, size : 31976  
+2021:05:21 18:43:53.844 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015066, shard_no : 7, range : 10, duration : 3387, size : 31546  
+2021:05:21 18:43:55.324 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015067, shard_no : 8, range : 10, duration : 4723, size : 31501  
+2021:05:21 18:43:56.705 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015068, shard_no : 9, range : 10, duration : 5825, size : 31151  
+2021:05:21 18:43:56.911 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015071, shard_no : 12, range : 10, duration : 5879, size : 31604  
+2021:05:21 18:43:56.991 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015069, shard_no : 10, range : 10, duration : 6091, size : 31467  
+2021:05:21 18:43:56.997 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015070, shard_no : 11, range : 10, duration : 6079, size : 31463  
+2021:05:21 18:43:57.262 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015073, shard_no : 14, range : 10, duration : 5457, size : 31582  
+2021:05:21 18:43:57.394 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015072, shard_no : 13, range : 10, duration : 5595, size : 31265  
+2021:05:21 18:43:57.603 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015074, shard_no : 15, range : 10, duration : 5307, size : 31497  
+2021:05:21 18:43:57.656 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015075, shard_no : 16, range : 10, duration : 5299, size : 31560  
+2021:05:21 18:43:57.970 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015076, shard_no : 17, range : 10, duration : 4120, size : 31674  
+2021:05:21 18:44:00.445 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015077, shard_no : 18, range : 10, duration : 4235, size : 31470  
+2021:05:21 18:44:02.400 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015078, shard_no : 19, range : 10, duration : 5559, size : 31644  
+2021:05:21 18:44:02.509 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015079, shard_no : 20, range : 10, duration : 5575, size : 31772  
+2021:05:21 18:44:02.512 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015084, shard_no : 5, range : 10, duration : 4903, size : 31776  
+2021:05:21 18:44:02.575 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015083, shard_no : 4, range : 10, duration : 5169, size : 31380  
+2021:05:21 18:44:02.728 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015080, shard_no : 1, range : 10, duration : 5723, size : 31818  
+2021:05:21 18:44:02.729 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015082, shard_no : 3, range : 10, duration : 5455, size : 31590  
+2021:05:21 18:44:02.861 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015085, shard_no : 6, range : 10, duration : 5200, size : 31424  
+2021:05:21 18:44:02.862 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015081, shard_no : 2, range : 10, duration : 5847, size : 31843  
+2021:05:21 18:44:03.021 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015086, shard_no : 7, range : 10, duration : 5044, size : 31492  
+2021:05:21 18:44:03.677 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015087, shard_no : 8, range : 10, duration : 3207, size : 31406  
+2021:05:21 18:44:08.079 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015088, shard_no : 9, range : 10, duration : 5676, size : 31363  
+2021:05:21 18:44:08.283 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015090, shard_no : 11, range : 10, duration : 5725, size : 31655  
+2021:05:21 18:44:08.435 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015089, shard_no : 10, range : 10, duration : 5888, size : 31663  
+2021:05:21 18:44:08.540 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015091, shard_no : 12, range : 10, duration : 5875, size : 31780  
+2021:05:21 18:44:08.696 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015093, shard_no : 14, range : 10, duration : 5884, size : 31728  
+2021:05:21 18:44:08.859 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015094, shard_no : 15, range : 10, duration : 5980, size : 31621  
+2021:05:21 18:44:09.603 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015092, shard_no : 13, range : 10, duration : 6794, size : 31698  
+2021:05:21 18:44:09.609 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015096, shard_no : 17, range : 10, duration : 6585, size : 31484  
+2021:05:21 18:44:09.667 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015095, shard_no : 16, range : 10, duration : 6783, size : 31457  
+2021:05:21 18:44:09.752 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015097, shard_no : 18, range : 10, duration : 6070, size : 31635  
+2021:05:21 18:44:11.199 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015098, shard_no : 19, range : 10, duration : 3101, size : 31593  
+2021:05:21 18:44:14.085 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015099, shard_no : 20, range : 10, duration : 5711, size : 31787  
+2021:05:21 18:44:14.645 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015100, shard_no : 1, range : 10, duration : 6117, size : 31512  
+2021:05:21 18:44:14.794 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015101, shard_no : 2, range : 10, duration : 6246, size : 31819  
+2021:05:21 18:44:14.815 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015102, shard_no : 3, range : 10, duration : 6115, size : 31821  
+2021:05:21 18:44:15.178 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015103, shard_no : 4, range : 10, duration : 6313, size : 31794  
+2021:05:21 18:44:15.386 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015107, shard_no : 8, range : 10, duration : 5630, size : 31693  
+2021:05:21 18:44:15.389 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015106, shard_no : 7, range : 10, duration : 5701, size : 31496  
+2021:05:21 18:44:15.464 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015105, shard_no : 6, range : 10, duration : 5828, size : 31545  
+2021:05:21 18:44:15.491 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015104, shard_no : 5, range : 10, duration : 5868, size : 31827  
+2021:05:21 18:44:15.820 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015108, shard_no : 9, range : 10, duration : 4617, size : 31639  
+2021:05:21 18:44:18.375 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015109, shard_no : 10, range : 10, duration : 4277, size : 31570  
+2021:05:21 18:44:20.048 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015110, shard_no : 11, range : 10, duration : 5392, size : 31587  
+2021:05:21 18:44:20.031 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015112, shard_no : 13, range : 10, duration : 5207, size : 31495  
+2021:05:21 18:44:20.281 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015111, shard_no : 12, range : 10, duration : 5479, size : 31603  
+2021:05:21 18:44:20.836 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015113, shard_no : 14, range : 10, duration : 5587, size : 31561  
+2021:05:21 18:44:20.857 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015115, shard_no : 16, range : 10, duration : 5455, size : 31620  
+2021:05:21 18:44:21.013 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015114, shard_no : 15, range : 10, duration : 5615, size : 31674  
+2021:05:21 18:44:21.135 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015116, shard_no : 17, range : 10, duration : 5668, size : 31878  
+2021:05:21 18:44:21.148 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015117, shard_no : 18, range : 10, duration : 5653, size : 31578  
+2021:05:21 18:44:21.849 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015118, shard_no : 19, range : 10, duration : 6013, size : 31480  
+2021:05:21 18:44:22.033 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015119, shard_no : 20, range : 10, duration : 3633, size : 31496  
+2021:05:21 18:44:24.740 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015121, shard_no : 2, range : 10, duration : 4604, size : 31722  
+2021:05:21 18:44:25.580 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015120, shard_no : 1, range : 10, duration : 5522, size : 31803  
+2021:05:21 18:44:25.851 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015122, shard_no : 3, range : 10, duration : 5565, size : 31603  
+2021:05:21 18:44:27.254 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015124, shard_no : 5, range : 10, duration : 6376, size : 31501  
+2021:05:21 18:44:27.431 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015123, shard_no : 4, range : 10, duration : 6587, size : 31621  
+2021:05:21 18:44:27.499 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015126, shard_no : 7, range : 10, duration : 6357, size : 31371  
+2021:05:21 18:44:27.549 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015125, shard_no : 6, range : 10, duration : 6518, size : 31408  
+2021:05:21 18:44:27.575 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015127, shard_no : 8, range : 10, duration : 6407, size : 31794  
+2021:05:21 18:44:27.840 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015128, shard_no : 9, range : 10, duration : 5980, size : 31571  
+2021:05:21 18:44:27.901 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015129, shard_no : 10, range : 10, duration : 5865, size : 31684  
+2021:05:21 18:44:29.077 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015130, shard_no : 11, range : 10, duration : 4276, size : 31592  
+2021:05:21 18:44:30.524 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015132, shard_no : 13, range : 10, duration : 4636, size : 31852  
+2021:05:21 18:44:30.679 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015131, shard_no : 12, range : 10, duration : 5091, size : 31628  
+2021:05:21 18:44:32.771 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015133, shard_no : 14, range : 10, duration : 5505, size : 31688  
+2021:05:21 18:44:32.802 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015135, shard_no : 16, range : 10, duration : 5292, size : 31746  
+2021:05:21 18:44:32.840 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015137, shard_no : 18, range : 10, duration : 5255, size : 31349  
+2021:05:21 18:44:32.968 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015136, shard_no : 17, range : 10, duration : 5402, size : 31616  
+2021:05:21 18:44:33.096 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015134, shard_no : 15, range : 10, duration : 5660, size : 31533  
+2021:05:21 18:44:33.163 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015139, shard_no : 20, range : 10, duration : 5255, size : 31601  
+2021:05:21 18:44:33.305 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015138, shard_no : 19, range : 10, duration : 5447, size : 31470  
+2021:05:21 18:44:34.145 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015140, shard_no : 1, range : 10, duration : 5047, size : 31709  
+2021:05:21 18:44:34.701 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015141, shard_no : 2, range : 10, duration : 4152, size : 31654  
+2021:05:21 18:44:34.720 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015142, shard_no : 3, range : 10, duration : 4029, size : 31952  
+2021:05:21 18:44:37.355 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015143, shard_no : 4, range : 10, duration : 4547, size : 31503  
+2021:05:21 18:44:39.414 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015146, shard_no : 7, range : 10, duration : 6440, size : 31336  
+2021:05:21 18:44:39.492 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015144, shard_no : 5, range : 10, duration : 6671, size : 31570  
+2021:05:21 18:44:39.604 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015145, shard_no : 6, range : 10, duration : 6664, size : 31570  
+2021:05:21 18:44:39.677 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015147, shard_no : 8, range : 10, duration : 6572, size : 31676  
+2021:05:21 18:44:39.699 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015148, shard_no : 9, range : 10, duration : 6533, size : 31572  
+2021:05:21 18:44:39.886 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015149, shard_no : 10, range : 10, duration : 6493, size : 31305  
+2021:05:21 18:44:40.338 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015151, shard_no : 12, range : 10, duration : 5632, size : 31932  
+2021:05:21 18:44:40.419 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015150, shard_no : 11, range : 10, duration : 6271, size : 31619  
+2021:05:21 18:44:40.441 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015152, shard_no : 13, range : 10, duration : 5719, size : 31751  
+2021:05:21 18:44:41.177 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015153, shard_no : 14, range : 10, duration : 3812, size : 31839  
+2021:05:21 18:44:44.072 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015156, shard_no : 17, range : 10, duration : 4457, size : 31824  
+2021:05:21 18:44:44.399 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015155, shard_no : 16, range : 10, duration : 4904, size : 31382  
+2021:05:21 18:44:44.568 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015154, shard_no : 15, range : 10, duration : 5106, size : 31495  
+2021:05:21 18:44:45.076 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015157, shard_no : 18, range : 10, duration : 5392, size : 31537  
+2021:05:21 18:44:45.319 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015158, shard_no : 19, range : 10, duration : 5612, size : 31738  
+2021:05:21 18:44:45.368 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015159, shard_no : 20, range : 10, duration : 5475, size : 31867  
+2021:05:21 18:44:45.505 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015161, shard_no : 2, range : 10, duration : 5083, size : 31453  
+2021:05:21 18:44:45.836 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015160, shard_no : 1, range : 10, duration : 5491, size : 31478  
+2021:05:21 18:44:45.936 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015162, shard_no : 3, range : 10, duration : 5492, size : 31367  
+2021:05:21 18:44:46.089 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015163, shard_no : 4, range : 10, duration : 4902, size : 31413  
+2021:05:21 18:44:48.378 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015164, shard_no : 5, range : 10, duration : 4196, size : 31558  
+2021:05:21 18:44:48.916 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015165, shard_no : 6, range : 10, duration : 4506, size : 31690  
+2021:05:21 18:44:49.143 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015166, shard_no : 7, range : 10, duration : 4467, size : 31509  
+2021:05:21 18:44:50.349 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015168, shard_no : 9, range : 10, duration : 5015, size : 31656  
+2021:05:21 18:44:50.485 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015167, shard_no : 8, range : 10, duration : 5396, size : 31498  
+2021:05:21 18:44:50.863 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015169, shard_no : 10, range : 10, duration : 5484, size : 31277  
+2021:05:21 18:44:50.877 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015170, shard_no : 11, range : 10, duration : 5354, size : 31633  
+2021:05:21 18:44:51.045 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015171, shard_no : 12, range : 10, duration : 5206, size : 31901  
+2021:05:21 18:44:51.831 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015173, shard_no : 14, range : 10, duration : 5739, size : 31794  
+2021:05:21 18:44:51.863 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015172, shard_no : 13, range : 10, duration : 5917, size : 31486  
+2021:05:21 18:44:52.559 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015174, shard_no : 15, range : 10, duration : 4128, size : 31601  
+2021:05:21 18:44:52.925 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015175, shard_no : 16, range : 10, duration : 3991, size : 31443  
+2021:05:21 18:44:53.398 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015176, shard_no : 17, range : 10, duration : 4232, size : 31505  
+2021:05:21 18:44:56.324 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015177, shard_no : 18, range : 10, duration : 5969, size : 32213  
+2021:05:21 18:44:56.655 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015178, shard_no : 19, range : 10, duration : 6141, size : 31834  
+2021:05:21 18:44:56.921 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015179, shard_no : 20, range : 10, duration : 6056, size : 31736  
+2021:05:21 18:44:57.088 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015180, shard_no : 1, range : 10, duration : 6203, size : 31739  
+2021:05:21 18:44:57.300 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015181, shard_no : 2, range : 10, duration : 6235, size : 31624  
+2021:05:21 18:44:57.630 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015182, shard_no : 3, range : 10, duration : 5793, size : 31787  
+2021:05:21 18:44:57.651 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015183, shard_no : 4, range : 10, duration : 5769, size : 31231  
+2021:05:21 18:44:57.747 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015185, shard_no : 6, range : 10, duration : 4809, size : 31709  
+2021:05:21 18:44:57.779 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015184, shard_no : 5, range : 10, duration : 5207, size : 31536  
+2021:05:21 18:44:58.077 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015186, shard_no : 7, range : 10, duration : 4654, size : 31413  
+2021:05:21 18:45:00.829 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015187, shard_no : 8, range : 10, duration : 4491, size : 31939  
+2021:05:21 18:45:00.885 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015188, shard_no : 9, range : 10, duration : 4215, size : 31583  
+2021:05:21 18:45:02.359 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015192, shard_no : 13, range : 10, duration : 4712, size : 31585  
+2021:05:21 18:45:02.359 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015189, shard_no : 10, range : 10, duration : 5419, size : 31722  
+2021:05:21 18:45:02.730 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015190, shard_no : 11, range : 10, duration : 5637, size : 31778  
+2021:05:21 18:45:02.892 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015191, shard_no : 12, range : 10, duration : 5589, size : 31395  
+2021:05:21 18:45:03.069 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015195, shard_no : 16, range : 10, duration : 5288, size : 31748  
+2021:05:21 18:45:03.215 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015193, shard_no : 14, range : 10, duration : 5556, size : 31517  
+2021:05:21 18:45:04.051 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015194, shard_no : 15, range : 10, duration : 6297, size : 31887  
+2021:05:21 18:45:04.102 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015196, shard_no : 17, range : 10, duration : 6022, size : 31460  
+2021:05:21 18:45:04.645 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015198, shard_no : 19, range : 10, duration : 3756, size : 31584  
+2021:05:21 18:45:05.003 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015197, shard_no : 18, range : 10, duration : 4156, size : 31807  
+2021:05:21 18:45:07.354 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015199, shard_no : 20, range : 10, duration : 4975, size : 31868  
+2021:05:21 18:45:08.725 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015200, shard_no : 1, range : 10, duration : 6351, size : 31903  
+2021:05:21 18:45:08.887 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015201, shard_no : 2, range : 10, duration : 6137, size : 31691  
+2021:05:21 18:45:09.002 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015202, shard_no : 3, range : 10, duration : 6108, size : 31449  
+2021:05:21 18:45:09.205 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015203, shard_no : 4, range : 10, duration : 6118, size : 31370  
+2021:05:21 18:45:09.447 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015204, shard_no : 5, range : 10, duration : 6133, size : 31801  
+2021:05:21 18:45:09.549 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015206, shard_no : 7, range : 10, duration : 5436, size : 31277  
+2021:05:21 18:45:09.607 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015205, shard_no : 6, range : 10, duration : 5529, size : 31813  
+2021:05:21 18:45:09.886 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015207, shard_no : 8, range : 10, duration : 5081, size : 31988  
+2021:05:21 18:45:10.181 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015208, shard_no : 9, range : 10, duration : 5174, size : 31591  
+2021:05:21 18:45:10.619 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015209, shard_no : 10, range : 10, duration : 3183, size : 31742  
+2021:05:21 18:45:13.215 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015210, shard_no : 11, range : 10, duration : 4477, size : 31622  
+2021:05:21 18:45:13.526 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015211, shard_no : 12, range : 10, duration : 4636, size : 31809  
+2021:05:21 18:45:13.909 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015212, shard_no : 13, range : 10, duration : 4892, size : 31550  
+2021:05:21 18:45:14.561 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015213, shard_no : 14, range : 10, duration : 5340, size : 31917  
+2021:05:21 18:45:14.842 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015214, shard_no : 15, range : 10, duration : 5386, size : 31548  
+2021:05:21 18:45:15.091 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015215, shard_no : 16, range : 10, duration : 5526, size : 32106  
+2021:05:21 18:45:15.163 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015216, shard_no : 17, range : 10, duration : 5553, size : 31890  
+2021:05:21 18:45:15.389 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015217, shard_no : 18, range : 10, duration : 5490, size : 31813  
+2021:05:21 18:45:15.560 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015218, shard_no : 19, range : 10, duration : 5367, size : 31556  
+2021:05:21 18:45:16.040 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015219, shard_no : 20, range : 10, duration : 5417, size : 31702  
+2021:05:21 18:45:17.313 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015220, shard_no : 1, range : 10, duration : 4024, size : 31547  
+2021:05:21 18:45:17.591 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015221, shard_no : 2, range : 10, duration : 3899, size : 31397  
+2021:05:21 18:45:17.998 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015222, shard_no : 3, range : 10, duration : 3981, size : 31547  
+2021:05:21 18:45:19.710 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015223, shard_no : 4, range : 10, duration : 5136, size : 31863  
+2021:05:21 18:45:21.315 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015224, shard_no : 5, range : 10, duration : 6455, size : 31814  
+2021:05:21 18:45:21.478 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015226, shard_no : 7, range : 10, duration : 6236, size : 31419  
+2021:05:21 18:45:21.514 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015225, shard_no : 6, range : 10, duration : 6399, size : 31806  
+2021:05:21 18:45:21.546 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015227, shard_no : 8, range : 10, duration : 6154, size : 31878  
+2021:05:21 18:45:21.702 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015228, shard_no : 9, range : 10, duration : 6130, size : 31527  
+2021:05:21 18:45:22.143 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015229, shard_no : 10, range : 10, duration : 6081, size : 31553  
+2021:05:21 18:45:22.447 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015230, shard_no : 11, range : 10, duration : 5114, size : 31467  
+2021:05:21 18:45:22.540 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015231, shard_no : 12, range : 10, duration : 4935, size : 31670  
+2021:05:21 18:45:22.795 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015232, shard_no : 13, range : 10, duration : 4794, size : 31708  
+2021:05:21 18:45:23.060 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015233, shard_no : 14, range : 10, duration : 3347, size : 31583  
+2021:05:21 18:45:26.026 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015237, shard_no : 18, range : 10, duration : 4456, size : 31743  
+2021:05:21 18:45:26.186 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015234, shard_no : 15, range : 10, duration : 4729, size : 31519  
+2021:05:21 18:45:27.219 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015236, shard_no : 17, range : 10, duration : 5691, size : 31817  
+2021:05:21 18:45:27.250 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015235, shard_no : 16, range : 10, duration : 5758, size : 31652  
+2021:05:21 18:45:27.270 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015238, shard_no : 19, range : 10, duration : 5550, size : 31931  
+2021:05:21 18:45:27.518 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015239, shard_no : 20, range : 10, duration : 5371, size : 31665  
+2021:05:21 18:45:27.894 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015240, shard_no : 1, range : 10, duration : 5444, size : 31707  
+2021:05:21 18:45:27.942 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015241, shard_no : 2, range : 10, duration : 5389, size : 31739  
+2021:05:21 18:45:28.058 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015242, shard_no : 3, range : 10, duration : 5259, size : 31577  
+2021:05:21 18:45:28.260 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015243, shard_no : 4, range : 10, duration : 5197, size : 31576  
+2021:05:21 18:45:29.372 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015244, shard_no : 5, range : 10, duration : 3329, size : 31672  
+2021:05:21 18:45:29.639 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015245, shard_no : 6, range : 10, duration : 3429, size : 32020  
+2021:05:21 18:45:31.849 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015246, shard_no : 7, range : 10, duration : 4621, size : 31545  
+2021:05:21 18:45:32.236 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015247, shard_no : 8, range : 10, duration : 4963, size : 31574  
+2021:05:21 18:45:32.504 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015248, shard_no : 9, range : 10, duration : 5156, size : 31849  
+2021:05:21 18:45:34.295 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015249, shard_no : 10, range : 10, duration : 6766, size : 31512  
+2021:05:21 18:45:34.603 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015251, shard_no : 12, range : 10, duration : 6658, size : 31497  
+2021:05:21 18:45:34.636 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015250, shard_no : 11, range : 10, duration : 6698, size : 31461  
+2021:05:21 18:45:34.690 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015253, shard_no : 14, range : 10, duration : 6406, size : 31648  
+2021:05:21 18:45:34.909 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015252, shard_no : 13, range : 10, duration : 6847, size : 31547  
+2021:05:21 18:45:35.171 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015254, shard_no : 15, range : 10, duration : 5783, size : 31716  
+2021:05:21 18:45:35.396 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015255, shard_no : 16, range : 10, duration : 5739, size : 31570  
+2021:05:21 18:45:36.392 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015256, shard_no : 17, range : 10, duration : 4525, size : 31898  
+2021:05:21 18:45:37.138 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015257, shard_no : 18, range : 10, duration : 4899, size : 31501  
+2021:05:21 18:45:37.307 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015258, shard_no : 19, range : 10, duration : 4799, size : 31619  
+2021:05:21 18:45:39.633 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015259, shard_no : 20, range : 10, duration : 5300, size : 31579  
+2021:05:21 18:45:39.673 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015263, shard_no : 4, range : 10, duration : 4748, size : 31254  
+2021:05:21 18:45:39.795 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015261, shard_no : 2, range : 10, duration : 5153, size : 31555  
+2021:05:21 18:45:39.929 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015260, shard_no : 1, range : 10, duration : 5314, size : 31583  
+2021:05:21 18:45:39.956 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015262, shard_no : 3, range : 10, duration : 5257, size : 31766  
+2021:05:21 18:45:40.142 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015264, shard_no : 5, range : 10, duration : 4964, size : 31625  
+2021:05:21 18:45:40.275 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015265, shard_no : 6, range : 10, duration : 4859, size : 31567  
+2021:05:21 18:45:41.333 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015266, shard_no : 7, range : 10, duration : 4923, size : 31409  
+2021:05:21 18:45:41.452 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015267, shard_no : 8, range : 10, duration : 4271, size : 31653  
+2021:05:21 18:45:41.494 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015268, shard_no : 9, range : 10, duration : 4176, size : 31577  
+2021:05:21 18:45:44.226 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015271, shard_no : 12, range : 10, duration : 4428, size : 31166  
+2021:05:21 18:45:45.152 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015269, shard_no : 10, range : 10, duration : 5502, size : 31320  
+2021:05:21 18:45:46.199 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015270, shard_no : 11, range : 10, duration : 6524, size : 31620  
+2021:05:21 18:45:46.511 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015272, shard_no : 13, range : 10, duration : 6580, size : 31585  
+2021:05:21 18:45:46.574 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015273, shard_no : 14, range : 10, duration : 6610, size : 31675  
+2021:05:21 18:45:46.726 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015274, shard_no : 15, range : 10, duration : 6569, size : 31502  
+2021:05:21 18:45:46.823 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015275, shard_no : 16, range : 10, duration : 6545, size : 31536  
+2021:05:21 18:45:47.030 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015276, shard_no : 17, range : 10, duration : 5681, size : 31498  
+2021:05:21 18:45:47.043 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015278, shard_no : 19, range : 10, duration : 5546, size : 31497  
+2021:05:21 18:45:47.065 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015277, shard_no : 18, range : 10, duration : 5610, size : 31606  
+2021:05:21 18:45:47.539 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015279, shard_no : 20, range : 10, duration : 3304, size : 31680  
+2021:05:21 18:45:51.202 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015281, shard_no : 2, range : 10, duration : 4997, size : 31828  
+2021:05:21 18:45:51.686 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015280, shard_no : 1, range : 10, duration : 5510, size : 31967  
+2021:05:21 18:45:51.800 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015284, shard_no : 5, range : 10, duration : 5035, size : 31627  
+2021:05:21 18:45:51.931 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015283, shard_no : 4, range : 10, duration : 5351, size : 31576  
+2021:05:21 18:45:51.951 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015282, shard_no : 3, range : 10, duration : 5431, size : 31904  
+2021:05:21 18:45:52.151 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015287, shard_no : 8, range : 10, duration : 5104, size : 31728  
+2021:05:21 18:45:52.193 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015285, shard_no : 6, range : 10, duration : 5355, size : 31751  
+2021:05:21 18:45:52.362 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015288, shard_no : 9, range : 10, duration : 5294, size : 31656  
+2021:05:21 18:45:52.395 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015286, shard_no : 7, range : 10, duration : 5362, size : 31887  
+2021:05:21 18:45:52.453 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015289, shard_no : 10, range : 10, duration : 4911, size : 31635  
+2021:05:21 18:45:55.815 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015290, shard_no : 11, range : 10, duration : 4509, size : 31809  
+2021:05:21 18:45:56.565 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015291, shard_no : 12, range : 10, duration : 4809, size : 31488  
+2021:05:21 18:45:57.523 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015292, shard_no : 13, range : 10, duration : 5714, size : 31972  
+2021:05:21 18:45:57.732 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015296, shard_no : 17, range : 10, duration : 5527, size : 31875  
+2021:05:21 18:45:57.827 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015294, shard_no : 15, range : 10, duration : 5873, size : 31614  
+2021:05:21 18:45:57.863 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015295, shard_no : 16, range : 10, duration : 5699, size : 31350  
+2021:05:21 18:45:58.006 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015293, shard_no : 14, range : 10, duration : 6071, size : 31495  
+2021:05:21 18:45:58.057 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015298, shard_no : 19, range : 10, duration : 5652, size : 31520  
+2021:05:21 18:45:58.161 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015299, shard_no : 20, range : 10, duration : 5705, size : 31608  
+2021:05:21 18:45:58.168 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015297, shard_no : 18, range : 10, duration : 5795, size : 31857  
+2021:05:21 18:45:59.061 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015300, shard_no : 1, range : 10, duration : 3227, size : 31511  
+2021:05:21 18:45:59.416 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015301, shard_no : 2, range : 10, duration : 2744, size : 31654  
+2021:05:21 18:46:02.082 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015302, shard_no : 3, range : 10, duration : 4527, size : 31521  
+2021:05:21 18:46:04.801 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015305, shard_no : 6, range : 10, duration : 6934, size : 31586  
+2021:05:21 18:46:04.812 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015303, shard_no : 4, range : 10, duration : 7065, size : 31740  
+2021:05:21 18:46:05.031 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015304, shard_no : 5, range : 10, duration : 7195, size : 31739  
+2021:05:21 18:46:05.126 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015307, shard_no : 8, range : 10, duration : 7056, size : 31636  
+2021:05:21 18:46:05.177 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015308, shard_no : 9, range : 10, duration : 7013, size : 31771  
+2021:05:21 18:46:05.194 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015306, shard_no : 7, range : 10, duration : 7173, size : 31560  
+2021:05:21 18:46:05.253 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015309, shard_no : 10, range : 10, duration : 7083, size : 31918  
+2021:05:21 18:46:05.318 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015310, shard_no : 11, range : 10, duration : 6252, size : 31430  
+2021:05:21 18:46:05.423 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015311, shard_no : 12, range : 10, duration : 6004, size : 31570  
+2021:05:21 18:46:05.785 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015312, shard_no : 13, range : 10, duration : 3679, size : 31392  
+2021:05:21 18:46:09.685 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015313, shard_no : 14, range : 10, duration : 4860, size : 31642  
+2021:05:21 18:46:10.098 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015314, shard_no : 15, range : 10, duration : 5266, size : 31520  
+2021:05:21 18:46:10.743 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015317, shard_no : 18, range : 10, duration : 5550, size : 31355  
+2021:05:21 18:46:10.893 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015318, shard_no : 19, range : 10, duration : 5694, size : 31343  
+2021:05:21 18:46:10.892 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015315, shard_no : 16, range : 10, duration : 5859, size : 31451  
+2021:05:21 18:46:11.158 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015316, shard_no : 17, range : 10, duration : 6007, size : 31552  
+2021:05:21 18:46:11.177 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015319, shard_no : 20, range : 10, duration : 5904, size : 31672  
+2021:05:21 18:46:11.207 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015320, shard_no : 1, range : 10, duration : 5887, size : 31601  
+2021:05:21 18:46:11.213 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015322, shard_no : 3, range : 10, duration : 5425, size : 31652  
+2021:05:21 18:46:11.337 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015321, shard_no : 2, range : 10, duration : 5909, size : 31790  
+2021:05:21 18:46:13.593 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015323, shard_no : 4, range : 10, duration : 3895, size : 31592  
+2021:05:21 18:46:14.400 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015324, shard_no : 5, range : 10, duration : 4298, size : 31539  
+2021:05:21 18:46:15.730 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015325, shard_no : 6, range : 10, duration : 4984, size : 31300  
+2021:05:21 18:46:16.255 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015326, shard_no : 7, range : 10, duration : 5349, size : 31579  
+2021:05:21 18:46:16.427 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015327, shard_no : 8, range : 10, duration : 5516, size : 31620  
+2021:05:21 18:46:16.726 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015330, shard_no : 11, range : 10, duration : 5517, size : 31665  
+2021:05:21 18:46:16.737 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015329, shard_no : 10, range : 10, duration : 5530, size : 31462  
+2021:05:21 18:46:16.854 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015328, shard_no : 9, range : 10, duration : 5657, size : 31604  
+2021:05:21 18:46:17.488 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015331, shard_no : 12, range : 10, duration : 6273, size : 31713  
+2021:05:21 18:46:17.543 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015332, shard_no : 13, range : 10, duration : 6204, size : 31538  
+2021:05:21 18:46:17.963 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015333, shard_no : 14, range : 10, duration : 4234, size : 31717  
+2021:05:21 18:46:17.989 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015334, shard_no : 15, range : 10, duration : 3587, size : 31726  
+2021:05:21 18:46:18.472 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015335, shard_no : 16, range : 10, duration : 2717, size : 31485  
+2021:05:21 18:46:20.307 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015336, shard_no : 17, range : 10, duration : 4043, size : 31335  
+2021:05:21 18:46:21.900 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015337, shard_no : 18, range : 10, duration : 5471, size : 31891  
+2021:05:21 18:46:22.331 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015338, shard_no : 19, range : 10, duration : 5479, size : 31449  
+2021:05:21 18:46:22.453 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015338, shard_no : 19, range : 10, duration : 5601, size : 31449  
+2021:05:21 18:46:23.079 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015339, shard_no : 20, range : 10, duration : 5618, size : 31240  
+2021:05:21 18:46:23.369 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015340, shard_no : 1, range : 10, duration : 5878, size : 31468  
+2021:05:21 18:46:23.381 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015341, shard_no : 2, range : 10, duration : 5836, size : 31829  
+2021:05:21 18:46:24.104 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015342, shard_no : 3, range : 10, duration : 6135, size : 31514  
+2021:05:21 18:46:24.148 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015343, shard_no : 4, range : 10, duration : 6156, size : 31229  
+2021:05:21 18:46:24.227 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015344, shard_no : 5, range : 10, duration : 5750, size : 31562  
+2021:05:21 18:46:24.597 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015345, shard_no : 6, range : 10, duration : 4197, size : 31726  
+2021:05:21 18:46:25.011 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015346, shard_no : 7, range : 10, duration : 3106, size : 31756  
+2021:05:21 18:46:25.651 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015347, shard_no : 8, range : 10, duration : 3318, size : 31527  
+2021:05:21 18:46:26.700 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015348, shard_no : 9, range : 10, duration : 4207, size : 31385  
+2021:05:21 18:46:28.389 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015349, shard_no : 10, range : 10, duration : 5305, size : 31798  
+2021:05:21 18:46:29.454 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015350, shard_no : 11, range : 10, duration : 5428, size : 31617  
+2021:05:21 18:46:29.727 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015352, shard_no : 13, range : 10, duration : 5613, size : 31526  
+2021:05:21 18:46:29.732 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015351, shard_no : 12, range : 10, duration : 5705, size : 31411  
+2021:05:21 18:46:29.830 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015354, shard_no : 15, range : 10, duration : 5594, size : 31790  
+2021:05:21 18:46:29.840 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015353, shard_no : 14, range : 10, duration : 5690, size : 31727  
+2021:05:21 18:46:30.003 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015356, shard_no : 17, range : 10, duration : 4989, size : 31576  
+2021:05:21 18:46:30.021 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015355, shard_no : 16, range : 10, duration : 5417, size : 31593  
+2021:05:21 18:46:30.295 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015357, shard_no : 18, range : 10, duration : 4635, size : 31686  
+2021:05:21 18:46:30.423 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015358, shard_no : 19, range : 10, duration : 3711, size : 31871  
+2021:05:21 18:46:31.556 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015359, shard_no : 20, range : 10, duration : 3154, size : 31801  
+2021:05:21 18:46:35.121 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015360, shard_no : 1, range : 10, duration : 5553, size : 31722  
+2021:05:21 18:46:35.239 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015362, shard_no : 3, range : 10, duration : 5487, size : 31477  
+2021:05:21 18:46:35.366 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015363, shard_no : 4, range : 10, duration : 5525, size : 31505  
+2021:05:21 18:46:35.479 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015361, shard_no : 2, range : 10, duration : 5731, size : 31381  
+2021:05:21 18:46:35.807 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015364, shard_no : 5, range : 10, duration : 5963, size : 31748  
+2021:05:21 18:46:35.913 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015366, shard_no : 7, range : 10, duration : 5890, size : 31517  
+2021:05:21 18:46:36.836 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015367, shard_no : 8, range : 10, duration : 6538, size : 31444  
+2021:05:21 18:46:36.840 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015368, shard_no : 9, range : 10, duration : 6414, size : 31606  
+2021:05:21 18:46:36.837 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015365, shard_no : 6, range : 10, duration : 6829, size : 31735  
+2021:05:21 18:46:37.016 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015369, shard_no : 10, range : 10, duration : 5456, size : 31460  
+2021:05:21 18:46:39.519 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015371, shard_no : 12, range : 10, duration : 4261, size : 31724  
+2021:05:21 18:46:40.078 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015370, shard_no : 11, range : 10, duration : 4934, size : 31709  
+2021:05:21 18:46:41.446 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015373, shard_no : 14, range : 10, duration : 5958, size : 31355  
+2021:05:21 18:46:41.483 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015372, shard_no : 13, range : 10, duration : 6103, size : 31545  
+2021:05:21 18:46:41.749 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015375, shard_no : 16, range : 10, duration : 5817, size : 31460  
+2021:05:21 18:46:41.875 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015374, shard_no : 15, range : 10, duration : 6064, size : 31487  
+2021:05:21 18:46:42.269 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015378, shard_no : 19, range : 10, duration : 5418, size : 31553  
+2021:05:21 18:46:42.271 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015379, shard_no : 20, range : 10, duration : 5253, size : 31560  
+2021:05:21 18:46:42.365 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015376, shard_no : 17, range : 10, duration : 5522, size : 31520  
+2021:05:21 18:46:42.471 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015377, shard_no : 18, range : 10, duration : 5627, size : 31596  
+2021:05:21 18:46:43.015 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015380, shard_no : 1, range : 10, duration : 3455, size : 31669  
+2021:05:21 18:46:45.893 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015381, shard_no : 2, range : 10, duration : 4911, size : 31706  
+2021:05:21 18:46:46.779 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015383, shard_no : 4, range : 10, duration : 5281, size : 31530  
+2021:05:21 18:46:46.894 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015384, shard_no : 5, range : 10, duration : 5131, size : 31446  
+2021:05:21 18:46:47.165 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015385, shard_no : 6, range : 10, duration : 5160, size : 31644  
+2021:05:21 18:46:47.188 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015382, shard_no : 3, range : 10, duration : 5733, size : 31626  
+2021:05:21 18:46:47.443 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015387, shard_no : 8, range : 10, duration : 5159, size : 31685  
+2021:05:21 18:46:47.601 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015386, shard_no : 7, range : 10, duration : 5319, size : 31448  
+2021:05:21 18:46:47.675 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015389, shard_no : 10, range : 10, duration : 5194, size : 31227  
+2021:05:21 18:46:47.795 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015388, shard_no : 9, range : 10, duration : 5425, size : 31728  
+2021:05:21 18:46:47.846 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015390, shard_no : 11, range : 10, duration : 4829, size : 31415  
+2021:05:21 18:46:48.926 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015391, shard_no : 12, range : 10, duration : 3031, size : 31615  
+2021:05:21 18:46:51.711 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015393, shard_no : 14, range : 10, duration : 4792, size : 31546  
+2021:05:21 18:46:51.839 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015392, shard_no : 13, range : 10, duration : 4959, size : 31374  
+2021:05:21 18:46:53.050 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015395, shard_no : 16, range : 10, duration : 5860, size : 31754  
+2021:05:21 18:46:53.193 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015394, shard_no : 15, range : 10, duration : 6025, size : 31675  
+2021:05:21 18:46:53.350 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015396, shard_no : 17, range : 10, duration : 5894, size : 31430  
+2021:05:21 18:46:53.392 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015397, shard_no : 18, range : 10, duration : 5789, size : 31269  
+2021:05:21 18:46:54.206 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015400, shard_no : 1, range : 10, duration : 6358, size : 31544  
+2021:05:21 18:46:54.296 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015398, shard_no : 19, range : 10, duration : 6615, size : 31749  
+2021:05:21 18:46:54.369 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015399, shard_no : 20, range : 10, duration : 6564, size : 31911  
+2021:05:21 18:46:54.434 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015401, shard_no : 2, range : 10, duration : 5499, size : 31771  
+2021:05:21 18:46:55.007 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015403, shard_no : 4, range : 10, duration : 3163, size : 31668  
+2021:05:21 18:46:55.082 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015402, shard_no : 3, range : 10, duration : 3361, size : 31552  
+2021:05:21 18:46:58.448 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015404, shard_no : 5, range : 10, duration : 5384, size : 31769  
+2021:05:21 18:46:58.508 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015405, shard_no : 6, range : 10, duration : 5313, size : 31800  
+2021:05:21 18:46:58.571 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015406, shard_no : 7, range : 10, duration : 5205, size : 31319  
+2021:05:21 18:46:59.797 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015408, shard_no : 9, range : 10, duration : 5557, size : 31517  
+2021:05:21 18:46:59.915 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015409, shard_no : 10, range : 10, duration : 5617, size : 31785  
+2021:05:21 18:46:59.923 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015407, shard_no : 8, range : 10, duration : 6528, size : 31686  
+2021:05:21 18:47:00.006 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015410, shard_no : 11, range : 10, duration : 5632, size : 31914  
+2021:05:21 18:46:59.991 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015411, shard_no : 12, range : 10, duration : 5555, size : 31842  
+2021:05:21 18:47:00.107 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015413, shard_no : 14, range : 10, duration : 5022, size : 31644  
+2021:05:21 18:47:00.153 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015412, shard_no : 13, range : 10, duration : 5143, size : 31882  
+2021:05:21 18:47:02.060 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015414, shard_no : 15, range : 10, duration : 3591, size : 31626  
+2021:05:21 18:47:03.068 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015415, shard_no : 16, range : 10, duration : 4557, size : 31524  
+2021:05:21 18:47:03.471 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015416, shard_no : 17, range : 10, duration : 4895, size : 31699  
+2021:05:21 18:47:05.677 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015419, shard_no : 20, range : 10, duration : 5679, size : 31436  
+2021:05:21 18:47:06.879 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015421, shard_no : 2, range : 10, duration : 6867, size : 31746  
+2021:05:21 18:47:06.880 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015423, shard_no : 4, range : 10, duration : 6724, size : 31391  
+2021:05:21 18:47:06.896 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015418, shard_no : 19, range : 10, duration : 6911, size : 31718  
+2021:05:21 18:47:06.928 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015417, shard_no : 18, range : 10, duration : 7119, size : 31326  
+2021:05:21 18:47:06.967 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015422, shard_no : 3, range : 10, duration : 6847, size : 31514  
+2021:05:21 18:47:07.124 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015420, shard_no : 1, range : 10, duration : 7114, size : 31719  
+2021:05:21 18:47:07.515 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015424, shard_no : 5, range : 10, duration : 5445, size : 31594  
+2021:05:21 18:47:07.707 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015425, shard_no : 6, range : 10, duration : 4637, size : 31376  
+2021:05:21 18:47:07.841 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015426, shard_no : 7, range : 10, duration : 4367, size : 31327  
+2021:05:21 18:47:09.126 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015427, shard_no : 8, range : 10, duration : 3446, size : 31664  
+2021:05:21 18:47:12.295 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015428, shard_no : 9, range : 10, duration : 5407, size : 31691  
+2021:05:21 18:47:12.455 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015433, shard_no : 14, range : 10, duration : 5317, size : 31770  
+2021:05:21 18:47:12.456 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015431, shard_no : 12, range : 10, duration : 5523, size : 31688  
+2021:05:21 18:47:12.490 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015432, shard_no : 13, range : 10, duration : 5516, size : 31475  
+2021:05:21 18:47:12.616 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015429, shard_no : 10, range : 10, duration : 5709, size : 31416  
+2021:05:21 18:47:12.863 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015430, shard_no : 11, range : 10, duration : 5955, size : 31364  
+2021:05:21 18:47:13.014 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015434, shard_no : 15, range : 10, duration : 5497, size : 31436  
+2021:05:21 18:47:13.037 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015435, shard_no : 16, range : 10, duration : 5323, size : 31200  
+2021:05:21 18:47:13.170 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015436, shard_no : 17, range : 10, duration : 5324, size : 31618  
+2021:05:21 18:47:13.671 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015437, shard_no : 18, range : 10, duration : 4527, size : 31988  
+2021:05:21 18:47:17.703 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015438, shard_no : 19, range : 10, duration : 5377, size : 31675  
+2021:05:21 18:47:18.131 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015439, shard_no : 20, range : 10, duration : 5667, size : 31291  
+2021:05:21 18:47:18.228 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015441, shard_no : 2, range : 10, duration : 5664, size : 31253  
+2021:05:21 18:47:18.532 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015442, shard_no : 3, range : 10, duration : 5885, size : 31712  
+2021:05:21 18:47:18.551 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015440, shard_no : 1, range : 10, duration : 6076, size : 31671  
+2021:05:21 18:47:18.852 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015444, shard_no : 5, range : 10, duration : 5830, size : 31643  
+2021:05:21 18:47:18.857 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015446, shard_no : 7, range : 10, duration : 5684, size : 31453  
+2021:05:21 18:47:19.519 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015443, shard_no : 4, range : 10, duration : 6649, size : 31656  
+2021:05:21 18:47:19.593 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015445, shard_no : 6, range : 10, duration : 6547, size : 31735  
+2021:05:21 18:47:19.638 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015447, shard_no : 8, range : 10, duration : 5964, size : 31524  
+2021:05:21 18:47:20.216 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015448, shard_no : 9, range : 10, duration : 2504, size : 31855  
+2021:05:21 18:47:22.488 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015450, shard_no : 11, range : 10, duration : 4252, size : 31683  
+2021:05:21 18:47:23.029 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015449, shard_no : 10, range : 10, duration : 4895, size : 31765  
+2021:05:21 18:47:23.158 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015451, shard_no : 12, range : 10, duration : 4617, size : 31589  
+2021:05:21 18:47:24.532 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015452, shard_no : 13, range : 10, duration : 5976, size : 31863  
+2021:05:21 18:47:25.408 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015453, shard_no : 14, range : 10, duration : 6545, size : 31806  
+2021:05:21 18:47:25.457 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015457, shard_no : 18, range : 10, duration : 5817, size : 31639  
+2021:05:21 18:47:25.645 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015456, shard_no : 17, range : 10, duration : 6043, size : 31281  
+2021:05:21 18:47:25.649 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015455, shard_no : 16, range : 10, duration : 6114, size : 31287  
+2021:05:21 18:47:25.650 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015454, shard_no : 15, range : 10, duration : 6194, size : 31675  
+2021:05:21 18:47:25.674 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015458, shard_no : 19, range : 10, duration : 5456, size : 31555  
+2021:05:21 18:47:26.839 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015459, shard_no : 20, range : 10, duration : 4349, size : 31694  
+2021:05:21 18:47:27.801 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015461, shard_no : 2, range : 10, duration : 4612, size : 31567  
+2021:05:21 18:47:27.793 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015460, shard_no : 1, range : 10, duration : 4760, size : 31782  
+2021:05:21 18:47:29.480 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015462, shard_no : 3, range : 10, duration : 4930, size : 31755  
+2021:05:21 18:47:30.552 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015463, shard_no : 4, range : 10, duration : 5126, size : 31759  
+2021:05:21 18:47:30.827 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015464, shard_no : 5, range : 10, duration : 5346, size : 31863  
+2021:05:21 18:47:30.832 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015465, shard_no : 6, range : 10, duration : 5157, size : 31859  
+2021:05:21 18:47:30.850 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015465, shard_no : 6, range : 10, duration : 5175, size : 31859  
+2021:05:21 18:47:30.951 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015466, shard_no : 7, range : 10, duration : 5274, size : 31624  
+2021:05:21 18:47:31.592 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015467, shard_no : 8, range : 10, duration : 5914, size : 31729  
+2021:05:21 18:47:32.058 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015470, shard_no : 11, range : 10, duration : 4247, size : 31625  
+2021:05:21 18:47:32.122 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015468, shard_no : 9, range : 10, duration : 5276, size : 31886  
+2021:05:21 18:47:32.148 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015469, shard_no : 10, range : 10, duration : 4343, size : 31740  
+2021:05:21 18:47:32.522 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015471, shard_no : 12, range : 10, duration : 3037, size : 31697  
+2021:05:21 18:47:36.414 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015473, shard_no : 14, range : 10, duration : 5579, size : 31599  
+2021:05:21 18:47:36.591 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015475, shard_no : 16, range : 10, duration : 5647, size : 31493  
+2021:05:21 18:47:36.619 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015476, shard_no : 17, range : 10, duration : 5650, size : 31587  
+2021:05:21 18:47:36.773 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015472, shard_no : 13, range : 10, duration : 6217, size : 31564  
+2021:05:21 18:47:37.120 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015474, shard_no : 15, range : 10, duration : 6275, size : 31645  
+2021:05:21 18:47:37.424 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015477, shard_no : 18, range : 10, duration : 5814, size : 31500  
+2021:05:21 18:47:38.628 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015480, shard_no : 1, range : 10, duration : 6478, size : 31731  
+2021:05:21 18:47:38.641 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015479, shard_no : 20, range : 10, duration : 6517, size : 31683  
+2021:05:21 18:47:38.677 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015478, shard_no : 19, range : 10, duration : 6611, size : 31623  
+2021:05:21 18:47:38.788 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015481, shard_no : 2, range : 10, duration : 6263, size : 31430  
+2021:05:21 18:47:41.524 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015483, shard_no : 4, range : 10, duration : 4916, size : 31738  
+2021:05:21 18:47:42.700 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015482, shard_no : 3, range : 10, duration : 6268, size : 31501  
+2021:05:21 18:47:42.797 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015485, shard_no : 6, range : 10, duration : 6009, size : 31694  
+2021:05:21 18:47:43.077 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015484, shard_no : 5, range : 10, duration : 6433, size : 31353  
+2021:05:21 18:47:43.117 INFO  --- [http-nio-8081-exec-5] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015486, shard_no : 7, range : 10, duration : 5995, size : 31481  
+2021:05:21 18:47:43.483 INFO  --- [http-nio-8081-exec-4] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015487, shard_no : 8, range : 10, duration : 6030, size : 31661  
+2021:05:21 18:47:43.737 INFO  --- [http-nio-8081-exec-6] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015490, shard_no : 11, range : 10, duration : 5047, size : 31710  
+2021:05:21 18:47:43.964 INFO  --- [http-nio-8081-exec-1] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015489, shard_no : 10, range : 10, duration : 5312, size : 31690  
+2021:05:21 18:47:44.073 INFO  --- [http-nio-8081-exec-7] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015491, shard_no : 12, range : 10, duration : 5283, size : 31375  
+2021:05:21 18:47:44.083 INFO  --- [http-nio-8081-exec-9] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015488, shard_no : 9, range : 10, duration : 5451, size : 31587  
+2021:05:21 18:47:44.594 INFO  --- [http-nio-8081-exec-11] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015492, shard_no : 13, range : 10, duration : 3035, size : 31643  
+2021:05:21 18:47:46.126 INFO  --- [http-nio-8081-exec-8] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015493, shard_no : 14, range : 10, duration : 3418, size : 31414  
+2021:05:21 18:47:46.240 INFO  --- [http-nio-8081-exec-10] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015496, shard_no : 17, range : 10, duration : 3121, size : 31621  
+2021:05:21 18:47:46.256 INFO  --- [http-nio-8081-exec-2] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015494, shard_no : 15, range : 10, duration : 3452, size : 31540  
+2021:05:21 18:47:46.372 INFO  --- [http-nio-8081-exec-3] com.cnc.rating.service.QueryService : service_mgmt_no : 7000015495, shard_no : 16, range : 10, duration : 3288, size : 31456  
+2021:05:21 18:48:03.211 INFO  --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2021:05:21 18:48:03.213 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-20 - Shutdown initiated... 
+2021:05:21 18:48:03.222 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-20 - Shutdown completed. 
+2021:05:21 18:48:03.223 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-19 - Shutdown initiated... 
+2021:05:21 18:48:03.229 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-19 - Shutdown completed. 
+2021:05:21 18:48:03.229 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-18 - Shutdown initiated... 
+2021:05:21 18:48:03.232 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-18 - Shutdown completed. 
+2021:05:21 18:48:03.232 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-17 - Shutdown initiated... 
+2021:05:21 18:48:03.233 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-17 - Shutdown completed. 
+2021:05:21 18:48:03.233 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-16 - Shutdown initiated... 
+2021:05:21 18:48:03.235 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-16 - Shutdown completed. 
+2021:05:21 18:48:03.235 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-15 - Shutdown initiated... 
+2021:05:21 18:48:03.239 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-15 - Shutdown completed. 
+2021:05:21 18:48:03.239 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-14 - Shutdown initiated... 
+2021:05:21 18:48:03.243 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-14 - Shutdown completed. 
+2021:05:21 18:48:03.243 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-12 - Shutdown initiated... 
+2021:05:21 18:48:03.244 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-12 - Shutdown completed. 
+2021:05:21 18:48:03.244 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-13 - Shutdown initiated... 
+2021:05:21 18:48:03.247 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-13 - Shutdown completed. 
+2021:05:21 18:48:03.247 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-11 - Shutdown initiated... 
+2021:05:21 18:48:03.248 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-11 - Shutdown completed. 
+2021:05:21 18:48:03.248 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-10 - Shutdown initiated... 
+2021:05:21 18:48:03.251 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-10 - Shutdown completed. 
+2021:05:21 18:48:03.251 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-5 - Shutdown initiated... 
+2021:05:21 18:48:03.252 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-5 - Shutdown completed. 
+2021:05:21 18:48:03.252 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-7 - Shutdown initiated... 
+2021:05:21 18:48:03.255 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-7 - Shutdown completed. 
+2021:05:21 18:48:03.255 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-9 - Shutdown initiated... 
+2021:05:21 18:48:03.260 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-9 - Shutdown completed. 
+2021:05:21 18:48:03.260 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-8 - Shutdown initiated... 
+2021:05:21 18:48:03.262 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-8 - Shutdown completed. 
+2021:05:21 18:48:03.262 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-3 - Shutdown initiated... 
+2021:05:21 18:48:03.263 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-3 - Shutdown completed. 
+2021:05:21 18:48:03.264 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-4 - Shutdown initiated... 
+2021:05:21 18:48:03.265 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-4 - Shutdown completed. 
+2021:05:21 18:48:03.265 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-6 - Shutdown initiated... 
+2021:05:21 18:48:03.266 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-6 - Shutdown completed. 
+2021:05:21 18:48:03.267 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Shutdown initiated... 
+2021:05:21 18:48:03.269 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-2 - Shutdown completed. 
+2021:05:21 18:48:03.269 INFO  --- [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021:05:21 18:48:03.271 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:05:21 18:48:03.272 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 
