@@ -36,6 +36,8 @@ dependencies {
     runtimeOnly 'mysql:mysql-connector-java'
     runtimeOnly 'org.mariadb.jdbc:mariadb-java-client'
 
+    runtimeOnly 'org.postgresql:postgresql'
+
     implementation group: 'org.mybatis.spring.boot', name: 'mybatis-spring-boot-starter', version: '2.1.4'
 
 //    implementation group: 'org.apache.shardingsphere', name: 'sharding-jdbc-spring-boot-starter', version: '4.1.1'
