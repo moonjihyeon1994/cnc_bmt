@@ -21,10 +21,10 @@ spring:
 app:
   datasource:
     client:
-#      jdbc-url: jdbc:postgresql://bss-bmt-kc-urt-postgresql-c.postgres.database.azure.com:5432/bmtdb
-      jdbc-url: jdbc:postgresql://localhost:5432/bmtdb
-#      username: bmtstat3
-      username: postgres
-#      password: djqjdlskf12!
-      password: password
+      jdbc-url: jdbc:postgresql://bss-bmt-kc-urt-postgresql-c.postgres.database.azure.com:5432/bmtdb
+#      jdbc-url: jdbc:postgresql://localhost:5432/bmtdb
+      username: bmtstat3
+#      username: postgres
+      password: djqjdlskf12!
+#      password: password
       driver-class-name: org.postgresql.Driver
