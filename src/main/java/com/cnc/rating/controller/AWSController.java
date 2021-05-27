@@ -21,7 +21,7 @@ import static com.cnc.rating.config.SpringProfile.*;
 @Profile({DEV, TEST, PROD})
 @RequiredArgsConstructor
 @RestController
-public class Controller {
+public class AWSController {
 
     private final QueryService queryService;
     public static long shardNum = 0;
@@ -62,7 +62,6 @@ public class Controller {
         long service_mgmt_no = base_num + shardNum++;
 
         List<HashMap<String, Object>> result = queryService.selectCDRByMonth(service_mgmt_no, currentDate, rangeMonth);
-
         return true;
     }
 }

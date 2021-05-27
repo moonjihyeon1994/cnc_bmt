@@ -32,7 +32,7 @@ public class AzureDBConfig {
         SqlSessionFactoryBean sqlSession = new SqlSessionFactoryBean();
         sqlSession.setDataSource(clientDataSource());
         sqlSession.setConfigLocation(applicationContext.getResource("classpath:/mapper/mybatis-config.xml"));
-        sqlSession.setMapperLocations(applicationContext.getResources("classpath:/mapper/*Mapper.xml"));
+        sqlSession.setMapperLocations(applicationContext.getResources("classpath:/mapper/postgresMapper.xml"));
         return sqlSession.getObject();
     }
 
