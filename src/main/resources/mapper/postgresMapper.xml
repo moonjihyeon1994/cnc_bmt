@@ -90,14 +90,14 @@
             dialed_no,
             called_no
             from bmtstat3.${table} a
-#             RIGHT OUTER JOIN ui_minor_code b
-#             on a.ag_service_type = b.code_id
+--             RIGHT OUTER JOIN ui_minor_code b
+--            on a.ag_service_type = b.code_id
             WHERE service_mgmt_no = #{service_mgmt_no}
             AND usg_start_date >= #{startDate}
             AND usg_start_date &lt;= #{endDate}
             AND concat(usg_start_date, usg_start_time) >= #{startDateTime}
             AND concat(usg_start_date, usg_start_time) &lt;= #{endDateTime}
-#             AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
+--            AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
             AND coalesce(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP') as a
         </foreach>
     </select>
