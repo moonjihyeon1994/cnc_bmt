@@ -84,7 +84,7 @@
             dialed_no,
             called_no
             from bmtstat3.${table} a
-            WHERE service_mgmt_no = #{service_mgmt_no};
+            WHERE service_mgmt_no = #{service_mgmt_no}
         </foreach>
     </select>
     <select id="selectSub1" parameterType="HashMap" resultType="map">
