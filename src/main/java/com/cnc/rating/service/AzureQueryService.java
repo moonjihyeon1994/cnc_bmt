@@ -88,7 +88,7 @@ public class AzureQueryService {
         params.put("startDateTime", "202005" + currentDate + "0000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
 
-        log.info("service_mgmt_no : {}, range : {} ", service_mgmt_no, rangeMonth);
+//        log.info("service_mgmt_no : {}, range : {} ", service_mgmt_no, rangeMonth);
         List<HashMap<String, Object>> result = ratingRepository.selectSub(params);
 
         log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
