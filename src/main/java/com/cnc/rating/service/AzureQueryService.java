@@ -1,7 +1,6 @@
 package com.cnc.rating.service;
 
 import com.cnc.rating.repository.AzureRatingRepository;
-import com.cnc.rating.repository.RatingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Profile;
@@ -12,7 +11,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
-import static com.cnc.rating.config.SpringProfile.*;
+import static com.cnc.rating.config.SpringProfile.AZURE;
 
 @Slf4j
 @Profile({AZURE})
@@ -24,6 +23,7 @@ public class AzureQueryService {
 
     /**
      * CDR 조회
+     *
      * @param service_mgmt_no 서비스 관리 번호
      * @param startDateTime   시작
      * @param endDateTime     끝
@@ -81,12 +81,14 @@ public class AzureQueryService {
         long currentTimeMillis = System.currentTimeMillis();
 
         HashMap<String, Object> params = new HashMap<>();
-        params.put("service_mgmt_no", service_mgmt_no);
+        params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
         params.put("tables", list.toArray(String[]::new));
         params.put("startDate", "202005");
         params.put("endDate", dateFormat.format(calendar.getTime()));
         params.put("startDateTime", "202005" + currentDate + "0000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
+
+        log.info("service_mgmt_no : {}, range : {} ", service_mgmt_no, rangeMonth);
         List<HashMap<String, Object>> result = ratingRepository.selectSub(params);
 
         log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
