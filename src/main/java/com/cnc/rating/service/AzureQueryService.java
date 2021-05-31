@@ -94,4 +94,35 @@ public class AzureQueryService {
         log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
         return result;
     }
+
+    /**
+     * @param service_mgmt_no 서비스 관리번호
+     * @param rangeMonth      범위
+     * @return
+     * @throws ParseException
+     */
+    public List<HashMap<String, Object>> selectOnlyService(long service_mgmt_no, int rangeMonth) throws ParseException {
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
+        Calendar calendar = Calendar.getInstance();
+        Date date = dateFormat.parse("202005");
+        calendar.setTime(date);
+
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < rangeMonth; i++) {
+            list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
+            calendar.add(Calendar.MONTH, 1);
+        }
+        list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
+
+        long currentTimeMillis = System.currentTimeMillis();
+
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
+        params.put("tables", list.toArray(String[]::new));
+
+        List<HashMap<String, Object>> result = ratingRepository.selectSub(params);
+
+        log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
+        return result;
+    }
 }

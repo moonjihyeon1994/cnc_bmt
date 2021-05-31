@@ -28,4 +28,8 @@ public class AzureRatingRepository {
         return clientSqlSessionTemplate.selectList(namespace + "selectSub", params);
     }
 
+    public List<HashMap<String, Object>> selectOnlyService(HashMap<String, Object> params) {
+        return clientSqlSessionTemplate.selectList(namespace + "selectOnlyService", params);
+    }
+
 }

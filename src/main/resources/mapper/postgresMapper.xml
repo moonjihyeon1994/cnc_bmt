@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.cnc.rating.mybatis.RatingMapper">
-    <select id="selectSub" parameterType="HashMap" resultType="map">
+    <select id="selectOnlyService" parameterType="HashMap" resultType="map">
         <foreach collection="tables" item="table" separator="UNION ALL">
             SELECT CASE WHEN usg_type = 550 THEN '서킷데이터' ELSE '데이터통화' END cdr_kind,
             33                                       cdr_kind_order,
@@ -87,7 +87,7 @@
             WHERE service_mgmt_no = #{service_mgmt_no}
         </foreach>
     </select>
-    <select id="selectSub1" parameterType="HashMap" resultType="map">
+    <select id="selectSub" parameterType="HashMap" resultType="map">
        WITH ui_minor_code (code_id, major_id)
        AS
        (

@@ -65,4 +65,24 @@ public class AzureController {
         List<HashMap<String, Object>> result = queryService.selectCDRByMonth(service_mgmt_no, currentDate, rangeMonth);
         return true;
     }
+
+    /**
+     * 기간 조회
+     *
+     * @param rangeMonth  숫자 0부터 시작 0이면 현재 달만 포함, 1이면 다음달
+     * @return
+     * @throws ParseException
+     */
+    @GetMapping("/selectOnlyService")
+    public boolean selectOnlyService(
+            @RequestParam(value = "rangeMonth") int rangeMonth,
+            @RequestParam(value = "startNumber") int startNumber
+    ) throws ParseException {
+        if (rangeMonth > 12) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        long base_num = 7000000000L + startNumber;
+        long service_mgmt_no = base_num + shardNum++;
+
+        List<HashMap<String, Object>> result = queryService.selectOnlyService(service_mgmt_no, rangeMonth);
+        return true;
+    }
 }
