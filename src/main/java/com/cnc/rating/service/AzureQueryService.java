@@ -120,7 +120,7 @@ public class AzureQueryService {
         params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
         params.put("tables", list.toArray(String[]::new));
 
-        List<HashMap<String, Object>> result = ratingRepository.selectSub(params);
+        List<HashMap<String, Object>> result = ratingRepository.selectOnlyService(params);
 
         log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
         return result;
