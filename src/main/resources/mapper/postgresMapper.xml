@@ -88,12 +88,12 @@
         </foreach>
     </select>
     <select id="selectSub" parameterType="HashMap" resultType="map">
-       -- WITH ui_minor_code (code_id, major_id)
-       -- AS
-       -- (
-       -- SELECT code_id, major_id
-       -- FROM bmtstat3.ui_minor_code
-       -- )
+       WITH ui_minor_code (code_id, major_id)
+       AS
+       (
+       SELECT code_id, major_id
+       FROM bmtstat3.ui_minor_code
+       )
         <foreach collection="tables" item="table" separator="UNION ALL">
             SELECT CASE WHEN usg_type = 550 THEN '서킷데이터' ELSE '데이터통화' END cdr_kind,
             33                                       cdr_kind_order,
@@ -176,14 +176,14 @@
             dialed_no,
             called_no
             from bmtstat3.${table} a
-            -- RIGHT OUTER JOIN ui_minor_code b
-           -- on a.ag_service_type = b.code_id
+            RIGHT OUTER JOIN ui_minor_code b
+           on a.ag_service_type = b.code_id
             WHERE service_mgmt_no = #{service_mgmt_no}
             AND usg_start_date >= #{startDate}
             AND usg_start_date &lt;= #{endDate}
             AND concat(usg_start_date, usg_start_time) >= #{startDateTime}
             AND concat(usg_start_date, usg_start_time) &lt;= #{endDateTime}
-           -- AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
+           AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
             AND coalesce(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP') as a
         </foreach>
     </select>
