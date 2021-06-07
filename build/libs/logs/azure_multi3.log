@@ -1,0 +1,57 @@
+2021:06:07 08:55:28.054 INFO  --- [main] com.cnc.rating.RatingApplication : Starting RatingApplication using Java 11.0.11 on bss-bmt-urt-vm-dev-1 with PID 144307 (/home/P171580/cnc_bmt/build/libs/rating-0.0.1-SNAPSHOT.jar started by P171580 in /home/P171580/cnc_bmt/build/libs) 
+2021:06:07 08:55:28.057 INFO  --- [main] com.cnc.rating.RatingApplication : The following profiles are active: azure 
+2021:06:07 08:55:29.653 INFO  --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2021:06:07 08:55:29.670 INFO  --- [main] o.s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces. 
+2021:06:07 08:55:29.783 WARN  --- [main] o.m.s.mapper.ClassPathMapperScanner : No MyBatis mapper was found in '[com.cnc.rating]' package. Please check your configuration. 
+2021:06:07 08:55:30.394 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat initialized with port(s): 8081 (http) 
+2021:06:07 08:55:30.408 INFO  --- [main] o.a.coyote.http11.Http11NioProtocol : Initializing ProtocolHandler ["http-nio-8081"] 
+2021:06:07 08:55:30.409 INFO  --- [main] o.a.catalina.core.StandardService : Starting service [Tomcat] 
+2021:06:07 08:55:30.409 INFO  --- [main] o.a.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.45] 
+2021:06:07 08:55:30.475 INFO  --- [main] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext 
+2021:06:07 08:55:30.475 INFO  --- [main] o.s.b.w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2266 ms 
+2021:06:07 08:55:30.914 INFO  --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting... 
+2021:06:07 08:55:31.333 INFO  --- [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed. 
+2021:06:07 08:55:31.410 INFO  --- [main] o.h.jpa.internal.util.LogHelper : HHH000204: Processing PersistenceUnitInfo [name: default] 
+2021:06:07 08:55:31.481 INFO  --- [main] org.hibernate.Version : HHH000412: Hibernate ORM core version 5.4.30.Final 
+2021:06:07 08:55:31.812 INFO  --- [main] o.h.annotations.common.Version : HCANN000001: Hibernate Commons Annotations {5.1.2.Final} 
+2021:06:07 08:55:32.018 INFO  --- [main] org.hibernate.dialect.Dialect : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect 
+2021:06:07 08:55:32.970 INFO  --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2021:06:07 08:55:32.981 INFO  --- [main] o.s.o.j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2021:06:07 08:55:33.269 WARN  --- [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2021:06:07 08:55:33.454 INFO  --- [main] o.s.s.c.ThreadPoolTaskExecutor : Initializing ExecutorService 'applicationTaskExecutor' 
+2021:06:07 08:55:33.827 INFO  --- [main] o.s.b.a.e.web.EndpointLinksResolver : Exposing 4 endpoint(s) beneath base path '/actuator' 
+2021:06:07 08:55:33.873 INFO  --- [main] o.a.coyote.http11.Http11NioProtocol : Starting ProtocolHandler ["http-nio-8081"] 
+2021:06:07 08:55:33.891 INFO  --- [main] o.s.b.w.e.tomcat.TomcatWebServer : Tomcat started on port(s): 8081 (http) with context path '' 
+2021:06:07 08:55:33.923 INFO  --- [main] com.cnc.rating.RatingApplication : Started RatingApplication in 6.994 seconds (JVM running for 7.685) 
+2021:06:07 08:55:41.436 INFO  --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2021:06:07 08:55:41.436 INFO  --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet' 
+2021:06:07 08:55:41.438 INFO  --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet : Completed initialization in 1 ms 
+2021:06:07 08:56:03.244 INFO  --- [http-nio-8081-exec-1] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002525, range : 3, duration : 21688, size : 9131  
+2021:06:07 08:56:20.360 INFO  --- [http-nio-8081-exec-1] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002528, range : 3, duration : 17062, size : 9290  
+2021:06:07 08:56:20.893 INFO  --- [http-nio-8081-exec-4] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002527, range : 3, duration : 17596, size : 8999  
+2021:06:07 08:56:21.328 INFO  --- [http-nio-8081-exec-7] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002534, range : 3, duration : 18003, size : 8865  
+2021:06:07 08:56:21.810 INFO  --- [http-nio-8081-exec-5] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002533, range : 3, duration : 18490, size : 9022  
+2021:06:07 08:56:22.009 INFO  --- [http-nio-8081-exec-2] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002526, range : 3, duration : 18723, size : 9392  
+2021:06:07 08:56:23.453 INFO  --- [http-nio-8081-exec-8] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002532, range : 3, duration : 20138, size : 9304  
+2021:06:07 08:56:23.918 INFO  --- [http-nio-8081-exec-6] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002535, range : 3, duration : 20589, size : 9317  
+2021:06:07 08:56:24.556 INFO  --- [http-nio-8081-exec-9] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002531, range : 3, duration : 21245, size : 9376  
+2021:06:07 08:56:25.542 INFO  --- [http-nio-8081-exec-3] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002529, range : 3, duration : 22240, size : 9477  
+2021:06:07 08:56:29.235 INFO  --- [http-nio-8081-exec-10] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002530, range : 3, duration : 25929, size : 9012  
+2021:06:07 08:56:37.012 INFO  --- [http-nio-8081-exec-1] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002536, range : 3, duration : 16646, size : 9066  
+2021:06:07 08:56:41.431 INFO  --- [http-nio-8081-exec-6] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002542, range : 3, duration : 17509, size : 9085  
+2021:06:07 08:56:41.517 INFO  --- [http-nio-8081-exec-4] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002537, range : 3, duration : 20603, size : 9443  
+2021:06:07 08:56:41.927 INFO  --- [http-nio-8081-exec-5] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002539, range : 3, duration : 20112, size : 9274  
+2021:06:07 08:56:42.742 INFO  --- [http-nio-8081-exec-7] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002538, range : 3, duration : 21407, size : 9432  
+2021:06:07 08:56:43.012 INFO  --- [http-nio-8081-exec-8] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002541, range : 3, duration : 19554, size : 9045  
+2021:06:07 08:56:44.656 INFO  --- [http-nio-8081-exec-3] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002544, range : 3, duration : 19110, size : 9139  
+2021:06:07 08:56:44.850 INFO  --- [http-nio-8081-exec-9] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002543, range : 3, duration : 20290, size : 9232  
+2021:06:07 08:56:46.033 INFO  --- [http-nio-8081-exec-2] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002540, range : 3, duration : 24005, size : 9253  
+2021:06:07 08:56:51.902 INFO  --- [http-nio-8081-exec-10] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002545, range : 3, duration : 22659, size : 9219  
+2021:06:07 08:56:54.267 INFO  --- [http-nio-8081-exec-1] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002546, range : 3, duration : 17250, size : 9248  
+2021:06:07 08:57:02.138 INFO  --- [http-nio-8081-exec-5] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002549, range : 3, duration : 20207, size : 8851  
+2021:06:07 08:57:04.236 INFO  --- [http-nio-8081-exec-4] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002548, range : 3, duration : 22715, size : 9205  
+2021:06:07 08:57:05.538 INFO  --- [http-nio-8081-exec-6] c.c.r.service.AzureQueryService : service_mgmt_no : 7000002547, range : 3, duration : 24103, size : 8885  
+2021:06:07 08:58:08.520 INFO  --- [SpringContextShutdownHook] o.s.s.c.ThreadPoolTaskExecutor : Shutting down ExecutorService 'applicationTaskExecutor' 
+2021:06:07 08:58:08.521 INFO  --- [SpringContextShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default' 
+2021:06:07 08:58:08.523 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown initiated... 
+2021:06:07 08:58:08.531 INFO  --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Shutdown completed. 

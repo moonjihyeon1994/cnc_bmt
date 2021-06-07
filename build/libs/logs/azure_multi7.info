@@ -9,34 +9,34 @@ Server Software:
 Server Hostname:        localhost
 Server Port:            8081
 
-Document Path:          /selectCDR?startNumber=2250&currentDate=04&rangeMonth=2
+Document Path:          /selectCDR?startNumber=2425&currentDate=04&rangeMonth=7
 Document Length:        4 bytes
 
-Concurrency Level:      1
-Time taken for tests:   355.338 seconds
+Concurrency Level:      10
+Time taken for tests:   198.012 seconds
 Complete requests:      25
 Failed requests:        0
 Total transferred:      2725 bytes
 HTML transferred:       100 bytes
-Requests per second:    0.07 [#/sec] (mean)
-Time per request:       14213.522 [ms] (mean)
-Time per request:       14213.522 [ms] (mean, across all concurrent requests)
+Requests per second:    0.13 [#/sec] (mean)
+Time per request:       79204.778 [ms] (mean)
+Time per request:       7920.478 [ms] (mean, across all concurrent requests)
 Transfer rate:          0.01 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        0    0   0.0      0       0
-Processing: 12426 14213 985.2  14108   15927
-Waiting:    12425 14213 984.7  14106   15927
-Total:      12426 14213 985.2  14108   15927
+Connect:        0    0   0.2      0       1
+Processing: 41998 49449 5494.4  48530   65390
+Waiting:    41998 49444 5494.6  48530   65386
+Total:      41998 49449 5494.4  48530   65390
 
 Percentage of the requests served within a certain time (ms)
-  50%  14071
-  66%  14520
-  75%  14802
-  80%  15344
-  90%  15784
-  95%  15890
-  98%  15927
-  99%  15927
- 100%  15927 (longest request)
+  50%  48503
+  66%  50161
+  75%  52495
+  80%  53021
+  90%  54066
+  95%  62356
+  98%  65390
+  99%  65390
+ 100%  65390 (longest request)
