@@ -97,7 +97,7 @@
         <foreach collection="tables" item="table" separator="UNION ALL">
             SELECT CASE WHEN usg_type = 550 THEN '서킷데이터' ELSE '데이터통화' END cdr_kind,
             33                                       cdr_kind_order,
-            to_date(usg_start_date, '%Y/%m/%d')  usg_start_date,
+            usg_start_date  usg_start_date,
             usg_start_time                           usg_start_time,
             total_duration                           total_duration,
             ''                                       rat_term_phon_num,
