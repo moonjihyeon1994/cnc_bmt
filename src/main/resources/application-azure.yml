@@ -5,23 +5,11 @@ spring:
     activate:
       on-profile: azure
 
-# logging 설정
-#logging:
-#  pattern:
-#    console: "%d %-5level %logger : %msg%n"
-#    file: "%d %-5level [%thread] %logger : %msg%n"
-##  level:
-##    org.springframework.web: DEBUG
-##    guru.springframework.controllers: DEBUG
-##    org.hibernate: DEBUG
-#  file:
-#    name: logs/dev_profile_app.log
-
 # multi datasource 설정
 app:
   datasource:
     client:
-      jdbc-url: jdbc:postgresql://bss-bmt-kc-urt-postgresql-c.postgres.database.azure.com:5432/citus
+      jdbc-url: jdbc:postgresql://c.bss-bmt-kc-urt-postgresql.postgres.database.azure.com:5432/citus
 #      jdbc-url: jdbc:postgresql://localhost:5432/bmtdb
       username: bmtstat3
 #      username: postgres

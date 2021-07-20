@@ -15,6 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 import static com.cnc.rating.config.SpringProfile.*;
 
@@ -81,6 +82,8 @@ public class AzureController {
         if (rangeMonth > 12) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
         long base_num = 7000000000L + startNumber;
         long service_mgmt_no = base_num + shardNum++;
+
+        long boundedRandomValue = ThreadLocalRandom.current().nextLong(0, 7002799900L);
 
         List<HashMap<String, Object>> result = queryService.selectOnlyService(service_mgmt_no, rangeMonth);
         return true;

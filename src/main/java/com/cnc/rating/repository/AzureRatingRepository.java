@@ -12,7 +12,7 @@ import java.util.List;
 import static com.cnc.rating.config.SpringProfile.*;
 
 @Slf4j
-@Profile({AZURE})
+@Profile({AZURE, AZURE_DIRECT})
 @Repository
 public class AzureRatingRepository {
 
