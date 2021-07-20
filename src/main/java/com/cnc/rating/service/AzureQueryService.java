@@ -67,11 +67,11 @@ public class AzureQueryService {
     public List<HashMap<String, Object>> selectCDRByMonth(long service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
         DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
         Calendar calendar = Calendar.getInstance();
-        Date date = dateFormat.parse("202005");
+        Date date = dateFormat.parse("202007");
         calendar.setTime(date);
 
         List<String> list = new ArrayList<>();
-        list.add("online_evdo_rated_cdr_" + "05" + currentDate);
+        list.add("online_evdo_rated_cdr_" + "07" + currentDate);
         for (int i = 0; i < rangeMonth; i++) {
             list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
             calendar.add(Calendar.MONTH, 1);
@@ -83,9 +83,9 @@ public class AzureQueryService {
         HashMap<String, Object> params = new HashMap<>();
         params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
         params.put("tables", list.toArray(String[]::new));
-        params.put("startDate", "202005");
+        params.put("startDate", "202007");
         params.put("endDate", dateFormat.format(calendar.getTime()));
-        params.put("startDateTime", "202005" + currentDate + "0000000");
+        params.put("startDateTime", "202007" + currentDate + "0000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
 
 //        log.info("service_mgmt_no : {}, range : {} ", service_mgmt_no, rangeMonth);
