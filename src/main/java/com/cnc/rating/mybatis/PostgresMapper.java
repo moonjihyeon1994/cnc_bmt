@@ -7,9 +7,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.cnc.rating.config.SpringProfile.AZURE;
 import static com.cnc.rating.config.SpringProfile.AZURE_DIRECT;
 
-@Profile({AZURE_DIRECT})
+@Profile({AZURE, AZURE_DIRECT})
 @Mapper
 public interface PostgresMapper {
     List<HashMap<String, Object>> selectTest(Map<String, Object> parameters);
