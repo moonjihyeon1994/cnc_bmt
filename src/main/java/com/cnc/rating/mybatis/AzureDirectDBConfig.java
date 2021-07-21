@@ -18,7 +18,7 @@ import static com.cnc.rating.config.SpringProfile.AZURE_DIRECT;
 public class AzureDirectDBConfig {
 
     String prefixUrl = "jdbc:postgresql://";
-    String suffixUrl = ".bss-bmt-kc-urt-postgresql.postgres.database.azure.com";
+    String suffixUrl = ".bss-bmt-kc-urt-postgresql.postgres.database.azure.com:5432/citus";
 
     @Bean
     public DataSource RouterDataSource() {

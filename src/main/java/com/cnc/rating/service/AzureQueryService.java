@@ -14,9 +14,10 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 import static com.cnc.rating.config.SpringProfile.AZURE;
+import static com.cnc.rating.config.SpringProfile.AZURE_DIRECT;
 
 @Slf4j
-@Profile({AZURE})
+@Profile({AZURE, AZURE_DIRECT})
 @RequiredArgsConstructor
 @Service
 public class AzureQueryService {
@@ -127,11 +128,10 @@ public class AzureQueryService {
         log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
         return result;
     }
-
+    int shardNumber = 0;
     public List<HashMap<String, Object>> selectCDRDirect(long service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
-        int shardNumber = 0;
-        ClientDatabaseContextHolder.set("w" + shardNumber);
 
+        ClientDatabaseContextHolder.set("w" + shardNumber%80);
 
         DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
         Calendar calendar = Calendar.getInstance();

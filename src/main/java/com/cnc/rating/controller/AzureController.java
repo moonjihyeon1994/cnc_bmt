@@ -20,7 +20,7 @@ import java.util.concurrent.ThreadLocalRandom;
 import static com.cnc.rating.config.SpringProfile.*;
 
 @Slf4j
-@Profile({AZURE})
+@Profile({AZURE, AZURE_DIRECT})
 @RequiredArgsConstructor
 @RestController
 public class AzureController {
@@ -107,8 +107,8 @@ public class AzureController {
         long base_num = 7000000000L + startNumber;
         long service_mgmt_no = base_num + shardNum++;
         // 샤드 검색
-
-        List<HashMap<String, Object>> result = queryService.selectCDRDirect(service_mgmt_no, currentDate, rangeMonth);
+        long boundedRandomValue = ThreadLocalRandom.current().nextLong(7000000000L, 7000100000L);
+        List<HashMap<String, Object>> result = queryService.selectCDRDirect(boundedRandomValue, currentDate, rangeMonth);
 
         return true;
     }
