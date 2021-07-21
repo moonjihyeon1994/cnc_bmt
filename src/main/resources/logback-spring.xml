@@ -32,6 +32,9 @@
         <springProfile name="azure">
             <appender-ref ref="dailyRollingFileAppender"/>
         </springProfile>
+        <springProfile name="ad">
+            <appender-ref ref="dailyRollingFileAppender"/>
+        </springProfile>
         <springProfile name="test">
             <appender-ref ref="STDOUT"/>
         </springProfile>
