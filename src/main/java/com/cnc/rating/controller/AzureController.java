@@ -63,7 +63,7 @@ public class AzureController {
         long base_num = 7000000000L + startNumber;
         long service_mgmt_no = base_num + shardNum++;
 
-        long boundedRandomValue = ThreadLocalRandom.current().nextLong(1, 7000199900L);
+        long boundedRandomValue = ThreadLocalRandom.current().nextLong(7000000000L, 7000100000L);
 
         List<HashMap<String, Object>> result = queryService.selectCDRByMonth(boundedRandomValue, currentDate, rangeMonth);
         return true;
