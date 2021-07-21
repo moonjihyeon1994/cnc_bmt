@@ -1,5 +1,7 @@
 package com.cnc.rating.service;
 
+import com.cnc.rating.config.ClientDatabase;
+import com.cnc.rating.config.ClientDatabaseContextHolder;
 import com.cnc.rating.repository.AzureRatingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -123,6 +125,41 @@ public class AzureQueryService {
         List<HashMap<String, Object>> result = ratingRepository.selectOnlyService(params);
 
         log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
+        return result;
+    }
+
+    public List<HashMap<String, Object>> selectCDRDirect(long service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
+        int shardNumber = 0;
+        ClientDatabaseContextHolder.set("w" + shardNumber);
+
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
+        Calendar calendar = Calendar.getInstance();
+        Date date = dateFormat.parse("202007");
+        calendar.setTime(date);
+
+        List<String> list = new ArrayList<>();
+        list.add("online_evdo_rated_cdr_" + "07" + currentDate);
+        for (int i = 0; i < rangeMonth; i++) {
+            list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
+            calendar.add(Calendar.MONTH, 1);
+        }
+        list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
+
+        long currentTimeMillis = System.currentTimeMillis();
+
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
+        params.put("tables", list.toArray(String[]::new));
+        params.put("startDate", "202007");
+        params.put("endDate", dateFormat.format(calendar.getTime()));
+        params.put("startDateTime", "202007" + currentDate + "0000000");
+        params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
+
+        List<HashMap<String, Object>> result = ratingRepository.selectSub(params);
+
+        log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
+        ClientDatabaseContextHolder.clear();
         return result;
     }
 }

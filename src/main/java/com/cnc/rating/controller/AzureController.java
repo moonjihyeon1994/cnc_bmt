@@ -63,7 +63,9 @@ public class AzureController {
         long base_num = 7000000000L + startNumber;
         long service_mgmt_no = base_num + shardNum++;
 
-        List<HashMap<String, Object>> result = queryService.selectCDRByMonth(service_mgmt_no, currentDate, rangeMonth);
+        long boundedRandomValue = ThreadLocalRandom.current().nextLong(1, 7000199900L);
+
+        List<HashMap<String, Object>> result = queryService.selectCDRByMonth(boundedRandomValue, currentDate, rangeMonth);
         return true;
     }
 
@@ -80,12 +82,34 @@ public class AzureController {
             @RequestParam(value = "startNumber") int startNumber
     ) throws ParseException {
         if (rangeMonth > 12) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        long base_num = 7000000000L + startNumber;
-        long service_mgmt_no = base_num + shardNum++;
+//        long base_num = 7000000000L + startNumber;
+//        long service_mgmt_no = base_num + shardNum++;
 
         long boundedRandomValue = ThreadLocalRandom.current().nextLong(0, 7002799900L);
 
-        List<HashMap<String, Object>> result = queryService.selectOnlyService(service_mgmt_no, rangeMonth);
+        List<HashMap<String, Object>> result = queryService.selectOnlyService(boundedRandomValue, rangeMonth);
+        return true;
+    }
+
+    /**
+     * 직접 접속
+     *
+     * @return
+     * @throws ParseException
+     */
+    @GetMapping("/selectOnlyService")
+    public boolean selectCDRDirect(
+            @RequestParam(value = "currentDate") String currentDate,
+            @RequestParam(value = "rangeMonth") int rangeMonth,
+            @RequestParam(value = "startNumber") int startNumber
+    ) throws ParseException {
+        if (rangeMonth > 12) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+        long base_num = 7000000000L + startNumber;
+        long service_mgmt_no = base_num + shardNum++;
+        // 샤드 검색
+
+        List<HashMap<String, Object>> result = queryService.selectCDRDirect(service_mgmt_no, currentDate, rangeMonth);
+
         return true;
     }
 }
