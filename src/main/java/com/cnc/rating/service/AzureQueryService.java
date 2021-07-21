@@ -136,6 +136,8 @@ public class AzureQueryService {
 
         ClientDatabaseContextHolder.set("w" + shardNumber%80);
 
+        System.out.println(ClientDatabaseContextHolder.getClientDatabase());
+
         DateFormat dateFormat = new SimpleDateFormat("yyyyMM");
         Calendar calendar = Calendar.getInstance();
         Date date = dateFormat.parse("202007");
