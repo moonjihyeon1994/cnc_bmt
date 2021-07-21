@@ -97,7 +97,7 @@ public class AzureController {
      * @return
      * @throws ParseException
      */
-    @GetMapping("/selectOnlyService")
+    @GetMapping("/selectCDRDirect")
     public boolean selectCDRDirect(
             @RequestParam(value = "currentDate") String currentDate,
             @RequestParam(value = "rangeMonth") int rangeMonth,
