@@ -15,7 +15,7 @@ spring:
 app:
   datasource:
     client:
-      jdbc-url: jdbc:postgresql://w0.bss-bmt-kc-urt-postgresql.postgres.database.azure.com,w1.bss-bmt-kc-urt-postgresql.postgres.database.azure.com
+      jdbc-url: jdbc:postgresql://c.bss-bmt-kc-urt-postgresql.postgres.database.azure.com:5431/citus
 #      jdbc-url: jdbc:postgresql://localhost:5432/bmtdb
       username: bmtstat3
 #      username: postgres
