@@ -4,10 +4,12 @@ spring:
   config:
     activate:
       on-profile: ad
-
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+
 
 #    url: jdbc:postgresql://w0.bss-bmt-kc-urt-postgresql.postgres.database.azure.com,w1.bss-bmt-kc-urt-postgresql.postgres.database.azure.com
 #    username: bmtstat3
