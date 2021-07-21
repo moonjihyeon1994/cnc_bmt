@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: rating
+  config:
+    activate:
+      on-profile: ad
+
+#  datasource:
+#    url: jdbc:postgresql://w0.bss-bmt-kc-urt-postgresql.postgres.database.azure.com,w1.bss-bmt-kc-urt-postgresql.postgres.database.azure.com
+#    username: bmtstat3
+#    password: djqjdlskf12!
+#    driver-class-name: org.postgresql.Driver
+# multi datasource 설정
+
+#app:
+#  datasource:
+#    client:
+#      jdbc-url: jdbc:postgresql://w0.bss-bmt-kc-urt-postgresql.postgres.database.azure.com,w1.bss-bmt-kc-urt-postgresql.postgres.database.azure.com
+##      jdbc-url: jdbc:postgresql://localhost:5432/bmtdb
+#      username: bmtstat3
+##      username: postgres
+#      password: djqjdlskf12!
+##      password: password
+#      driver-class-name: org.postgresql.Driver
