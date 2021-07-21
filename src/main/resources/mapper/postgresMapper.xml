@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.cnc.rating.mybatis.RatingMapper">
+<mapper namespace="com.cnc.rating.mybatis.PostgresMapper">
     <select id="selectOnlyService" parameterType="HashMap" resultType="map">
         <foreach collection="tables" item="table" separator="UNION ALL">
             SELECT CASE WHEN usg_type = 550 THEN '서킷데이터' ELSE '데이터통화' END cdr_kind,

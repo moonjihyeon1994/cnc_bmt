@@ -8,7 +8,7 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
 
 mybatis:
-  mapper-locations: classpath:mapper/*.xml
+  mapper-locations: classpath:mapper/postgresMapper.xml
 
 
 #    url: jdbc:postgresql://w0.bss-bmt-kc-urt-postgresql.postgres.database.azure.com,w1.bss-bmt-kc-urt-postgresql.postgres.database.azure.com

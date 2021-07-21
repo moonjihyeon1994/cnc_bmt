@@ -2,6 +2,7 @@ package com.cnc.rating.service;
 
 import com.cnc.rating.config.ClientDatabase;
 import com.cnc.rating.config.ClientDatabaseContextHolder;
+import com.cnc.rating.mybatis.PostgresMapper;
 import com.cnc.rating.repository.AzureRatingRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -23,6 +24,7 @@ import static com.cnc.rating.config.SpringProfile.AZURE_DIRECT;
 public class AzureQueryService {
 
     private final AzureRatingRepository ratingRepository;
+    private final PostgresMapper postgresMapper;
 
     /**
      * CDR 조회
@@ -128,6 +130,7 @@ public class AzureQueryService {
         log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
         return result;
     }
+
     int shardNumber = 0;
     public List<HashMap<String, Object>> selectCDRDirect(long service_mgmt_no, String currentDate, int rangeMonth) throws ParseException {
 
@@ -156,7 +159,7 @@ public class AzureQueryService {
         params.put("startDateTime", "202007" + currentDate + "0000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "999999999");
 
-        List<HashMap<String, Object>> result = ratingRepository.selectSub(params);
+        List<HashMap<String, Object>> result = postgresMapper.selectSub(params);
 
         log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
         ClientDatabaseContextHolder.clear();
