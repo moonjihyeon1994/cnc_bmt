@@ -22,7 +22,7 @@ public class AzureRatingRepository {
         this.clientSqlSessionTemplate = clientSqlSessionTemplate;
     }
 
-    private final String namespace = "com.cnc.rating.mybatis.RatingMapper.";
+    private final String namespace = "com.cnc.rating.mybatis.PostgresMapper.";
 
     public List<HashMap<String, Object>> selectSub(HashMap<String, Object> params) {
         return clientSqlSessionTemplate.selectList(namespace + "selectSub", params);
