@@ -2,6 +2,11 @@ package com.cnc.rating.mybatis;
 
 import com.cnc.rating.config.ClientDataSourceRouter;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.session.SqlSessionFactory;
+import org.mybatis.spring.SqlSessionFactoryBean;
+import org.mybatis.spring.SqlSessionTemplate;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -14,6 +19,7 @@ import static com.cnc.rating.config.SpringProfile.AZURE_DIRECT;
 
 @Slf4j
 @Profile({AZURE_DIRECT})
+@MapperScan(value = "com.example.madplay.mapper")
 @Configuration
 public class AzureDirectDBConfig {
 
