@@ -19,7 +19,7 @@ import static com.cnc.rating.config.SpringProfile.AZURE_DIRECT;
 
 @Slf4j
 @Profile({AZURE_DIRECT})
-@MapperScan(basePackages = "com.cnc.rating.mybatis.PostgresMapper")
+@MapperScan(basePackages = "com.cnc.rating.mybatis")
 @Configuration
 public class AzureDirectDBConfig {
 
