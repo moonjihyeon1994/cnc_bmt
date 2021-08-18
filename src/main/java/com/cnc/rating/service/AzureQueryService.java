@@ -189,8 +189,8 @@ public class AzureQueryService {
         HashMap<String, Object> params = new HashMap<>();
         params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
         params.put("tables", list.toArray(String[]::new));
-        params.put("startDate", "202007");
-        params.put("endDate", dateFormat.format(calendar.getTime()));
+        params.put("startDate", "20200701");
+        params.put("endDate", dateFormat.format(calendar.getTime())+"31");
         params.put("startDateTime", "20200701000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "31999999");
         long currentTimeMillis = System.currentTimeMillis();
