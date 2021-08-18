@@ -112,4 +112,10 @@ public class AzureController {
 
         return true;
     }
+
+    @GetMapping("/test")
+    public boolean selectTest() throws ParseException {
+        queryService.test();
+        return true;
+    }
 }

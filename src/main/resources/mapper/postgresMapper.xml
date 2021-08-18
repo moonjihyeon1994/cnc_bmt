@@ -187,4 +187,85 @@
             AND coalesce(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP') as a
         </foreach>
     </select>
+    <select id="test">
+        WITH CTE as NOT MATERIALIZED
+        (select * from bmtstat3.ui_minor_code) (
+        SELECT
+        usg_start_date,
+        usg_start_time,
+        total_duration,
+        round(ag_used_nou/ 2, 2) total_usg_nou,
+        total_used_charge,
+        total_rated_charge,
+        deduct_code1,
+        deduct_code2,
+        deduct_code3,
+        deduct_code4,
+        deduct_code5,
+        disc_code1,
+        disc_code2,
+        disc_code3,
+        coalesce(msc_switch_id, switch_id) msc_switch_id,
+        cell_id,
+        usg_type,
+        b.code_name ag_service_type_name,
+        CH_SVC_ICCID,
+        ocall_toll_id,
+        processed_date,
+        processed_time,
+        org_net_info,
+        opmd_flag,
+        dialed_no,
+        called_no
+        from bmtstat3.evdo_rated_cdr_202007 a,
+        CTE b
+        WHERE 1=1
+        And service_mgmt_no = ‘7000406188’
+        AND usg_start_date >= ’20200701’
+        AND usg_start_date &lt;= ’20200731’
+        AND usg_start_date || usg_start_time >= ’20200701000000’
+        AND usg_start_date || usg_start_time &lt;= ’20200731359000’
+        AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
+        AND a.ag_service_type = b.code_id
+        AND coalesce(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP'
+        Union all
+        SELECT
+        usg_start_date,
+        usg_start_time,
+        total_duration,
+        round(ag_used_nou/ 2, 2) total_usg_nou,
+        total_used_charge,
+        total_rated_charge,
+        deduct_code1,
+        deduct_code2,
+        deduct_code3,
+        deduct_code4,
+        deduct_code5,
+        disc_code1,
+        disc_code2,
+        disc_code3,
+        coalesce(msc_switch_id, switch_id) msc_switch_id,
+        cell_id,
+        usg_type,
+        b.code_name ag_service_type_name,
+        CH_SVC_ICCID,
+        ocall_toll_id,
+        processed_date,
+        processed_time,
+        org_net_info,
+        opmd_flag,
+        dialed_no,
+        called_no
+        from bmtstat3.evdo_rated_cdr_202007 a,
+        CTE b
+        WHERE 1=1
+        And service_mgmt_no = ‘7000406188’
+        AND usg_start_date >= ’20200701’
+        AND usg_start_date &lt;= ’20200731’
+        AND usg_start_date || usg_start_time >= ’20200701000000’
+        AND usg_start_date || usg_start_time &lt;= ’20200731359000’
+        AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
+        AND a.ag_service_type = b.code_id
+        AND coalesce(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP' )
+    </select>
 </mapper>

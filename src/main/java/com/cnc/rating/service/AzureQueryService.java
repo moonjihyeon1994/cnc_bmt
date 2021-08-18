@@ -167,4 +167,11 @@ public class AzureQueryService {
         ClientDatabaseContextHolder.clear();
         return result;
     }
+
+    public void test() {
+        long currentTimeMillis = System.currentTimeMillis();
+        List<HashMap<String, Object>> result = postgresMapper.test();
+        log.info("duration : {}, size : {} ", System.currentTimeMillis() - currentTimeMillis, result.size());
+    }
+
 }

@@ -13,9 +13,11 @@ import static com.cnc.rating.config.SpringProfile.AZURE_DIRECT;
 @Profile({AZURE, AZURE_DIRECT})
 @Mapper
 public interface PostgresMapper {
-    List<HashMap<String, Object>> selectTest(Map<String, Object> parameters);
-
-    void insertTest(HashMap<String, Object> parameters);
+//    List<HashMap<String, Object>> selectTest(Map<String, Object> parameters);
+//
+//    void insertTest(HashMap<String, Object> parameters);
 
     List<HashMap<String, Object>> selectSub(HashMap<String, Object> params);
+
+    List<HashMap<String, Object>> test();
 }
