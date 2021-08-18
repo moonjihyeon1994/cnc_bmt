@@ -1,0 +1,193 @@
+WITH ui_minor_code (code_id, major_id)
+        AS
+        (
+        SELECT code_id, major_id
+        FROM bmtstat3.ui_minor_code
+        )
+(
+    SELECT CASE WHEN usg_type = 550 THEN '서킷데이터' ELSE '데이터통화' END cdr_kind,
+    33                                       cdr_kind_order,
+    usg_start_date  usg_start_date,
+    usg_start_time                           usg_start_time,
+    total_duration                           total_duration,
+    ''                                       rat_term_phon_num,
+    ''                                       rat_term_phon_num_xxx,
+    total_usg_nou,
+    total_used_charge,
+    total_rated_charge,
+    (total_used_charge - total_rated_charge) deduct_discount_charge,
+    deduct_code1,
+    deduct_code2,
+    deduct_code3,
+    deduct_code4,
+    deduct_code5,
+    disc_code1,
+    disc_code2,
+    disc_code3,
+    msc_switch_id                            switch_id,
+    CONCAT(cell_id, ocall_toll_id) AS        cell_id,
+    ''                                       tzone,
+    usg_type,
+    CASE
+    WHEN opmd_flag = '7' THEN '스마트와치(AW) 데이터공유'
+    WHEN LENGTH(CH_SVC_ICCID) = 14 THEN CONCAT(substr(ch_svc_iccid, 0, 4), '-', substr(ch_svc_iccid, 5, 4), '-',
+    substr(ch_svc_iccid, 9, 4), '-', substr(ch_svc_iccid, 13))
+    ELSE coalesce(CH_SVC_ICCID, '')
+    END                                  bigo_name,
+    network_type,
+    processed_date,
+    processed_time,
+    ''                                       service_term_date,
+    ''                                       service_term_time,
+    usg_seq
+    FROM (
+    SELECT usg_start_date,
+    usg_start_time,
+    total_duration,
+    CASE WHEN USG_TYPE = 620
+    THEN (
+    CASE a.PROD_ID
+    WHEN 'NA00002738' THEN AG_USED_NOU * 1024
+    WHEN 'NA00002739' THEN AG_USED_NOU * 1024
+    ELSE AG_USED_NOU * 5
+    END
+    )
+    ELSE ROUND(AG_USED_NOU / 2, 2) END total_usg_nou,
+    total_used_charge,
+    total_rated_charge,
+    deduct_code1,
+    deduct_code2,
+    deduct_code3,
+    deduct_code4,
+    deduct_code5,
+    disc_code1,
+    disc_code2,
+    disc_code3,
+    coalesce(msc_switch_id, switch_id) msc_switch_id,
+    cell_id,
+    ''                               sect_cd,
+    usg_type,
+    CAST(usg_seq AS INTEGER)        usg_seq,
+    CH_SVC_ICCID,
+    ocall_toll_id,
+    processed_date,
+    processed_time,
+    org_net_info,
+    (CASE org_net_info
+    WHEN '4' THEN 'LTE'
+    WHEN '5' THEN 'LTE(3G망)'
+    WHEN 'D' THEN '3G(LTE망)'
+    WHEN 'I' THEN '5G'
+    WHEN 'H' THEN '5G(LTE망)'
+    ELSE ''
+    END
+    ) as                         network_type,
+    opmd_flag,
+    dialed_no,
+    called_no
+    from bmtstat3.evdo_rated_cdr_202007 a
+    RIGHT OUTER JOIN ui_minor_code b
+    on a.ag_service_type = b.code_id
+    where service_mgmt_no = '7000406180'
+    AND usg_start_date >= '20200801'
+    AND usg_start_date <= '20200831'
+    AND usg_start_date || usg_start_time >= '20200801000000'
+    AND usg_start_date || usg_start_time <= '20200831359000'
+    AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
+    AND a.ag_service_type = b.code_id
+    AND coalesce(a.ag_service_type, ' ') <> 'MVP'
+
+union all
+
+        SELECT CASE WHEN usg_type = 550 THEN '서킷데이터' ELSE '데이터통화' END cdr_kind,
+        33                                       cdr_kind_order,
+        usg_start_date  usg_start_date,
+        usg_start_time                           usg_start_time,
+        total_duration                           total_duration,
+        ''                                       rat_term_phon_num,
+        ''                                       rat_term_phon_num_xxx,
+        total_usg_nou,
+        total_used_charge,
+        total_rated_charge,
+        (total_used_charge - total_rated_charge) deduct_discount_charge,
+        deduct_code1,
+        deduct_code2,
+        deduct_code3,
+        deduct_code4,
+        deduct_code5,
+        disc_code1,
+        disc_code2,
+        disc_code3,
+        msc_switch_id                            switch_id,
+        CONCAT(cell_id, ocall_toll_id) AS        cell_id,
+        ''                                       tzone,
+        usg_type,
+        CASE
+        WHEN opmd_flag = '7' THEN '스마트와치(AW) 데이터공유'
+        WHEN LENGTH(CH_SVC_ICCID) = 14 THEN CONCAT(substr(ch_svc_iccid, 0, 4), '-', substr(ch_svc_iccid, 5, 4), '-',
+        substr(ch_svc_iccid, 9, 4), '-', substr(ch_svc_iccid, 13))
+        ELSE coalesce(CH_SVC_ICCID, '')
+        END                                  bigo_name,
+        network_type,
+        processed_date,
+        processed_time,
+        ''                                       service_term_date,
+        ''                                       service_term_time,
+        usg_seq
+        FROM (
+        SELECT usg_start_date,
+        usg_start_time,
+        total_duration,
+        CASE WHEN USG_TYPE = 620
+        THEN (
+        CASE a.PROD_ID
+        WHEN 'NA00002738' THEN AG_USED_NOU * 1024
+        WHEN 'NA00002739' THEN AG_USED_NOU * 1024
+        ELSE AG_USED_NOU * 5
+        END
+        )
+        ELSE ROUND(AG_USED_NOU / 2, 2) END total_usg_nou,
+        total_used_charge,
+        total_rated_charge,
+        deduct_code1,
+        deduct_code2,
+        deduct_code3,
+        deduct_code4,
+        deduct_code5,
+        disc_code1,
+        disc_code2,
+        disc_code3,
+        coalesce(msc_switch_id, switch_id) msc_switch_id,
+        cell_id,
+        ''                               sect_cd,
+        usg_type,
+        CAST(usg_seq AS INTEGER)        usg_seq,
+        CH_SVC_ICCID,
+        ocall_toll_id,
+        processed_date,
+        processed_time,
+        org_net_info,
+        (CASE org_net_info
+        WHEN '4' THEN 'LTE'
+        WHEN '5' THEN 'LTE(3G망)'
+        WHEN 'D' THEN '3G(LTE망)'
+        WHEN 'I' THEN '5G'
+        WHEN 'H' THEN '5G(LTE망)'
+        ELSE ''
+        END
+        ) as                         network_type,
+        opmd_flag,
+        dialed_no,
+        called_no
+        from bmtstat3.evdo_rated_cdr_202007 a
+        RIGHT OUTER JOIN ui_minor_code b
+        on a.ag_service_type = b.code_id
+where service_mgmt_no = '7000406180'
+        AND usg_start_date >= '20200801'
+        AND usg_start_date <= '20200831'
+        AND usg_start_date || usg_start_time >= '20200801000000'
+        AND usg_start_date || usg_start_time <= '20200831359000'
+        AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
+        AND a.ag_service_type = b.code_id
+        AND coalesce(a.ag_service_type, ' ') <> 'MVP'
+    );
