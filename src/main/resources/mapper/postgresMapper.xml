@@ -220,7 +220,7 @@
         from bmtstat3.evdo_rated_cdr_202007 a,
         CTE b
         WHERE 1=1
-        And service_mgmt_no = ‘7000406188’
+        And service_mgmt_no = 7000406188
         AND usg_start_date >= ’20200701’
         AND usg_start_date &lt;= ’20200731’
         AND usg_start_date || usg_start_time >= ’20200701000000’
@@ -259,7 +259,7 @@
         from bmtstat3.evdo_rated_cdr_202007 a,
         CTE b
         WHERE 1=1
-        And service_mgmt_no = ‘7000406188’
+        And service_mgmt_no = 7000406188
         AND usg_start_date >= ’20200701’
         AND usg_start_date &lt;= ’20200731’
         AND usg_start_date || usg_start_time >= ’20200701000000’
