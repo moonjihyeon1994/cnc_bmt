@@ -21,8 +21,8 @@
         </encoder>
     </appender>
 
-    <include resource="org/springframework/boot/logging/logback/base.xml"/>
-    <logger name="Account" level="INFO" />
+    <logger name="jdbc.sqlonly" level="INFO" appender-ref="STDOUT" />
+    <logger name="jdbc.resultsettable" level="INFO" appender-ref="STDOUT" />
 
     <root level="info">
         <springProfile name="dev">
