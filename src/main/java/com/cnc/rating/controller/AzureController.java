@@ -116,7 +116,8 @@ public class AzureController {
     @GetMapping("/selectCdrNew")
     public boolean selectTest(@RequestParam(value = "rangeMonth") int rangeMonth) throws ParseException {
         if (rangeMonth > 12) throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        long boundedRandomValue = ThreadLocalRandom.current().nextLong(0, 7002799900L);
+        long boundedRandomValue = ThreadLocalRandom.current().nextLong(0, 2799900);
+        boundedRandomValue += 7000000000L;
         queryService.test(boundedRandomValue, rangeMonth);
         return true;
     }
