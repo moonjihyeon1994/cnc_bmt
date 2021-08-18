@@ -181,6 +181,8 @@ public class AzureQueryService {
         }
         list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
 
+        System.out.println(list);
+        System.out.println("endDate : " + dateFormat.format(calendar.getTime()));
         HashMap<String, Object> params = new HashMap<>();
         params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
         params.put("tables", list.toArray(String[]::new));
