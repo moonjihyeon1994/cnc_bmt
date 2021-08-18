@@ -21,9 +21,6 @@
         </encoder>
     </appender>
 
-    <logger name="jdbc.sqlonly" level="INFO" appender-ref="dailyRollingFileAppender" />
-    <logger name="jdbc.resultsettable" level="INFO" appender-ref="dailyRollingFileAppender" />
-
     <root level="info">
         <springProfile name="dev">
             <appender-ref ref="dailyRollingFileAppender"/>
