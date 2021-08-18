@@ -174,6 +174,8 @@ public class AzureQueryService {
         Date date = dateFormat.parse("202007");
         calendar.setTime(date);
 
+        log.info("service_mgmt_no : {}", service_mgmt_no);
+
         List<String> list = new ArrayList<>();
         for (int i = 0; i < rangeMonth; i++) {
             list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
