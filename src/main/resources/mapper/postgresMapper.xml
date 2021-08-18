@@ -229,7 +229,7 @@
         dialed_no,
         called_no
         From bmtstat3.${table} a, cte b
-        WHERE 1 =1
+        WHERE 1 = 1
         AND service_mgmt_no = #{service_mgmt_no}
         AND usg_start_date >= #{startDate}
         AND usg_start_date &lt;= #{endDate}

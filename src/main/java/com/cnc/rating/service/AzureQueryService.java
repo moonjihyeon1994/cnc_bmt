@@ -184,7 +184,7 @@ public class AzureQueryService {
         for (int i = 0; i < list.size(); i++) {
             log.info(list.get(i));
         }
-        log.info("endDate : " + dateFormat.format(calendar.getTime()));
+
 
         HashMap<String, Object> params = new HashMap<>();
         params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
@@ -194,6 +194,11 @@ public class AzureQueryService {
         params.put("startDateTime", "20200701000000");
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "31999999");
         long currentTimeMillis = System.currentTimeMillis();
+
+        log.info("endDate : " + dateFormat.format(calendar.getTime()));
+        log.info("endDateTime : " + dateFormat.format(calendar.getTime()) + "31999999");
+
+
         List<HashMap<String, Object>> result = postgresMapper.test(params);
         log.info("duration : {}, size : {} ", System.currentTimeMillis() - currentTimeMillis, result.size());
     }
