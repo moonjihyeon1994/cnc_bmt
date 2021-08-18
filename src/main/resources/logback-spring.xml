@@ -21,14 +21,8 @@
         </encoder>
     </appender>
 
-    <logger name="jdbc.sqlonly" level="INFO">
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="dailyRollingFileAppender"/>
-    </logger>
-    <logger name="jdbc.resultsettable" level="INFO">
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="dailyRollingFileAppender"/>
-    </logger>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <logger name="Account" level="INFO" />
 
     <root level="info">
         <springProfile name="dev">
@@ -38,8 +32,6 @@
         <springProfile name="prod">
             <appender-ref ref="dailyRollingFileAppender"/>
             <appender-ref ref="STDOUT"/>
-            <logger name="jdbc.sqlonly" level="INFO"/>
-            <logger name="jdbc.resultsettable" level="INFO"/>
         </springProfile>
         <springProfile name="azure">
             <appender-ref ref="dailyRollingFileAppender"/>
