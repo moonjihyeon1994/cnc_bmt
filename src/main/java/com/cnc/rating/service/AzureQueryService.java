@@ -174,19 +174,12 @@ public class AzureQueryService {
         Date date = dateFormat.parse("202007");
         calendar.setTime(date);
 
-        log.info("service_mgmt_no : {}", service_mgmt_no);
-
         List<String> list = new ArrayList<>();
         for (int i = 0; i < rangeMonth; i++) {
             list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
             calendar.add(Calendar.MONTH, 1);
         }
         list.add("evdo_rated_cdr_" + dateFormat.format(calendar.getTime()));
-
-        for (int i = 0; i < list.size(); i++) {
-            log.info(list.get(i));
-        }
-
 
         HashMap<String, Object> params = new HashMap<>();
         params.put("service_mgmt_no", String.valueOf(service_mgmt_no));
@@ -197,12 +190,8 @@ public class AzureQueryService {
         params.put("endDateTime", dateFormat.format(calendar.getTime()) + "31999999");
         long currentTimeMillis = System.currentTimeMillis();
 
-        log.info("endDate : " + dateFormat.format(calendar.getTime()));
-        log.info("endDateTime : " + dateFormat.format(calendar.getTime()) + "31999999");
-
-
         List<HashMap<String, Object>> result = postgresMapper.test(params);
-        log.info("duration : {}, size : {} ", System.currentTimeMillis() - currentTimeMillis, result.size());
+        log.info("service_mgmt_no : {}, range : {}, duration : {}, size : {} ", service_mgmt_no, rangeMonth, System.currentTimeMillis() - currentTimeMillis, result.size());
     }
 
 }

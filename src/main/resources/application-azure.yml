@@ -4,9 +4,6 @@ spring:
   config:
     activate:
       on-profile: azure
-logging:
-  level:
-    root: debug
 
 #  datasource:
 #    url: jdbc:postgresql://w0.bss-bmt-kc-urt-postgresql.postgres.database.azure.com,w1.bss-bmt-kc-urt-postgresql.postgres.database.azure.com
