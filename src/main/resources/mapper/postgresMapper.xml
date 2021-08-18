@@ -187,9 +187,10 @@
             AND coalesce(a.AG_SERVICE_TYPE, ' ') &lt;> 'MVP') as a
         </foreach>
     </select>
-    <select id="test" resultType="map">
+    <select id="test" parameterType="HashMap" resultType="map">
         WITH cte as NOT MATERIALIZED (select * from bmtstat3.ui_minor_code where major_id = 'EVDO_AG_SERVICE_TYPE')
         (
+        <foreach collection="tables" item="table" separator="UNION ALL">
         select
         usg_start_date,
         usg_start_time,
@@ -227,64 +228,17 @@
         opmd_flag,
         dialed_no,
         called_no
-        From bmtstat3.evdo_rated_cdr_202007 a, cte b
+        From bmtstat3.${table} a, cte b
         WHERE 1 =1
-        AND service_mgmt_no = '7000406180'
-        AND usg_start_date >= '20200701'
-        AND usg_start_date &lt;= '20200731'
-        AND usg_start_date || usg_start_time >= '20200701000000'
-        AND usg_start_date || usg_start_time &lt;= '20200731359000'
+        AND service_mgmt_no = #{service_mgmt_no}
+        AND usg_start_date >= #{startDate}
+        AND usg_start_date &lt;= #{endDate}
+        AND usg_start_date || usg_start_time >= #{startDateTime}
+        AND usg_start_date || usg_start_time &lt;= #{endDateTime}
         AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
         AND a.ag_service_type = b.code_id
         AND coalesce(a.ag_service_type, ' ') &lt;> 'MVP'
-        union all
-        select
-        usg_start_date,
-        usg_start_time,
-        total_duration,
-        round(ag_used_nou /2,2) total_usg_nou,
-        total_used_charge,
-        total_rated_charge,
-        deduct_code1,
-        deduct_code2,
-        deduct_code3,
-        deduct_code4,
-        deduct_code5,
-        disc_code1,
-        disc_code2,
-        disc_code3,
-        coalesce(msc_switch_id, switch_id) msc_switch_id,
-        cell_id,
-        '' sect_cd,
-        usg_type,
-        b.code_name ag_service_type_name,
-        to_number(usg_seq, '999') usg_seq,
-        CH_SVC_ICCID,
-        ocall_toll_id,
-        processed_date,
-        processed_time,
-        org_net_info,
-        CASE
-        WHEN org_net_info = '4' THEN 'LTE'
-        WHEN org_net_info = '5' THEN 'LTE3'
-        WHEN org_net_info = 'D' THEN '3LTE'
-        WHEN org_net_info = 'I' THEN '5'
-        WHEN org_net_info = 'H' THEN '5LTE'
-        ELSE ''
-        END network_type,
-        opmd_flag,
-        dialed_no,
-        called_no
-        From bmtstat3.evdo_rated_cdr_202007 a, cte b
-        WHERE 1 =1
-        AND service_mgmt_no = '7000406180'
-        AND usg_start_date >= '20200801'
-        AND usg_start_date &lt;= '20200831'
-        AND usg_start_date || usg_start_time >= '20200801000000'
-        AND usg_start_date || usg_start_time &lt;= '20200831359000'
-        AND b.major_id = 'EVDO_AG_SERVICE_TYPE'
-        AND a.ag_service_type = b.code_id
-        AND coalesce(a.ag_service_type, ' ') &lt;> 'MVP'
+        </foreach>
         );
     </select>
 </mapper>
