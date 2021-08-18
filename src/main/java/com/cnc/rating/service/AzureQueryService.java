@@ -170,7 +170,9 @@ public class AzureQueryService {
 
     public void test() {
         long currentTimeMillis = System.currentTimeMillis();
-        List<HashMap<String, Object>> result = postgresMapper.test();
+        HashMap<String, Object> params = new HashMap<>();
+        params.put("service_mgmt_no", String.valueOf("7000406188"));
+        List<HashMap<String, Object>> result = postgresMapper.test(params);
         log.info("duration : {}, size : {} ", System.currentTimeMillis() - currentTimeMillis, result.size());
     }
 

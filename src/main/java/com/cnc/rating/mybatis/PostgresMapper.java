@@ -19,5 +19,5 @@ public interface PostgresMapper {
 
     List<HashMap<String, Object>> selectSub(HashMap<String, Object> params);
 
-    List<HashMap<String, Object>> test();
+    List<HashMap<String, Object>> test(HashMap<String, Object> params);
 }
