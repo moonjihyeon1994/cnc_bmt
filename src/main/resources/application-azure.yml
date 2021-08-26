@@ -21,5 +21,6 @@ app:
       username: bmtstat3
 #      username: postgres
       password: djqjdlskf12!
+      connectionTimeout: 3000000
 #      password: password
       driver-class-name: org.postgresql.Driver
