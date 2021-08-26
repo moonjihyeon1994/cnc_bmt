@@ -12,4 +12,3 @@ ab -n 100 -c 100 -s 50000 "http://localhost:8081/selectCdrNew?rangeMonth=9" > mu
 ab -n 100 -c 100 -s 50000 "http://localhost:8081/selectCdrNew?rangeMonth=10" > multi_100_11.info
 ab -n 100 -c 100 -s 50000 "http://localhost:8081/selectCdrNew?rangeMonth=11" > multi_100_12.info
 
-
